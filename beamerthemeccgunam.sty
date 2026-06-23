@@ -1,0 +1,296 @@
+%% Mathematical Institute, University of Oxford
+%% LaTeX Beamer Presentation Theme
+%%
+%% v1.0 Original theme: Tim Hosgood 2015 (based on department PowerPoint Template)
+%% v2.0 Reimplementation: Karl Welzel May 2024 (reimplementation from a standard theme)
+%% v2.1 Further adjustments and tweaks: Keith Gillow May 2024
+
+% Use infolines as base
+\useoutertheme{infolines} 
+
+% tweak colours for Oxford Blue
+\definecolor{ccgblue}{RGB}{0,73,144}
+\definecolor{unamgold}{HTML}{d59f0f}
+\definecolor{green}{HTML}{40a02b}
+\definecolor{red}{HTML}{e64553}
+\usecolortheme[named=ccgblue]{structure}
+
+%turn off the navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Add numbers to captions
+\setbeamertemplate{caption}[numbered]
+
+% Change the colors for hyperlinks
+\hypersetup{
+  colorlinks = true,
+  linkcolor = ccgblue,
+  citecolor = blue,
+  urlcolor = blue
+}
+
+% Table of contents customization
+%\setbeamercolor{section in toc}{bg=ccgblue}
+\setbeamertemplate{section in toc}{%
+    \bfseries\large
+    \inserttocsection
+  \par
+}
+\setbeamertemplate{subsection in toc}{%
+  \leavevmode\normalsize
+  \inserttocsubsection\par
+}
+
+\setbeamertemplate{section page}{%
+    \begingroup
+        \begin{beamercolorbox}[sep=10pt,center,rounded=true,shadow=true]{section title}
+        \usebeamerfont{section title}\bfseries\thesection~\insertsection\par
+        \end{beamercolorbox}
+    \endgroup
+}
+\setbeamertemplate{subsection page}{%
+    \begingroup
+        \begin{beamercolorbox}[sep=2pt,center,rounded=true,shadow=true]{section title}
+        \usebeamerfont{section title}\bfseries\thesection~\insertsection\par
+        \end{beamercolorbox}
+        \vspace*{-1.pt}
+        \begin{beamercolorbox}[sep=6pt,center,rounded=true,shadow=true]{subsection title}
+        \usebeamerfont{subsection title}\thesection.\thesubsection~\insertsubsection\par
+        \end{beamercolorbox}
+    \endgroup
+}
+
+\AtBeginSubsection[]{%
+    \begin{frame}
+        \sectionpage
+    \end{frame}
+}
+
+\AtBeginSubsection[]{%
+    \begin{frame}
+        \subsectionpage
+    \end{frame}
+}
+
+% Customize footnote position
+\setbeamertemplate{footnote}{%
+  \parindent 1em\noindent%
+  \raggedright % Align footnote text to the left
+  \hbox to 1.8em{\hfill\insertfootnotemark}\insertfootnotetext\par%
+}
+
+%beamer title settings
+\setbeamerfont{title}{size=\Large, family=\sffamily}
+\setbeamerfont{frametitle}{series=\bfseries, family=\sffamily}
+\setbeamerfont{framesubtitle}{series=\bfseries, family=\sffamily}
+
+% block configuration ----
+%\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamerfont{block title}{family=\sffamily, size=\footnotesize}
+\setbeamerfont{block body}{size=\footnotesize}
+
+%% default
+\setbeamercolor{block title}{fg=white, bg=ccgblue}
+\setbeamercolor{block body}{bg=ccgblue!5}
+
+%% example
+\setbeamerfont{block body example}{size=\footnotesize}
+\setbeamercolor{block title example}{fg=white, bg=green}
+\setbeamercolor{block body example}{bg=green!5}
+
+%% alert
+\setbeamerfont{block body alerted}{size=\footnotesize}
+\setbeamercolor{block title alerted}{fg=white, bg=red}
+\setbeamercolor{block body alerted}{bg=red!5}
+
+% define useful layout lengths
+\newlength{\textmargin}
+\setlength{\textmargin}{10mm} % Left and right margin for main content
+\setbeamersize{text margin left=\textmargin,text margin right=\textmargin}
+\newlength{\titlehmargin}
+\setlength{\titlehmargin}{5mm} % Left and right margin for title and footline
+\newlength{\titlevmargin}
+\setlength{\titlevmargin}{1mm} % Top and bottom margin for title and footline
+\newlength{\fullpagewidth}
+\setlength{\fullpagewidth}{\dimexpr\textwidth+\textmargin+\textmargin\relax}
+
+% change block styles
+% Change alert block colors
+
+% cool commands to highlight text
+\newcommand{\highlight}[1]{\textbf{\color{unamgold} #1}}
+
+% Calculate widths from heights for the logos
+\newlength{\unamlogowidth}
+\setlength{\unamlogowidth}{\dimexpr  10mm * 214 / 311 \relax}
+\newlength{\ccglogowidth}
+\setlength{\ccglogowidth}{\dimexpr 3mm * 347 / 105 \relax}
+
+%% Title slide formatting %%
+\setbeamertemplate{title page}{
+    \begin{picture}(0,0)
+        \put(-\textmargin, \dimexpr -\paperheight*6/10 \relax){%
+        \ifdim\paperwidth>400pt
+           \includegraphics[width=\paperwidth]{img/title-slide-background-wide.png}
+        \else
+           \includegraphics[width=\paperwidth]{img/title-slide-background.png}
+        \fi
+        }
+        \put(-\textmargin +7mm, -55pt){%
+            \begin{minipage}[b][4.5cm][t]{0.7\textwidth}
+                \raggedright
+                \color{white}
+                \usebeamerfont{title}
+                    {\bfseries\rmfamily\huge\inserttitle\\[1cm]}
+                \usebeamerfont{subtitle}
+                    {\insertauthor\\[0.2cm]}
+                    {\it\insertinstitute\\[0.5cm]}
+                    {\insertdate}
+            \end{minipage}
+        }
+    \end{picture}
+}
+
+% % --- Simple section title ---
+\AtBeginSection[]{
+  \begin{frame}[plain, c]
+    \centering
+    {\usebeamerfont{title}\bfseries\rmfamily\Huge \insertsectionhead\par}
+  \end{frame}
+}
+
+% --- Nice section title ---
+% \AtBeginSection[]{
+%   \begin{frame}[plain]
+%     \begin{picture}(0,0)
+%         % Add the same background image logic
+%         \put(-\textmargin, \dimexpr -\paperheight*6/10 \relax){%
+%         \ifdim\paperwidth>400pt
+%            \includegraphics[width=\paperwidth]{img/title-slide-background-wide.png}
+%         \else
+%            \includegraphics[width=\paperwidth]{img/title-slide-background.png}
+%         \fi
+%         }
+%         % Position the text
+%         \put(-\textmargin +7mm, -55pt){%
+%             \begin{minipage}[b][4.5cm][c]{0.9\textwidth}
+%                 \raggedright
+%                 \color{white} % Assuming your background is dark here
+%                 {\usebeamerfont{title}\bfseries\rmfamily\Huge \insertsectionhead}
+%             \end{minipage}
+%         }
+%     \end{picture}
+%   \end{frame}
+% }
+
+%% General slide header %%
+\setbeamertemplate{frametitle}{%
+   \rlap{%
+     \begin{beamercolorbox}[sep=\titlevmargin,left,wd=\dimexpr\fullpagewidth-\titlehmargin*2+\titlevmargin*2\relax]{frametitle}%
+      \begin{minipage}{\dimexpr\fullpagewidth-\unamlogowidth-\titlehmargin*3-0.1cm\relax}%
+        \strut\insertframetitle\strut\par%  % Use the default roman font
+      \end{minipage}%
+      \hspace{\titlehmargin}%
+      \begin{minipage}{\dimexpr\unamlogowidth+1mm\relax}%
+        \hfill
+        %\vspace*{-4mm}
+        \includegraphics[width=\unamlogowidth]{img/unam-logo.png}%
+      \end{minipage}%
+     \end{beamercolorbox}%
+   }%
+   \vspace{\dimexpr-\baselineskip+1ex\relax}%
+   \noindent\rlap{\hspace{-\textmargin}\hspace{\titlehmargin}\rule{\dimexpr\fullpagewidth-\titlehmargin*2\relax}{0.4pt}}%
+   \vspace{-0.6ex}%
+}
+
+%% General slide footer %%
+\setbeamertemplate{footline}{%
+  \noindent\hspace{\titlehmargin}\rule{\dimexpr\fullpagewidth-\titlehmargin*2\relax}{0.4pt}\par%
+  \vspace{\titlevmargin}%
+  \leavevmode%
+  \noindent\hspace{\dimexpr\titlehmargin-\titlevmargin\relax}%
+  \begin{beamercolorbox}[sep=\titlevmargin,wd=\dimexpr\fullpagewidth-\titlehmargin*2+\titlevmargin*2\relax]{footline}%
+    \begin{minipage}{\dimexpr\ccglogowidth+1pt\relax}%
+      \includegraphics[width=\ccglogowidth]{img/ccg-logo.png}%
+    \end{minipage}%
+    \hfill%
+    {\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertshorttitle}%
+    \hfill%
+    {\usebeamercolor[fg]{date in head/foot}\usebeamerfont{date in head/foot}\insertshortdate{}}%
+    \hfill%
+    {\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\usebeamertemplate{page number in head/foot}}%
+  \end{beamercolorbox}
+  \vspace{\titlevmargin}%
+}
+
+% Biblatex format
+\renewbibmacro*{cite}{%
+  \iffieldundef{shorthand}
+    {\ifthenelse{\ifnameundef{labelname}\OR\iffieldundef{labelyear}}
+       {\usebibmacro{cite:label}%
+        \setunit{\printdelim{nonameyeardelim}}}
+       {\printnames{labelname}%
+        \setunit{\printdelim{nameyeardelim}}}%
+     \usebibmacro{cite:labeldate+extradate}%
+     \setunit{\addcomma\space}%
+     \usebibmacro{journal}}
+    {\usebibmacro{cite:shorthand}}}
+
+% ============================================================
+% Card Commands
+% ============================================================
+% For either function, it goes like this:
+%
+% Usage:
+%   \tutorcard{<image path>}{<circle radius>}{<name>}{<role>}{<affiliation>}
+%
+% Example:
+%   \collabcard{img/tutors/mashaal-sohail.jpeg}{1.1cm}
+%     {PhD. Mashaal Sohail}{Main PhD Supervisor}{CCG -- UNAM}
+% ============================================================
+\newcommand{\tutorcard}[5]{%
+  \begin{minipage}[t]{0.31\textwidth}%
+    \centering
+    \begin{tikzpicture}
+      \clip (0,0) circle (#2);
+      \node[anchor=center] at (0,0)
+        {\includegraphics[width=\dimexpr 2\dimexpr #2\relax\relax, height=\dimexpr 2\dimexpr #2\relax\relax]{#1}};
+    \end{tikzpicture}\\[1pt]
+    {
+        \sffamily
+        \color{ccgblue!50!black}
+        {\scriptsize\bfseries #3}\\[-5pt]
+        {\tiny #4}\\[-5pt]
+        {\tiny #5}
+    }
+  \end{minipage}%
+}
+\newcommand{\collabcard}[5]{%
+  \begin{minipage}[t]{0.45\textwidth}%
+    \centering
+    \begin{tikzpicture}
+      \clip (0,0) circle (#2);
+      \node[anchor=center] at (0,0)
+        {\includegraphics[width=\dimexpr 2\dimexpr #2\relax\relax, height=\dimexpr 2\dimexpr #2\relax\relax]{#1}};
+    \end{tikzpicture}\\[1pt]
+    {
+      \sffamily
+      {\color{ccgblue!50!black}
+        {\scriptsize\bfseries #3}\\[-2pt]
+      }
+      {\tiny #4}\\[-5pt]
+      {\tiny #5}
+    }
+  \end{minipage}%
+}
+
+% ------------------------
+% CAPTIONS
+% ------------------------
+\RequirePackage{caption}
+\captionsetup{labelfont=bf, font={sf,tiny}}
+
+% Code listings (bottom instead of top)
+\RequirePackage{listings}
+\lstset{captionpos=t}
+\captionsetup[lstlisting]{font=small}

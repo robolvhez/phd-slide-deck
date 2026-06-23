@@ -1,0 +1,107 @@
+% ------------------------------
+% Dummy code to present a Book
+% ------------------------------
+
+\section{Book section}
+
+% Slide 5: Code Blocks
+\subsection{Code blocks}
+
+\begin{frame}[fragile] % Use [fragile] for code blocks
+
+  Here is some example for \verb|Python|
+
+  \frametitle{Code Blocks (Python)}
+  \begin{lstlisting}[language=python]
+    # A simple Python program
+    name = "Alice"
+    print(f"Hello, {name}!")
+    numbers = [1, 2, 3, 4, 5]
+    squared = [x**2 for x in numbers]
+    print("Squared numbers:", squared)
+  \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile] % Use [fragile] for code blocks
+  \frametitle{Code Blocks (R)}
+
+  More than often we also code in \verb|R|
+
+  \begin{lstlisting}[language=rlang]
+    # A simple R program
+    name <- "Alice"  # Define a variable
+    print(paste("Hello,", name, "!"))  # Print a greeting
+    numbers <- c(1, 2, 3, 4, 5)  # Create a vector
+    squared <- numbers^2  # Square each number
+    print("Squared numbers:")  # Print the result
+    print(squared)
+  \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile] % Use [fragile] for code blocks
+  \frametitle{Code Blocks (R)}
+
+  Sometimes we also need to \verb|BASH| code
+
+  \begin{lstlisting}[language=bash]
+    #!/bin/bash
+    
+    # A simple Bash script
+    echo "Hello, World!"  # Print a message
+    name="Alice"  # Define a variable
+    echo "Hello, $name!"  # Print a personalized message
+    files=$(ls)  # List files in the current directory
+    echo "Files in this directory: $files"  # Print the list
+  \end{lstlisting}
+
+\end{frame}
+
+% Slide 6: Alert and Example Blocks
+\subsection{Alert and Example Blocks}
+
+\begin{frame}
+  \frametitle{Alert and Example Blocks}
+  \begin{block}{Regular Block}
+    This is a regular block for general information.
+  \end{block}
+
+  \begin{alertblock}{Alert Block}
+    This is an alert block to highlight something important!
+  \end{alertblock}
+
+  \begin{exampleblock}{Example Block}
+    This is an example block to demonstrate something.
+  \end{exampleblock}
+\end{frame}
+
+% Slide 7: Overlays (Step-by-Step Reveal)
+\subsection{Overlays (Step-by-Step Reveal)}
+
+\begin{frame}{Overlays (Step-by-Step Reveal)}
+
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+          \item<1-> First item (appears on slide 1)
+          \item<2-> Second item (appears on slide 2)
+          \item<3-> Third item (appears on slide 3)
+      \end{itemize}
+
+      \uncover<4->{This text appears on slide 4.}
+    \end{column}
+
+    \begin{column}{0.45\textwidth}
+
+      \begin{figure}
+        \centering
+        \includegraphics<5->[width=0.95\textwidth]{example-image-b}
+        \uncover<5->{\caption{And this image will appear on slide 5.}}
+        \label{fig:example-image-b}
+      \end{figure}
+
+    \end{column}
+  \end{columns}
+
+\end{frame}

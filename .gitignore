@@ -1,0 +1,55 @@
+# ==============================================================================
+# .gitignore — LaTeX / Beamer project
+# ==============================================================================
+
+# Build output directory
+build/*.aux
+build/*.bbl
+build/*.bcf
+build/*.blg
+build/*.log
+build/*.nav
+build/*.out
+build/*.run.xml
+build/*.snm
+build/*.toc
+build/*.vrb
+
+# --- LaTeX auxiliary files ----------------------------------------------------
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.toc
+*.vrb
+*.synctex.gz
+*.synctex(busy)
+
+# --- Biber / BibTeX -----------------------------------------------------------
+*.bak
+*-blx.bib
+
+# --- Generated / cached files -------------------------------------------------
+*.dvi
+*.ps
+*.eps
+_minted-*/
+*.pyg
+
+# --- OS junk ------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# --- Editor/IDE ---------------------------------------------------------------
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

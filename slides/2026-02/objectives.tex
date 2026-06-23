@@ -1,0 +1,145 @@
+% \section{Objectives}
+\section{Objetivos}
+
+% --- OBJETIVO PRINCIPAL ---
+\begin{frame}[c]{Objectivos de investigación (Doctorado)}
+  \begin{center}
+    % --- Objectivo principal del doctorado ---
+    {\sffamily\bfseries\Large\color{ccgblue}
+      Objetivo principal
+    }\\[0.25cm]
+    {\sffamily\large
+      Estimar \textbf{efectos genéticos directos (DGEs)} para una amplia gama de rasgos complejos
+      y enfermedades en una cohorte \textit{mexicana}, utilizando el MCPS y nuevos estimadores
+      FGWAS para aumentar drásticamente el poder estadístico típicamente limitada
+      en diseños familiares.
+    }
+    \vfill
+    % --- Hipótesis principal ---
+    \uncover<2->{
+      {\sffamily\bfseries\Large\color{ccgblue}
+        Hipótesis principal
+      }\\[0.25cm]
+      {\sffamily\large
+
+        % --- Resumen para presentacion ---
+        Para la población mestiza del MCPS, un FGWAS con estimador robusto 
+        a mestizaje reciente cuantificará DGEs en múltiples
+        rasgos complejos, superando otros diseños para identificar
+        falsos-positivos de PopGWAS y revelar nuevos \textit{loci} ocultos.
+
+        % % --- Traduccion directa ----
+        % Para la población con mestizaje reciente del
+        % Estudio Prospectivo de la Ciudad de México (MCPS, por sus siglas en inglés),
+        % el FGWAS de estimador robusto proveerá estimaciones
+        % de efectos genéticos directos (DGEs) en para una selección
+        % comprensiva de rasgos complejos y enfermedades,
+        % dando un incremento substancial comparado a otros diseños de FGWAS
+        % lo que nos ayudará a identificar falsos-positivos en PopGWAS
+        % y potencialmente nuevos \textit{loci} ocultos.
+
+        % % --- Original ---
+        % For the recently admixed genomes of the Mexico City Prospective Study (MCPS), the FGWAS robust estimator will
+        % provide unbiased estimates of direct genetic effects (DGEs) across a comprehensive set of complex traits and diseases,
+        % yielding a substantial gain in effective sample size and statistical power relative to other FGWAS frameworks, identify
+        % false-positive effect sizes in PopGWAS, and identify novel loci hidden to PopGWAS.
+      }
+    }
+
+  \end{center}
+\end{frame}
+
+% --- OBJETIVOS ESPECÍFICOS DE INVESTIGACIÓN ---
+\begin{frame}[c]{Objetivos específicos}
+  
+  % 1. Obtener asociaciones genéticas libres de sesgos para 200 rasgos complejos. Y ampliar su poder estadístico con el 'estimador robusto'
+  % 2. Cuantificar cuáles son los más suceptibles a efectos de confusión.
+  % 3. Realizar comparaciones con otras cohortes mexicanas y globales.
+  % 4. Realizar análisis posteriores priorizando genes candidatos, predecir riesgo poligénico (PGS) e inferir causalidad (randomización mendeliana).
+  % 5. Desarrollar una plataforma en línea de libre acceso para garantizar la utilidad e interpretabilidad de los resultados.
+
+  \begin{center}
+      \resizebox{\textwidth}{!}{%
+      \begin{tikzpicture}[
+          % 1. Configuración de la caja base
+          box/.style={
+              rectangle,
+              rounded corners=4mm,
+              very thick,
+              align=center,
+              font=\sffamily\bfseries\large,
+              minimum width=5.2cm,
+              minimum height=2cm,
+              inner sep=8pt
+          },
+          % 2. Configuración de estilos activos con las nuevas variables
+          active1/.style={fill=bluefill, draw=bluestroke, text=bluestroke!50!black},
+          active2/.style={fill=grayfill, draw=graystroke, text=graystroke!50!black},
+          active3/.style={fill=greenfill, draw=greenstroke, text=greenstroke!50!black},
+          active4/.style={fill=yellowfill, draw=yellowstroke, text=yellowstroke!50!black},
+          active5/.style={fill=purplefill, draw=purplestroke, text=purplestroke!50!black},
+          % 3. AMBIENTE PERSONALIZADO: Estilo inactivo usando variables aqua
+          inactive/.style={fill=aquafill, draw=aquastroke, text=aquastroke},
+          % 4. Configuración de flechas como figuras
+          arrow_base/.style={single arrow, fill=aquastroke!30, minimum height=0.8cm, single arrow head extend=2.5mm},
+          arrow_right/.style={arrow_base, shape border rotate=0},
+          arrow_down/.style={arrow_base, shape border rotate=270},
+          arrow_left/.style={arrow_base, shape border rotate=180}
+      ]
+
+      % === FILA SUPERIOR (Izquierda a Derecha) ===
+      
+      % Objetivo 1
+      \node[box, active1] (o1) {1. Asociaciones Genéticas\\[2mm] \small\normalfont (Estimador robusto)};
+      
+      % Flecha 1
+      \node[arrow_right, right=0.3cm of o1] (a1) {};
+      
+      % Objetivo 2
+      \node[box, active2, right=0.3cm of a1] (o2) {2. Comparación de efectos\\[2mm] \small\normalfont (Cuantificación de sesgos)};
+      
+      % Flecha 2
+      \node[arrow_right, right=0.3cm of o2] (a2) {};
+      
+      % Objetivo 3
+      \node[box, inactive, right=0.3cm of a2] (o3) {3. Meta-análisis con cohortes\\[2mm] \small\normalfont (Mexicanas y globales)};
+
+      % === CONEXIÓN HACIA ABAJO ===
+      
+      % Flecha 3 (Apunta hacia abajo desde el Objetivo 3)
+      \node[arrow_down, below=0.3cm of o3] (a3) {};
+
+      % === FILA INFERIOR (Derecha a Izquierda) ===
+      
+      % Objetivo 4 (Estilo inactivo)
+        \node[box, inactive, below=0.3cm of a3] (o4) {4. Análisis posteriores\\[2mm] \small\normalfont (PGS y MR)};
+      
+      % Flecha 4 (Apunta hacia la izquierda)
+      \node[arrow_left, left=0.3cm of o4] (a4) {};
+      
+      % Objetivo 5 (Estilo inactivo)
+      \node[box, inactive, left=0.3cm of a4] (o5) {5. Plataforma Interactiva\\[2mm] \small\normalfont (Libre acceso)};
+
+      \end{tikzpicture}%
+      }
+  \end{center}
+\end{frame}
+
+% --- OBJETIVOS DEL SEMESTRE ---
+\begin{frame}[c]{Objetivos de investigación (Semestre 2026-02)}
+  \sffamily\small
+  \renewcommand{\arraystretch}{2.0}   % instead of 0.9
+  \begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
+    \multicolumn{1}{c}{\cellcolor{ccgblue}{\textcolor{white}{\large\bfseries Objetivos}}} & 
+    \multicolumn{1}{c}{\cellcolor{ccgblue}{\textcolor{white}{\large\bfseries Resultados esperados}}} \\
+
+    1. Obtener DGEs para 17 rasgos complejos del MCPS, usando el \textit{estimador robusto} \parencite{guan2025-fgwas}. &
+    El \textit{estimador robusto} \parencite{guan2025-fgwas} produce DGEs con tamaños de muestra efectiva \textbf{más grandes} que otros métodos de FGWAS, y más que en el UKB. \\
+
+    2. Comparar heredabilidad de DGEs y efectos poblacionales en cada rasgo para determinar la \textbf{dirección de atenuación} de los efectos de confusión. &
+    Heredabilidad inferida con DGEs será \textbf{más pequeña} que la de efectos poblacionales de la misma cohorte. \\
+
+    3. Cuantificar la magnitud de sesgos mediante correlaciones entre DGEs y efectos poblacionales. &
+    Las correlaciones serán \textbf{substancialmente más pequeños} en rasgos complejos con un alto nivel de confusión/sesgo.
+  \end{tabular}
+\end{frame}

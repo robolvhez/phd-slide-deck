@@ -1,0 +1,121 @@
+%! TeX program = lualatex
+% !TEX options = -outdir=build
+
+%Use one of the two documentclass lines depending on aspect ratio needed
+% for 4x3 aspect ratio slides
+%\documentclass{beamer}
+%for 16x9 (modern wide screen) aspect ratio slides
+\documentclass[9pt,aspectratio=169,table]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[
+  backend=biber,
+  citestyle=authoryear,
+  labeldate=year
+]{biblatex}
+\usepackage{multicol}
+\usepackage[light]{mycodestyle}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[spanish]{babel}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{dirtytalk}
+
+\captionsetup{font=scriptsize,labelfont=scriptsize}
+\graphicspath{{img/}{./}}
+\usetikzlibrary{shapes.geometric, shapes.arrows, positioning, fit, backgrounds}
+
+% Fonts ----
+% Custom fonts: https://www.overleaf.com/learn/latex/Questions/I_have_a_custom_font_I%27d_like_to_load_to_my_document._How_can_I_do_this%3F#Using_custom_fonts_with_XeLaTeX_and_LuaLaTeX
+\usepackage{fontspec}
+
+\usefonttheme{serif}
+\setmainfont{XCharter}
+\setsansfont{Cabin}
+\setmonofont{Source Code Pro}
+
+% Bibliography
+\addbibresource{bibliography.bib}
+\renewcommand*{\bibfont}{\scriptsize} % Change bibliography text size
+\AtEveryBibitem{\clearfield{title}}
+\DefineBibliographyStrings{spanish}{
+  andothers = {\textit{et al\adddot}}
+}
+
+
+% CCG theming
+\usetheme{ccgunam}
+
+% Set author etc info
+\title[E. Tutoral 2026-02]
+{\bfseries
+  % --- Spanish ---
+  Estudios de Asociación Genómica
+  Libres de Sesgos Poblacionales
+  para Rasgos Complejos y Enfermedades
+  en Más de 100 mil Mexicanos
+}
+
+\author[]{Ing. Roberto Olvera Hernández}
+\institute[CCG - UNAM]{
+  Programa de Doctorado en Ciencias Biomédicas (PDCB) \\
+  Centro de Ciencias Genómicas (CCG) \\
+  Universidad Nacional Autónoma de México (UNAM)
+}
+\date[\today]{\today} % main date for title page,
+
+% ----- COLOR PALETTE ----
+\definecolor{bluefill}{HTML}{E3F2FD}
+\definecolor{bluestroke}{HTML}{2196F3}
+\definecolor{grayfill}{HTML}{E0F2F1}
+\definecolor{graystroke}{HTML}{009688}
+\definecolor{aquafill}{HTML}{F5F5F5}
+\definecolor{aquastroke}{HTML}{9E9E9E}
+\definecolor{greenfill}{HTML}{E8F5E9}
+\definecolor{greenstroke}{HTML}{4CAF50}
+\definecolor{yellowfill}{HTML}{FFF3E0}
+\definecolor{yellowstroke}{HTML}{FF9800}
+\definecolor{purplefill}{HTML}{F3E5F5}
+\definecolor{purplestroke}{HTML}{9C27B0}
+
+%% Now for the actual slides %%
+\begin{document}
+
+% \nocite{*} % Prints all citations. Just for showcase, you can delete it.
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\sffamily
+
+% \begin{frame}{Contents}
+% \begin{frame}{Orden del día}
+%   \tableofcontents
+% \end{frame}
+
+% Slides
+\input{slides/introduction.tex}
+\input{slides/2026-02/background.tex}
+\input{slides/2026-02/objectives.tex}
+\input{slides/2026-02/methods.tex}
+\input{slides/2026-02/results.tex}
+\input{slides/2026-02/conclusions.tex}
+
+% Tutors
+\input{slides/tutors.tex}
+
+% Bibliography ----
+% \begin{frame}
+%     \frametitle{References}
+%     \begin{multicols}{2}
+%         \printbibliography[]
+%     \end{multicols}
+% \end{frame}
+
+\end{document}

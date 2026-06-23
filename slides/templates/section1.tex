@@ -1,0 +1,79 @@
+% ------------------------------
+% Dummy code to present an Article
+% ------------------------------
+
+\section{Article section}
+
+% Slide 1: Lists
+\subsection{Lists}
+\begin{frame}{Lists}
+  \begin{itemize}
+      \item Regular item
+      \item \textbf{Bold item}
+      \item \textit{Italic item}
+  \end{itemize}
+\end{frame}
+
+% Slide 2: Columns
+\subsection{Columns and images}
+
+\begin{frame}{Columns and images}
+\begin{columns}
+
+    % Left Column
+    \begin{column}{0.45\textwidth}
+
+        \textbf{Bullet points}
+        \begin{itemize}
+            \item Item 1
+            \item Item 2
+            \item Item 3
+            \item Referring Fig. \ref{fig:example-label}
+        \end{itemize}
+
+        \textbf{Numbered lists}
+        \begin{enumerate}
+          \item First item
+          \item Second item
+          \item Third item
+        \end{enumerate}
+
+        Maybe some citations here\footcite{anonymous2023website}.
+
+    \end{column}
+
+    % Right Column
+    \begin{column}{0.45\textwidth}
+      \begin{figure}
+        \begin{center}
+          \includegraphics[width=0.95\textwidth]{example-image-a}
+        \end{center}
+        \caption{Some cool caption\footcite{doe2023example}}
+        \label{fig:example-label}
+      \end{figure}
+      
+    \end{column}
+
+\end{columns}
+\end{frame}
+
+% Slide 4: Equations
+\begin{frame}{Equations}
+
+  Here is an example of a numbered equation (Eq. \ref{eq:an-equation}):
+
+  % Numbered equation
+  \begin{equation}
+    E = mc^2
+    \label{eq:an-equation}
+  \end{equation}
+
+  And an inline equation: \( f(x) = x^2 + 2x + 1 \).
+
+  A more complex equation, without numberation:
+
+  % Numbered equation
+  \begin{equation*}
+    \int_{a}^{b} f(x) \, dx = F(b) - F(a)
+  \end{equation*}
+\end{frame}

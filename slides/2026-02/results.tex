@@ -1,0 +1,155 @@
+% \section{Results}
+\section{Resultados}
+
+% --- EFFECTIVE SAMPLE SIZE ---
+\begin{frame}[c]{Tamaños Efectivos de Muestra}
+  \begin{columns}[b]
+    % --- LEFT COLUMN ----
+    \begin{column}{0.64\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{img/results/2026-02/effective-sample-sizes_robust-estimator_sibpair-trios.png}
+    \end{column}
+    % --- RIGHT COLUMN ----
+    \begin{column}{0.36\textwidth}
+      % --- UPPER QUADRANT ----
+      \small\sffamily
+
+      El estimador robusto tiene un mayor poder estadístico
+      que el modelo de \textcite{young2022-fgwas}
+
+      % --- LOWER QUADRANT ----
+      \vspace{1cm}
+      \vfill
+      \captionof{figure}{
+        \textbf{Comparación de tamaños efectivos de muestra para todos los rasgos en dos estimadores de FGWAS.}
+        El estimador robusto vs. de pares de hermanos y trios parentales,
+        incremento de 36.58\% (SD $\pm$ 6.78\%).
+        Barras de error representan intervalos de confianza del 95\%.
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- HERITABILITY ---
+\begin{frame}[c]{Estimaciones de heredabilidad}
+  \begin{columns}[b]
+    % --- Columna izquierda (imagen) ---
+    \begin{column}{0.64\textwidth}
+      \centering
+      \includegraphics[width=0.85\textwidth]{img/results/2026-02/heritability_comparison.scatter.png}
+    \end{column}
+    % --- Columna derecha (tabla + descripción) ---
+    \begin{column}{0.36\textwidth}
+      % Tabla escalada a 3 cm de altura (sin entorno table, innecesario en Beamer)
+      \resizebox{0.99\textwidth}{!}{%
+        \centering
+        \small
+        \begin{tabular}{llccrl}
+          \toprule
+          Trait type & Description & $h^2_{\mathrm{pop}}$ (SE) & $h^2_{\mathrm{DGE}}$ (SE) & $Z_{\mathrm{diff}}$ \\
+          \midrule
+          \multirow{6}{*}{Behavioural}
+          & Current smoking vs former & 0.0132 (0.032) & 0.0005 (0.044) & -0.2336 \\
+          & Current smoking vs not & 0.0144 (0.017) & 0.0148 (0.026) & 0.0129 \\
+          & Educational attainment & 0.0721 (0.025) & 0.0106 (0.017) & -2.0510 \\
+          & Frequency of alcohol consumption & 0.0244 (0.014) & 0.021 (0.028) & -0.1100 \\
+          & Frequency of smoking & 0.0074 (0.019) & 0.0049 (0.027) & -0.0760 \\
+          \multirow{8}{*}{Biomedical}
+          & BMI & 0.1935 (0.021) & 0.1828 (0.029) & -0.2985 \\
+          & DBP & 0.0913 (0.018) & 0.0942 (0.026) & 0.0923 \\
+          & HDL cholesterol & 0.0893 (0.023) & 0.1455 (0.041) & 1.1895 \\
+          & Height & 0.3312 (0.034) & 0.2247 (0.032) & -2.2604 \\
+          & Hypertension & 0.0919 (0.019) & 0.0633 (0.024) & -0.9340 \\
+          & LDL cholesterol & 0.146 (0.027) & 0.1113 (0.033) & -0.8088 \\
+          & SBP & 0.1199 (0.022) & 0.1096 (0.029) & -0.2847 \\
+          & Self-reported diabetes & 0.0903 (0.022) & 0.137 (0.03) & 1.2690 \\
+          \bottomrule
+        \end{tabular}
+      }\par
+      \vspace{1cm}
+      \vfill
+      \captionof{figure}{%
+        \textbf{Comparación de estimaciones de heredabilidad derivadas de FGWAS contra PopGWAS.}
+        Cada punto representa un rasgo complejo.
+        Los colores representan la clasificación.
+        La línea punteada representa la línea de identidad.
+        Barras de error representan intervalos de confianza al 95\%.
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[c]{Estimaciones de heredabilidad}
+  \begin{columns}[b]
+    % --- Columna izquierda (imagen) ---
+    \begin{column}{0.64\textwidth}
+      \centering
+      \includegraphics[width=0.85\textwidth]{img/results/2026-02/heritability_comparison.normalized.png}
+    \end{column}
+    % --- Columna derecha (tabla + descripción) ---
+    \begin{column}{0.36\textwidth}
+      % Tabla escalada a 3 cm de altura (sin entorno table, innecesario en Beamer)
+      \resizebox{0.99\textwidth}{!}{%
+        \centering
+        \small
+        \begin{tabular}{llccrl}
+          \toprule
+          Trait type & Description & $h^2_{\mathrm{pop}}$ (SE) & $h^2_{\mathrm{DGE}}$ (SE) & $Z_{\mathrm{diff}}$ \\
+          \midrule
+          \multirow{6}{*}{Behavioural}
+          & Current smoking vs former & 0.0132 (0.032) & 0.0005 (0.044) & -0.2336 \\
+          & Current smoking vs not & 0.0144 (0.017) & 0.0148 (0.026) & 0.0129 \\
+          & Educational attainment & 0.0721 (0.025) & 0.0106 (0.017) & -2.0510 \\
+          & Frequency of alcohol consumption & 0.0244 (0.014) & 0.021 (0.028) & -0.1100 \\
+          & Frequency of smoking & 0.0074 (0.019) & 0.0049 (0.027) & -0.0760 \\
+          \multirow{8}{*}{Biomedical}
+          & BMI & 0.1935 (0.021) & 0.1828 (0.029) & -0.2985 \\
+          & DBP & 0.0913 (0.018) & 0.0942 (0.026) & 0.0923 \\
+          & HDL cholesterol & 0.0893 (0.023) & 0.1455 (0.041) & 1.1895 \\
+          & Height & 0.3312 (0.034) & 0.2247 (0.032) & -2.2604 \\
+          & Hypertension & 0.0919 (0.019) & 0.0633 (0.024) & -0.9340 \\
+          & LDL cholesterol & 0.146 (0.027) & 0.1113 (0.033) & -0.8088 \\
+          & SBP & 0.1199 (0.022) & 0.1096 (0.029) & -0.2847 \\
+          & Self-reported diabetes & 0.0903 (0.022) & 0.137 (0.03) & 1.2690 \\
+          \bottomrule
+        \end{tabular}
+      }\par
+      \vspace{0.15cm}
+      {\centering
+        \begin{equation*}
+            Z_{\mathrm{diff}} = \frac{
+                \Delta h^2_{\mathrm{pop - DGE}}
+            }{
+                \sqrt{SE^2_{\mathrm{pop}} - SE^2_{\mathrm{DGE}}}
+            }
+        \end{equation*}
+      }\par
+      \vspace{0.15cm}
+      \vfill
+      \captionof{figure}{%
+        \textbf{Diferencias normalizadas entre estimaciones de heredabilidad.}
+        La diferencia asume independencia entre las muestras del FGWAS y popGWAS,
+        y son respecto a las estimaciones de popGWAS.
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- EFFECT SIZE CORRELATIONS ---
+\begin{frame}[c]{Correlación de estimadores}
+\begin{figure}
+    \begin{minipage}[b]{0.67\textwidth}
+        \includegraphics[width=0.95\textwidth]{img/results/2026-02/snipar-correlations.png}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.33\textwidth}
+        \caption{
+            \textbf{Correlaciones de genoma completo entre efectos genéticos directos y efectos poblacionales.}
+            Correlaciones estimadas con snipar \parencite{young2022-fgwas}
+            entre efectos genéticos directos y poblacionales,
+            ajustado para LD y correlaciones muestrales.
+            Comparaciones contrastadas con resultados de \textcite{tan2024-fgwas}.
+            Barras de error indican intervalos de confianza al 95\%.
+        }
+    \end{minipage}
+\end{figure}
+\end{frame}
