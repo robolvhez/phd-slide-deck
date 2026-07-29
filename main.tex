@@ -25,10 +25,12 @@
 \usepackage{multirow}
 \usepackage{colortbl}
 \usepackage{dirtytalk}
-
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{fontawesome5}
 \captionsetup{font=scriptsize,labelfont=scriptsize}
 \graphicspath{{img/}{./}}
-\usetikzlibrary{shapes.geometric, shapes.arrows, positioning, fit, backgrounds}
+\usetikzlibrary{shapes.geometric, shapes.arrows, positioning, fit, backgrounds, arrows.meta}
 
 % Fonts ----
 % Custom fonts: https://www.overleaf.com/learn/latex/Questions/I_have_a_custom_font_I%27d_like_to_load_to_my_document._How_can_I_do_this%3F#Using_custom_fonts_with_XeLaTeX_and_LuaLaTeX
@@ -52,13 +54,14 @@
 \usetheme{ccgunam}
 
 % Set author etc info
-\title[E. Tutoral 2026-02]
+\title[Examen de Candidatura]
 {\bfseries
   % --- Spanish ---
   Estudios de Asociación Genómica
-  Libres de Sesgos Poblacionales
+  Libres de Sesgos
   para Rasgos Complejos y Enfermedades
-  en Más de 100 mil Mexicanos
+  en Más de 100 mil Mexicanos \\[5pt]
+  \normalsize{Examen de candidatura}
 }
 
 \author[]{Ing. Roberto Olvera Hernández}
@@ -101,11 +104,12 @@
 
 % Slides
 \input{slides/introduction.tex}
-\input{slides/2026-02/background.tex}
-\input{slides/2026-02/objectives.tex}
-\input{slides/2026-02/methods.tex}
-\input{slides/2026-02/results.tex}
-\input{slides/2026-02/conclusions.tex}
+\input{slides/methods.tex}
+% \input{slides/2026-02/background.tex}
+% \input{slides/2026-02/objectives.tex}
+% \input{slides/2026-02/methods.tex}
+% \input{slides/2026-02/results.tex}
+% \input{slides/2026-02/conclusions.tex}
 
 % Tutors
 \input{slides/tutors.tex}

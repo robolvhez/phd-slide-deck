@@ -1,0 +1,29 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\definecolor{ccgblue}{RGB}{0,73,144}
+\definecolor{unamgold}{HTML}{d59f0f}
+\definecolor{mygreen}{HTML}{40a02b}
+\definecolor{myred}{HTML}{e64553}
+
+\begin{document}
+\begin{frame}{Methods}
+\begin{tikzpicture}
+\def\bw{0.22\textwidth}
+\def\bhA{0.45\textheight}
+\def\bhB{0.55\textheight}
+\def\bhC{0.65\textheight}
+\def\bhD{0.75\textheight}
+
+\tikzset{
+    body/.style={draw=#1, thick, fill=white, rounded corners=1ex, minimum width=\bw, minimum height=#2, text width=\bw-2ex, align=center, anchor=south},
+    header/.style={fill=#1, text=white, font=\bfseries, minimum width=\bw, rounded corners=1ex, anchor=north, inner sep=1ex}
+}
+
+% 1
+\node[body={ccgblue}{\bhA}] (b1) at (0,0) {Data Collection\\...};
+\node[header={ccgblue}] (h1) at (b1.north) {\faDatabase~ Step 1};
+
+\end{tikzpicture}
+\end{frame}
+\end{document}

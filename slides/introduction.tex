@@ -1,399 +1,294 @@
-% \section{Introduction}
-\section{Introducción}
+\begin{frame}[b]{En México, 4 de cada 10 muertes registradas se relacionan con enfermedades complejas}
+    \begin{figure}[htpb]
+        \centering
+        \includegraphics[width=0.9\textwidth,height=0.75\textheight,keepaspectratio]{img/plots-from-articles-data/agudelo-botero2026-fig2-national-asmr.pdf}
 
-% ============================================================
-% Initial GWAS explanation
-% ============================================================
-\begin{frame}{Estudios de Asociación Genómica (GWAS)}
+        \caption{El \textbf{41.4\% de las muertes} en México son por enfermedades cardio-metabólicas. La mortalidad por enfermedad cardíaca y diabetes mellitus sigue en aumento (1998--2022). Fuente: Estadísticas vitales (INEGI) y proyecciones de población (CONAPO), vía \textcite{agudelo-botero2026-mexico-mortality}.}
 
-  \centering
-  \begin{minipage}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth, height=5cm, keepaspectratio]{img/diagrams/single-locus.png}
-    % \captionof{figure}{Single-variant linear model for simulated Body Mass Index (BMI) data.}
-    \captionof{figure}{Modelo lineal de una sola variante con datos simulaods para Índice de Masa Corporal (BMI).}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth, height=5.5cm, keepaspectratio]{img/diagrams/manhattan.png}
-    %\captionof{figure}{GWAS results showing the significance of each regression for Body Mass Index (BMI) (Uffelmann et al., 2021, Nature Methods Review).}
-    \captionof{figure}{Manhattan Plot mostrando resultados de asociación de un GWAS para Índice de Masa Corporal (BMI) en una población europea. Recuperado de \parencite{uffelmann2021-gwas}.}
-  \end{minipage}
-
+        \label{fig:asmr-trends-mexico}
+    \end{figure}
 \end{frame}
 
-% ============================================================
-% Animated TikZ: Genetic Effects Decomposition (two-column)
-% ============================================================
-\begin{frame}[b]{Sesgos en GWAS}
-
-  \begin{columns}
-
-    %% ---- LEFT COLUMN: stacked bar + legend ----
-    \begin{column}{0.42\textwidth}
-      \centering
-      \begin{tikzpicture}[
-        every node/.style={font=\sffamily},
-      ]
-
-        % --- Color definitions ---
-        \definecolor{dgegray}{HTML}{3C3C3C}
-        \definecolor{nurblue}{HTML}{1A7FA0}
-        \definecolor{assred}{HTML}{7A1525}
-        \definecolor{stratgray}{HTML}{B8B8B8}
-        \definecolor{sideblack}{HTML}{1A1A1A}
-        \definecolor{dimgray}{HTML}{D0D0D0}
-
-        % --- Dimensions (narrower for column) ---
-        \def\barW{2.4}
-        \def\barX{0.7}
-        \def\hdge{2.3}
-        \def\hBlue{0.75}
-        \def\hRed{0.6}
-        \def\hGray{0.35}
-
-        % --- Fixed bounding box (prevents bar from jumping between overlays) ---
-        \useasboundingbox
-          (\barX-0.8, -2.5) rectangle (\barX+\barW+0.1, \hdge+\hBlue+\hRed+\hGray+0.1);
-
-        % --- Layer 1: dge (always visible) ---
-        \fill[dgegray]
-          (\barX, 0) rectangle (\barX+\barW, \hdge);
-
-        % --- Layer 2: Crianza genética (overlay 2+) ---
-        \only<2->{
-          \fill[nurblue]
-            (\barX, \hdge) rectangle (\barX+\barW, \hdge+\hBlue);
-        }
-
-        % --- Layer 3: Apareamiento selectivo (overlay 3+) ---
-        \only<3->{
-          \fill[assred]
-            (\barX, \hdge+\hBlue) rectangle (\barX+\barW, \hdge+\hBlue+\hRed);
-        }
-
-        % --- Layer 4: Estratificación poblacional (overlay 4+) ---
-        \only<4->{
-          \fill[stratgray]
-            (\barX, \hdge+\hBlue+\hRed) rectangle (\barX+\barW, \hdge+\hBlue+\hRed+\hGray);
-        }
-
-        % --- Sidebar: "Efectos de confusión" (overlay 2+) ---
-        \only<2->{
-          \fill[sideblack]
-            (\barX-0.7, \hdge) rectangle (\barX, \hdge+\hBlue+\hRed+\hGray);
-          \node[rotate=90, anchor=mid, text=white,
-                font=\sffamily\bfseries\tiny]
-            at (\barX-0.35, \hdge + 0.5*\hBlue + 0.5*\hRed + 0.5*\hGray)
-            % {Confounding effects};
-            {Efectos de confusión};
-        }
-
-        % --- Legend: order mirrors bar (top→bottom = Estrat, Apear, Crianza, dge) ---
-        \def\legX{0.0}
-        \def\legY{-0.5}
-        \def\legSep{0.45}
-        \def\legBoxW{0.25}
-        \def\legBoxH{0.25}
-
-        %% Row 0 (top): Estratificación — highlighted on overlay 4
-        \only<4>{
-          \fill[stratgray]
-            (\legX, \legY) rectangle +(\legBoxW, -\legBoxH);
-          \node[anchor=west, font=\sffamily\bfseries\scriptsize]
-            at (\legX+\legBoxW+0.1, \legY-0.5*\legBoxH)
-            % {Population Stratification};
-            {Estratificación poblacional};
-        }
-        \only<1-3>{
-          \fill[dimgray]
-            (\legX, \legY) rectangle +(\legBoxW, -\legBoxH);
-          \node[anchor=west, font=\sffamily\scriptsize, text=dimgray]
-            at (\legX+\legBoxW+0.1, \legY-0.5*\legBoxH)
-            % {Population Stratification};
-            {Estratificación poblacional};
-        }
-
-        %% Row 1: Apareamiento selectivo — highlighted on overlay 3
-        \only<3>{
-          \fill[assred]
-            (\legX, \legY-1*\legSep) rectangle +(\legBoxW, -\legBoxH);
-          \node[anchor=west, font=\sffamily\bfseries\scriptsize, text=assred]
-            at (\legX+\legBoxW+0.1, \legY-1*\legSep-0.5*\legBoxH)
-            % {Assortative Mating};
-            {Apareamiento selectivo};
-        }
-        \only<1-2,4>{
-          \fill[dimgray]
-            (\legX, \legY-1*\legSep) rectangle +(\legBoxW, -\legBoxH);
-          \node[anchor=west, font=\sffamily\scriptsize, text=dimgray]
-            at (\legX+\legBoxW+0.1, \legY-1*\legSep-0.5*\legBoxH)
-            % {Assortative Mating};
-            {Apareamiento selectivo};
-        }
-
-        %% Row 2: Crianza genética — highlighted on overlay 2
-        \only<2>{
-          \fill[nurblue]
-            (\legX, \legY-2*\legSep) rectangle +(\legBoxW, -\legBoxH);
-          \node[anchor=west, font=\sffamily\bfseries\scriptsize, text=nurblue]
-            at (\legX+\legBoxW+0.1, \legY-2*\legSep-0.5*\legBoxH)
-            % {Indirect Genetic Effects (IGEs)};
-            {Efectos Genéticos Indirectos (IGEs)};
-        }
-        \only<1,3->{
-          \fill[dimgray]
-            (\legX, \legY-2*\legSep) rectangle +(\legBoxW, -\legBoxH);
-          \node[anchor=west, font=\sffamily\scriptsize, text=dimgray]
-            at (\legX+\legBoxW+0.1, \legY-2*\legSep-0.5*\legBoxH)
-            % {Indirect Genetic Effects (IGEs)};
-            {Efectos Genéticos Indirectos (IGEs)};
-        }
-
-        %% Row 3 (bottom): dge — highlighted on overlay 1
-        \only<1>{
-          \fill[dgegray]
-            (\legX, \legY-3*\legSep) rectangle +(\legBoxW, -\legBoxH);
-          \node[anchor=west, font=\sffamily\bfseries\scriptsize]
-            at (\legX+\legBoxW+0.1, \legY-3*\legSep-0.5*\legBoxH)
-            % {Direct Genetic Effects (DGEs)};
-            {Efectos Genéticos Directos (DGEs)};
-        }
-        \only<2->{
-          \fill[dimgray]
-            (\legX, \legY-3*\legSep) rectangle +(\legBoxW, -\legBoxH);
-          \node[anchor=west, font=\sffamily\scriptsize, text=dimgray]
-            at (\legX+\legBoxW+0.1, \legY-3*\legSep-0.5*\legBoxH)
-            % {Direct Genetic Effects (DGEs)};
-            {Efectos Genéticos Directos (DGEs)};
-        }
-
-      \end{tikzpicture}
-    \end{column}
-
-    %% ---- RIGHT COLUMN: images with captions ----
-    \begin{column}{0.52\textwidth}
-      \centering
-      \vspace{0.5cm}
-      \only<1>{%
-        \includegraphics[width=0.95\textwidth, height=4cm, keepaspectratio]{img/diagrams/eye-color.png}%
-        \captionof{figure}{Color de ojos esperado basado en el polimorfismo rs12913832 (\textit{HERC2}) en una población canadiense \parencite{abbatangelo2026-eye-color}.}%
-      }%
-      \only<2>{%
-        \includegraphics[width=0.95\textwidth, height=4cm, keepaspectratio]{img/diagrams/kong2018-ige.png}%
-        % \captionof{figure}{Genetic nurture \parencite{kong2018-parental-genotype}.}%
-        \captionof{figure}{Diagrama para el modelado de IGEs \parencite{kong2018-parental-genotype}.}%
-      }%
-      \only<3>{%
-        \includegraphics[width=0.95\textwidth, height=4cm, keepaspectratio]{img/diagrams/smolen2023-assortative-mating.jpg}%
-        % \captionof{figure}{Assortative mating \parencite{smolen2023-assortative-mating}.}%
-        \captionof{figure}{Fenotipos y genotipos (indirectamente) pueden estar correlacionados en la selección de parejas \parencite{smolen2023-assortative-mating}.}%
-      }%
-      \only<4>{%
-        \includegraphics[width=0.95\textwidth, height=4cm, keepaspectratio]{img/diagrams/novembre2008-pca.png}%
-        % \captionof{figure}{Population stratification \parencite{novembre2008-humanitiesandsocialsciences}.}%
-        \captionof{figure}{Fenotipos y genotipos son segregados en regiones geográficas por barreras naturales, sociales o culturales \parencite{novembre2008-humanitiesandsocialsciences}.}%
-      }%
-    \end{column}
-  \end{columns}
+\begin{frame}[c]{La diabetes es más común y más mortal en México que en países de altos ingresos}
+    \begin{figure}[htpb]
+        \centering
+        \includegraphics[width=0.9\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/alegre-diaz2016-mortality-mcps.png}
+        \caption{En la cohorte MCPS (N $\approx$ 150{,}000), la diabetes explica \textbf{1 de cada 3 muertes} entre 35--74 años (RR = 5.4 a los 35--59). Recuperado de \textcite{alegre-diazjesus2016-diabetes}.}
+        \label{fig:mortality-diabetes-mexico}
+    \end{figure}
 \end{frame}
 
-% ============================================================
-% Static TikZ: Genetic Effects Shrinkage
-% ============================================================
-\usetikzlibrary{decorations.pathreplacing, arrows.meta}
-
-\begin{frame}{Sesgos en GWAS}
-  \centering
-  \vspace{0.5cm}
-  \begin{tikzpicture}[
-    every node/.style={font=\sffamily},
-  ]
-
-    % --- Color definitions ---
-    \definecolor{dgegray}{HTML}{3C3C3C}
-    \definecolor{nurblue}{HTML}{1A7FA0}
-    \definecolor{assred}{HTML}{7A1525}
-    \definecolor{stratgray}{HTML}{B8B8B8}
-    \definecolor{sideblack}{HTML}{000000}
-    \definecolor{arrowdark}{HTML}{2B3245}
-    \definecolor{bracered}{HTML}{ED4E33}
-
-    % --- Dimensions for left bar (copied from previous slide) ---
-    \def\barW{2.4}
-    \def\barX{-0.5}
-    \def\hdge{2.3}
-    \def\hBlue{0.75}
-    \def\hRed{0.6}
-    \def\hGray{0.35}
-
-    % --- Dimensions for right bar ---
-    \def\barXRight{6.8}
-    \def\hBlueR{0.4}
-    \def\hRedR{0.15}
-    \def\hGrayR{0.2}
-
-    % --- LEFT BAR ---
-    % DGE
-    \fill[dgegray] (\barX, 0) rectangle (\barX+\barW, \hdge);
-    % Crianza / IGEs
-    \fill[nurblue] (\barX, \hdge) rectangle (\barX+\barW, \hdge+\hBlue);
-    % Apareamiento / Assortative
-    \fill[assred] (\barX, \hdge+\hBlue) rectangle (\barX+\barW, \hdge+\hBlue+\hRed);
-    % Estratificación / Pop Strat
-    \fill[stratgray] (\barX, \hdge+\hBlue+\hRed) rectangle (\barX+\barW, \hdge+\hBlue+\hRed+\hGray);
-
-    % Sidebar "Confounding effects"
-    \fill[sideblack] (\barX-0.7, \hdge) rectangle (\barX, \hdge+\hBlue+\hRed+\hGray);
-    \node[rotate=90, anchor=mid, text=white, font=\sffamily\bfseries\tiny]
-      at (\barX-0.35, \hdge + 0.5*\hBlue + 0.5*\hRed + 0.5*\hGray)
-      % {Confounding effects};
-      {Efectos de confusión};
-
-    % Left bar annotations
-    \node[anchor=west, font=\sffamily\scriptsize] at (\barX+\barW+0.1, \hdge+\hBlue+\hRed+0.5*\hGray) {PCAs};
-    \node[anchor=west, font=\sffamily\scriptsize] at (\barX+\barW+0.1, \hdge+\hBlue+0.5*\hRed) {LMM w/GRM};
-
-    % --- MIDDLE ARROW ---
-    \draw[-{Triangle[width=10pt,length=10pt]}, line width=5pt, color=arrowdark] 
-      (\barX+\barW+2.0, \hdge+0.3) -- (\barXRight-0.5, \hdge+0.3);
-
-    % --- RIGHT BAR ---
-    % DGE (same height)
-    \fill[dgegray] (\barXRight, 0) rectangle (\barXRight+\barW, \hdge);
-    % IGEs (shrunk)
-    \fill[nurblue] (\barXRight, \hdge) rectangle (\barXRight+\barW, \hdge+\hBlueR);
-    % Assortative (shrunk)
-    \fill[assred] (\barXRight, \hdge+\hBlueR) rectangle (\barXRight+\barW, \hdge+\hBlueR+\hRedR);
-    % Pop Strat (shrunk)
-    \fill[stratgray] (\barXRight, \hdge+\hBlueR+\hRedR) rectangle (\barXRight+\barW, \hdge+\hBlueR+\hRedR+\hGrayR);
-
-    % Curly brace and "Inflated results"
-    \draw[bracered, thick, decorate, decoration={brace, amplitude=5pt, mirror}] 
-      (\barXRight+\barW+0.1, \hdge) -- (\barXRight+\barW+0.1, \hdge+\hBlueR+\hRedR+\hGrayR) 
-      node[midway, right=8pt, font=\sffamily\bfseries\scriptsize, text=bracered]
-      % {Inflated results};
-      {Efectos poblacionales};
-
-    % --- LEGEND (Bottom Left) ---
-    \def\legX{\barX-0.7}
-    \def\legY{-0.5}
-    \def\legSep{0.45}
-    \def\legBoxW{0.25}
-    \def\legBoxH{0.25}
-
-    % Pop Strat
-    \fill[stratgray] (\legX, \legY) rectangle +(\legBoxW, -\legBoxH);
-    \node[anchor=west, font=\sffamily\scriptsize] at (\legX+\legBoxW+0.1, \legY-0.5*\legBoxH)
-      % {Population stratification};
-      {Estratificación poblacional};
-
-    % Assortative Mating
-    \fill[assred] (\legX, \legY-1*\legSep) rectangle +(\legBoxW, -\legBoxH);
-    \node[anchor=west, font=\sffamily\scriptsize] at (\legX+\legBoxW+0.1, \legY-1*\legSep-0.5*\legBoxH)
-      % {Assortative mating};
-      {Apareamiento selectivo};
-
-    % IGEs
-    \fill[nurblue] (\legX, \legY-2*\legSep) rectangle +(\legBoxW, -\legBoxH);
-    \node[anchor=west, font=\sffamily\scriptsize] at (\legX+\legBoxW+0.1, \legY-2*\legSep-0.5*\legBoxH)
-      % {Indirect Genetic Effects (IGEs)};
-      {Efectos Genéticos Indirectos (IGEs)};
-
-    % DGEs
-    \fill[dgegray] (\legX, \legY-3*\legSep) rectangle +(\legBoxW, -\legBoxH);
-    \node[anchor=west, font=\sffamily\bfseries\scriptsize] at (\legX+\legBoxW+0.1, \legY-3*\legSep-0.5*\legBoxH)
-      % {Direct Genetic Efects (DGEs)};
-      {Efectos Genéticos Directos (DGEs)};
-
-    % --- CITATION (Bottom Right) ---
-    \node[anchor=south east, font=\sffamily\scriptsize] 
-      at (\barXRight+\barW+2.5, \legY-3*\legSep-0.5*\legBoxH) 
-      % {Adapted from \textcite{young2019-genetic-effects}.};
-      {Diagrama adptado de \textcite{young2019-genetic-effects}.};
-
-  \end{tikzpicture}
+\begin{frame}[c]{Las poblaciones latinoamericanas están subrepresentadas en estudios genómicos}
+    \begin{columns}
+        % --- Column A ----
+        \begin{column}{0.45\textwidth}
+            \begin{figure}[htpb]
+                \centering
+                \includegraphics[width=0.95\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/martin2019-gwas-ancestries.png}
+                \caption{Ancestría de participantes en GWAS por el tiempo, comparado con población global. Recuperado de \textcite{martin2019-pgs}.}
+                \label{fig:gwas-altas-ancestries}
+            \end{figure}
+        \end{column}
+        % --- Column B ----
+        \begin{column}{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/diagrams/gwas-diversity-monitor/bucketPlots.png}\par
+            {\footnotesize \url{gwasdiversitymonitor.com}}
+        \end{column}
+    \end{columns}
 \end{frame}
 
-% ============================================================
-% Family-based GWAS Limitations
-% ============================================================
-\begin{frame}[c]{Family-based GWAS}
-  \begin{columns}[c]
 
-    % --- LEFT COLUMN: Image ---
-    \begin{column}{0.55\textwidth}
-      \centering
-      \includegraphics[height=5.15cm, keepaspectratio]{img/diagrams/young2019-signals-captured-gwas.png}
-      % \captionof{figure}{Signals captured by GWAS of related individuals and families \parencite{young2019-genetic-effects}.}
-      \captionof{figure}{Señales capturadas por un GWAS de individuos relacionados y familias. Recuperado de \textcite{young2019-genetic-effects}.}
-    \end{column}
-
-    % --- RIGHT COLUMN: Text ---
+\begin{frame}[b]{El genoma mexicano es mestizo y tiene orígen en su pasado colonial europeo}
+\begin{columns}
     \begin{column}{0.45\textwidth}
-
-      % --- Spanish ---
-      {Los FGWAS pueden discriminar entre DGEs y Efectos Poblacionales} \\[1pt]
-      {\tiny \parencite{visscher2006-populationgenetics,young2019-genetic-effects}}\\[1em]
-      \pause
-      \centering
-      {\bfseries\large\color[HTML]{7CBB00}
-        PERO
-      }\\[0.5em]
-      \begin{columns}[T]
-        \small
-        \begin{column}{0.425\textwidth}
-          {Evidencia de una señal biológica \textbf{verdadera}}
-        \end{column}
-        \begin{column}{0.05\textwidth}
-          vs.
-        \end{column}
-        \begin{column}{0.425\textwidth}
-          {Limitado a solamente individuos con \textbf{ambos padres genotipados}}
-        \end{column}
-      \end{columns}
-      \pause
-      \vspace{3em}
-      {\centering\large
-        Recuperar poder estadístico es \textbf{prioridad}
-      }
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[height=5.5cm]{img/diagrams/casta-painting.jpg}
+            \caption{Pintura de Castas (ca. 1750)}
+            \label{fig:casta-painting}
+        \end{figure}
     \end{column}
-  \end{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/diagrams/sohail2023-mexico-diversity.png}
+            \caption{\textbf{Patrones ancestrales en el MXB}. (A) Puntos de muestreo en MXB, (B) Agrupamiento no supervisado de ADMIXTURE, (C) Analisis UMAP para el MXB por región de Mesoamérica \parencite{sohail2023-mexican-biobank}}
+            \label{fig:label}
+        \end{figure}
+    \end{column}
+\end{columns}
 \end{frame}
 
-% ============================================================
-% Why use the MCPS?
-% ============================================================
- \begin{frame}[c]{Estudio Prospectivo de la Ciudad de México (MCPS)}
-  \begin{columns}[T]
-    % --- COLUMN A ---
-    \begin{column}{0.35\textwidth}
-      \centering
-      \includegraphics[height=3cm]{img/diagrams/mcps-family-network.png}\\[0.5em]
-      {\bfseries
-        Redes familiares densas
-      }\\[3pt]
-      {\tiny
-        MCPS \parencite{ziyatdinov2023-mcps} proporciona más del \textit{doble} de pares de familiares de primer grado que UK Biobank \parencite{bycroft2018-ukbiobank} \\[2pt]
-      }
-    \end{column}
-    % --- COLUMN B ---
-    \begin{column}{0.65\textwidth}
-      \centering
-      \includegraphics[height=3cm]{img/diagrams/mcps-admixture.png}\\[0.5em]
-      {\bfseries
-        Mestizaje reciente
-      }\\[3pt]
-      {\tiny
-        Ancestrías provenientes de Europa y África, e indígenas de México.
-        Mejorar representación en estudios genómicos \parencite{popejoy2016-admixture,martin2017-pgs}.
-      }
-    \end{column}
-  \end{columns}
-  \centering
-  \vspace{2em}
-  {\small
-    \textcite{tapia-conyer2006-mcps,ziyatdinov2023-mcps}
-  }
+\begin{frame}[c]{La distancia genética respecto a poblaciones europeas está correlacionado con la capacidad de predicción}
+    \vspace{1cm}
+    \begin{figure}[htpb]
+        \centering
+        % Subfigure A
+        \begin{subfigure}{0.45\textwidth}
+            \includegraphics[width=\textwidth]{img/diagrams/ding2023-pcs.png}
+            \caption{Estructura poblacional del estudio.}
+            \label{subfig:ding-pcs}
+        \end{subfigure}
+        \hfill
+        % Subfigure B
+        \begin{subfigure}{0.45\textwidth}
+            \includegraphics[width=\textwidth]{img/diagrams/ding2023-distances.png}
+            \caption{Decaimiento continuo de precisión.}
+            \label{subfig:ding-decreasing}
+        \end{subfigure}
+        % Figure caption
+        \caption{ATLAS \textcite{ding2023-prs}.}
+        \label{fig:ding-bias}
+    \end{figure}
 \end{frame}
+
+\begin{frame}[b]{La reducción de predicción lo podemos ver directamente en México}
+    \begin{figure}[htpb]
+        \centering
+        % Subfigure A
+        \begin{subfigure}{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.95\textwidth]{img/diagrams/ziyatdinov2023-prs-prediction-decay.png}
+            \caption{IMC en MCPS \parencite{ziyatdinov2023-mcps}.}
+            \label{subfig:bmi-decay-mcps}
+        \end{subfigure}
+        \hfill
+        % Subfigure B
+        \begin{subfigure}{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.95\textwidth]{img/diagrams/liu2026-chd-prs-prediction-accuracy.png}
+            \caption{Cardiopatía en MCPS \parencite{liu2026-mcps}.}
+            \label{subfig:chd-prs-decay-mcps}
+        \end{subfigure}
+    \end{figure}
+\end{frame}
+
+%%% \begin{frame}[b]{Los grupos originarios también son genéticamente diversos, no homogéneos}
+%%%     \begin{columns}[T]
+%%%         % --- Column A ----
+%%%         \begin{column}{0.45\textwidth}
+%%% 
+%%%             No mames está bien diverso que pedo ($F_{ST} = 0.14$)\\[1em]
+%%% 
+%%%             \begin{figure}[htpb]
+%%%                 \centering
+%%%                 \includegraphics[width=0.95\textwidth]{img/diagrams/moreno2014-nmdp_aspca-mexico.png}
+%%%                 \caption{Subestructura continental en México \parencite{moreno-estrada2014-nmdp}.}
+%%%                 \label{fig:moreno-pca}
+%%%             \end{figure}
+%%%         \end{column}
+%%%         % --- Column B ----
+%%%         \pause
+%%%         \begin{column}{0.45\textwidth}
+%%%             \begin{figure}[htpb]
+%%%                 \centering
+%%%                 \includegraphics[width=0.95\textwidth]{img/diagrams/sohail2023-mexico-diversity.png}
+%%%                     \caption{\textbf{Patrones ancestrales en el MXB}. (A) Puntos de muestreo en MXB, (r) Agrupamiento no supervisado de ADMIXTURE, (C) Analisis UMAP para el MXB por región de Mesoamérica \parencite{sohail2023-mexican-biobank}}
+%%%                 \label{fig:label}
+%%%             \end{figure}
+%%%         \end{column}
+%%%     \end{columns}
+%%% \end{frame}
+
+%%% % ============================================================
+%%% % SECCIÓN 2: ¿Por qué fallan las herramientas actuales?
+%%% % ============================================================
+
+%%% % ============================================================
+%%% % SECCIÓN 3: GWAS familiares libres de confusión
+%%% % ============================================================
+%%% 
+%%% \begin{frame}{Sesgos en GWAS: El origen del problema}
+%%%   \centering
+%%%   \begin{tikzpicture}[
+%%%     every node/.style={font=\sffamily},
+%%%     scale=0.9, transform shape
+%%%   ]
+%%% 
+%%%     % --- Color definitions ---
+%%%     \definecolor{dgegray}{HTML}{3C3C3C}
+%%%     \definecolor{nurblue}{HTML}{1A7FA0}
+%%%     \definecolor{assred}{HTML}{7A1525}
+%%%     \definecolor{stratgray}{HTML}{B8B8B8}
+%%%     \definecolor{sideblack}{HTML}{000000}
+%%%     \definecolor{arrowdark}{HTML}{2B3245}
+%%%     \definecolor{bracered}{HTML}{ED4E33}
+%%% 
+%%%     % --- Dimensions ---
+%%%     \def\barW{2.4}
+%%%     \def\barX{-0.5}
+%%%     \def\hdge{2.3}
+%%%     \def\hBlue{0.75}
+%%%     \def\hRed{0.6}
+%%%     \def\hGray{0.35}
+%%%     
+%%%     \def\barXRight{6.8}
+%%%     \def\hBlueR{0.4}
+%%%     \def\hRedR{0.15}
+%%%     \def\hGrayR{0.2}
+%%% 
+%%%     % --- LEFT BAR ---
+%%%     \fill[dgegray] (\barX, 0) rectangle (\barX+\barW, \hdge);
+%%%     \fill[nurblue] (\barX, \hdge) rectangle (\barX+\barW, \hdge+\hBlue);
+%%%     \fill[assred] (\barX, \hdge+\hBlue) rectangle (\barX+\barW, \hdge+\hBlue+\hRed);
+%%%     \fill[stratgray] (\barX, \hdge+\hBlue+\hRed) rectangle (\barX+\barW, \hdge+\hBlue+\hRed+\hGray);
+%%% 
+%%%     \fill[sideblack] (\barX-0.7, \hdge) rectangle (\barX, \hdge+\hBlue+\hRed+\hGray);
+%%%     \node[rotate=90, anchor=mid, text=white, font=\sffamily\bfseries\tiny]
+%%%       at (\barX-0.35, \hdge + 0.5*\hBlue + 0.5*\hRed + 0.5*\hGray) {Efectos de confusión};
+%%% 
+%%%     \node[anchor=west, font=\sffamily\scriptsize] at (\barX+\barW+0.1, \hdge+\hBlue+\hRed+0.5*\hGray) {PCs};
+%%%     \node[anchor=west, font=\sffamily\scriptsize] at (\barX+\barW+0.1, \hdge+\hBlue+0.5*\hRed) {LMM w/GRM};
+%%% 
+%%%     % --- MIDDLE ARROW ---
+%%%     \draw[-{Triangle[width=10pt,length=10pt]}, line width=5pt, color=arrowdark] 
+%%%       (\barX+\barW+2.0, \hdge+0.3) -- (\barXRight-0.5, \hdge+0.3);
+%%% 
+%%%     % --- RIGHT BAR ---
+%%%     \fill[dgegray] (\barXRight, 0) rectangle (\barXRight+\barW, \hdge);
+%%%     \fill[nurblue] (\barXRight, \hdge) rectangle (\barXRight+\barW, \hdge+\hBlueR);
+%%%     \fill[assred] (\barXRight, \hdge+\hBlueR) rectangle (\barXRight+\barW, \hdge+\hBlueR+\hRedR);
+%%%     \fill[stratgray] (\barXRight, \hdge+\hBlueR+\hRedR) rectangle (\barXRight+\barW, \hdge+\hBlueR+\hRedR+\hGrayR);
+%%% 
+%%%     \draw[bracered, thick, decorate, decoration={brace, amplitude=5pt, mirror}] 
+%%%       (\barXRight+\barW+0.1, \hdge) -- (\barXRight+\barW+0.1, \hdge+\hBlueR+\hRedR+\hGrayR) 
+%%%       node[midway, right=8pt, font=\sffamily\bfseries\scriptsize, text=bracered] {Efectos poblacionales};
+%%% 
+%%%     % --- LEGEND ---
+%%%     \def\legX{\barX-0.7}
+%%%     \def\legY{-0.5}
+%%%     \def\legSep{0.45}
+%%%     \def\legBoxW{0.25}
+%%%     \def\legBoxH{0.25}
+%%% 
+%%%     \fill[stratgray] (\legX, \legY) rectangle +(\legBoxW, -\legBoxH);
+%%%     \node[anchor=west, font=\sffamily\scriptsize] at (\legX+\legBoxW+0.1, \legY-0.5*\legBoxH) {Estratificación poblacional (Adaptación biológica/deriva)};
+%%% 
+%%%     \fill[assred] (\legX, \legY-1*\legSep) rectangle +(\legBoxW, -\legBoxH);
+%%%     \node[anchor=west, font=\sffamily\scriptsize] at (\legX+\legBoxW+0.1, \legY-1*\legSep-0.5*\legBoxH) {Apareamiento selectivo (Correlación fenotípica de padres)};
+%%% 
+%%%     \fill[nurblue] (\legX, \legY-2*\legSep) rectangle +(\legBoxW, -\legBoxH);
+%%%     \node[anchor=west, font=\sffamily\scriptsize] at (\legX+\legBoxW+0.1, \legY-2*\legSep-0.5*\legBoxH) {Efectos Genéticos Indirectos (Genetic nurture)};
+%%% 
+%%%     \fill[dgegray] (\legX, \legY-3*\legSep) rectangle +(\legBoxW, -\legBoxH);
+%%%     \node[anchor=west, font=\sffamily\bfseries\scriptsize] at (\legX+\legBoxW+0.1, \legY-3*\legSep-0.5*\legBoxH) {Efectos Genéticos Directos (DGEs - Biología causal)};
+%%% 
+%%%     \node[anchor=south east, font=\sffamily\scriptsize] 
+%%%       at (\barXRight+\barW+4.0, \legY-3*\legSep-0.5*\legBoxH) {Adaptado de \textcite{young2019-genetic-effects}.};
+%%% 
+%%%   \end{tikzpicture}
+%%% \end{frame}
+%%% 
+%%% \begin{frame}[c]{La solución: FGWAS y efectos genéticos directos}
+%%%   \begin{columns}
+%%%     \begin{column}{0.5\textwidth}
+%%%       \textbf{Familiares aíslan DGEs mediante aleatorización meiótica:}
+%%%       \begin{itemize}
+%%%         \item \textbf{Diseños familiares (FGWAS):} Comparan hermanos o tríos padres-hijos \parencite{young2022-fgwas, howe2022-fgwas}.
+%%%         \item Las diferencias genéticas entre hermanos completos provienen \textit{puramente} de la segregación meiótica aleatoria.
+%%%         \item Esto remueve estratificación e IGEs, estimando efectos causales directos (DGEs).
+%%%       \end{itemize}
+%%%     \end{column}
+%%%     \begin{column}{0.5\textwidth}
+%%%       \centering
+%%%       % Placeholder for Howe 2022 / Guan 2025 figure
+%%%       \begin{tikzpicture}
+%%%         \node[draw=greenstroke, fill=greenfill, minimum width=6cm, minimum height=4cm, rounded corners, align=center] {Espacio para Figuras:\\\textit{Esquema de segregación mendeliana}\\\textit{Howe 2022 / Young 2022}};
+%%%       \end{tikzpicture}
+%%%     \end{column}
+%%%   \end{columns}
+%%% \end{frame}
+%%% 
+%%% \begin{frame}[c]{Innovaciones metodológicas para MCPS}
+%%%   \begin{columns}
+%%%     \begin{column}{0.55\textwidth}
+%%%       \textbf{El problema:} Los FGWAS tradicionales (ej. sib-diff) requieren muestras enormes y pierden hasta el 50\% de la varianza.
+%%%       
+%%%       \vspace{0.5em}
+%%%       \textbf{La solución (\textit{Robust Estimator}):}
+%%%       \begin{itemize}
+%%%         \item Nuevo estimador \parencite{guan2025-fgwas} particiona la varianza por alelos \textit{no transmitidos}.
+%%%         \item Aumenta el poder estadístico ($N_{eff}$) entre \textbf{10--21\%}.
+%%%         \item \textbf{Insesgado incluso bajo admixtura extrema} ($F_{ST} = 0.1$). \textbf{Ideal para el contexto genético de México}.
+%%%       \end{itemize}
+%%%     \end{column}
+%%%     \begin{column}{0.45\textwidth}
+%%%       \centering
+%%%       \begin{tikzpicture}
+%%%         \node[draw=bluestroke, fill=bluefill, minimum width=5.5cm, minimum height=4cm, rounded corners, align=center] {Espacio para Figuras:\\\textit{Guan et al. 2025 (Fig 1a,b)}\\\textit{Aumento de poder en FGWAS}};
+%%%       \end{tikzpicture}
+%%%     \end{column}
+%%%   \end{columns}
+%%% \end{frame}
+%%% 
+%%% \begin{frame}[c]{Limitaciones: Validez interna vs. Portabilidad}
+%%%   \begin{itemize}
+%%%     \item \textbf{FGWAS resuelve validez interna:} Garantiza que las asociaciones encontradas son causales biológicamente, limpias de confusión ambiental y estratificación \parencite{young2024-fgwas}.
+%%%     \item \textbf{Pero NO garantiza portabilidad:} Los DGEs puros no mejoran automáticamente la transferencia de PRS entre poblaciones \parencite{zhang2024-fgwas}.
+%%%     \item Más del 85\% del decaimiento de precisión se debe a diferencias en Desequilibrio de Ligamiento (LD) y frecuencias alélicas (MAF), no solo al sesgo \parencite{zhang2024-fgwas}.
+%%%   \end{itemize}
+%%%   
+%%%   \vspace{1em}
+%%%   \begin{center}
+%%%     \textbf{\textcolor{bluestroke}{Mensaje clave:}} FGWAS nos dice \textit{qué} biología es causal, pero para predecir en mexicanos, \textbf{necesitamos hacer FGWAS directamente en mexicanos}.
+%%%   \end{center}
+%%% \end{frame}
+%%% 
+%%% % ============================================================
+%%% % CIERRE
+%%% % ============================================================
+%%% 
+%%% \begin{frame}[c]{En resumen...}
+%%%   \begin{center}
+%%%     \begin{tikzpicture}[
+%%%         node distance=0.5cm,
+%%%         every node/.style={font=\sffamily\large},
+%%%         box/.style={draw=greenstroke, fill=greenfill, rounded corners, align=center, inner sep=10pt, text width=9cm}
+%%%       ]
+%%%       \node[box] (c1) {México tiene \textbf{140,000 genomas familiares} en el estudio MCPS.};
+%%%       \node[box, below=of c1, draw=yellowstroke, fill=yellowfill] (c2) {Tenemos el \textbf{estimador robusto} para GWAS familiares.};
+%%%       \node[box, below=of c2, draw=bluestroke, fill=bluefill] (c3) {Podemos construir el \textbf{primer atlas genómico libre de confusión} para $\sim$200 rasgos complejos y enfermedades en mexicanos.};
+%%%     \end{tikzpicture}
+%%%   \end{center}
+%%% \end{frame}
