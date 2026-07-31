@@ -38,28 +38,6 @@
     \end{columns}
 \end{frame}
 
-
-\begin{frame}[b]{El genoma mexicano es mestizo y tiene orígen en su pasado colonial europeo}
-\begin{columns}
-    \begin{column}{0.45\textwidth}
-        \begin{figure}[htpb]
-            \centering
-            \includegraphics[height=5.5cm]{img/diagrams/casta-painting.jpg}
-            \caption{Pintura de Castas (ca. 1750)}
-            \label{fig:casta-painting}
-        \end{figure}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-        \begin{figure}[htpb]
-            \centering
-            \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/diagrams/sohail2023-mexico-diversity.png}
-            \caption{\textbf{Patrones ancestrales en el MXB}. (A) Puntos de muestreo en MXB, (B) Agrupamiento no supervisado de ADMIXTURE, (C) Analisis UMAP para el MXB por región de Mesoamérica \parencite{sohail2023-mexican-biobank}}
-            \label{fig:label}
-        \end{figure}
-    \end{column}
-\end{columns}
-\end{frame}
-
 \begin{frame}[c]{La distancia genética respecto a poblaciones europeas está correlacionado con la capacidad de predicción}
     \vspace{1cm}
     \begin{figure}[htpb]
@@ -86,22 +64,484 @@
 \begin{frame}[b]{La reducción de predicción lo podemos ver directamente en México}
     \begin{figure}[htpb]
         \centering
-        % Subfigure A
-        \begin{subfigure}{0.45\textwidth}
-            \centering
-            \includegraphics[width=0.95\textwidth]{img/diagrams/ziyatdinov2023-prs-prediction-decay.png}
-            \caption{IMC en MCPS \parencite{ziyatdinov2023-mcps}.}
-            \label{subfig:bmi-decay-mcps}
-        \end{subfigure}
-        \hfill
-        % Subfigure B
-        \begin{subfigure}{0.45\textwidth}
-            \centering
-            \includegraphics[width=0.95\textwidth]{img/diagrams/liu2026-chd-prs-prediction-accuracy.png}
-            \caption{Cardiopatía en MCPS \parencite{liu2026-mcps}.}
-            \label{subfig:chd-prs-decay-mcps}
-        \end{subfigure}
+        \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/diagrams/ziyatdinov2023-prs-prediction-decay.png}
+        \caption{\textbf{Decaemiento de precisión de PGS en MCPS.} Los PGS derivan de UKB y decaen con el porcentage de ancestría indígena mexicana \parencite{ziyatdinov2023-mcps}.}
+        \label{fig:label}
     \end{figure}
+\end{frame}
+
+%%% \begin{frame}[b]{La reducción de predicción lo podemos ver directamente en México}
+%%%     \begin{figure}[htpb]
+%%%         \centering
+%%%         % Subfigure A
+%%%         \begin{subfigure}{0.45\textwidth}
+%%%             \centering
+%%%             \includegraphics[width=0.95\textwidth]{img/diagrams/ziyatdinov2023-prs-prediction-decay.png}
+%%%             \caption{IMC en MCPS \parencite{ziyatdinov2023-mcps}.}
+%%%             \label{subfig:bmi-decay-mcps}
+%%%         \end{subfigure}
+%%%         \hfill
+%%%         % Subfigure B
+%%%         \begin{subfigure}{0.45\textwidth}
+%%%             \centering
+%%%             \includegraphics[width=0.95\textwidth]{img/diagrams/liu2026-chd-prs-prediction-accuracy.png}
+%%%             \caption{Cardiopatía en MCPS \parencite{liu2026-mcps}.}
+%%%             \label{subfig:chd-prs-decay-mcps}
+%%%         \end{subfigure}
+%%%     \end{figure}
+%%% \end{frame}
+
+\begin{frame}[c]{La diversidad genética es un espectro continuo, no categorías discretas}
+%%%    \begin{columns}
+%%%        % --- Column A ----
+%%%        \begin{column}{0.45\textwidth}
+    \begin{figure}[htpb]
+        \centering
+        \includegraphics[width=0.95\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/palma-martinez2025-map-genetic-diversity.png}
+        \caption{La diversidad genética opera en múltiples escalas temporales: arcaica, continental y sub-continental \parencite{palma-martinez2025-genetic-diversity}.}
+    \end{figure}
+%%%        \end{column}
+%%%        % --- Column B ----
+%%%        \begin{column}{0.45\textwidth}
+\end{frame}
+
+
+\begin{frame}[c]{El genoma mexicano es mestizo y tiene orígen en su pasado colonial europeo}
+\begin{columns}
+    \begin{column}{0.45\textwidth}
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.95\textwidth, keepaspectratio]{img/diagrams/karyograms-mcps-cropped.png}
+            \caption{Mosaico de bloques de haplotipos en cromosomas admixtos \parencite{ziyatdinov2023-mcps}.}
+        \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.95\textwidth, height=0.35\textheight, keepaspectratio]{img/diagrams/moreno2014-nmdp_aspca-mexico.png}
+            \caption{Estructura subcontinental de México \parencite{moreno-estrada2014-nmdp}.}
+        \end{figure}
+        \vspace{0.2cm}
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.95\textwidth, height=0.35\textheight, keepaspectratio]{img/diagrams/sohail2023-mexico-diversity-admixture.png}
+            \caption{Agrupamiento ADMIXTURE \parencite{sohail2023-mexican-biobank}.}
+        \end{figure}
+    \end{column}
+\end{columns}
+\end{frame}
+
+% ============================================================
+% SECCIÓN 2: Tres rutas para modelar la genética continua
+% ============================================================
+
+% \begin{frame}[c]{Cuatro rutas para modelar la genética en poblaciones diversas}
+%     \begin{columns}
+%         % --- Column A ----
+%         \begin{column}{0.45\textwidth}
+%             \begin{figure}[htpb]
+%                 \centering
+%                 \only<1>{\includegraphics[width=0.95\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/palma-martinez2024-ibd-networks.png}}
+%                 \only<2>{\includegraphics[width=0.95\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/ruan2022-prs-csx.png}}
+%                 \only<3>{\includegraphics[width=0.95\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/tan2026-tractor-mix-pipeline.png}}
+%                 \only<4->{\includegraphics[width=0.95\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/young2019-signals-captured-gwas.png}}
+%                 \caption{
+%                     \only<1>{\textbf{Pipeline GG-NC.} Detección de comunidades basado en similitud genética (e.g., relaciones IBD) \parencite{palma-martinez2024-variation}.}
+%                     \only<2>{Ejemplo de PRS multi-ancestría \parencite{ruan2022-prs}.}
+%                     \only<3>{Ejemplo de ancestría local \parencite{tan2026-tractor-mix}.}
+%                     \only<4->{Ejemplo de GWAS familiares \parencite{young2019-genetic-effects}.}
+%                 }
+%             \end{figure}
+%         \end{column}
+%         % --- Column B ----
+%         \begin{column}{0.5\textwidth}
+%             \textbf{¿Cómo capturar la genética continua?}
+%             {\small
+%             \begin{enumerate}
+%                 \setlength{\itemsep}{0.7em}
+%                 \item<1-> \textcolor<5>{gray}{\textbf{Identidad por descendencia (IBD):} Modelan la estructura local y continua.}
+%                 \begin{itemize}
+%                     \item<1-> \textcolor<5>{gray}{\textit{Ej. \textcite{palma-martinez2024-variation, cai2025-ibd,marsico2026-ibd,micheletti2025-ibd}}}
+%                 \end{itemize}
+%                 \item<2-> \textcolor<5>{gray}{\textbf{PRS multi-ancestría:} Combinan datos de múltiples poblaciones.}
+%                 \begin{itemize}
+%                     \item<2-> \textcolor<5>{gray}{\textit{Ej. PRS-CSx, CT-SLEB, BridgePRS, GAUDI}}
+%                 \end{itemize}
+%                 \item<3-> \textcolor<5>{gray}{\textbf{Ancestría local (LAI):} Modelan el LD y MAF por segmento ancestral.}
+%                 \begin{itemize}
+%                     \item<3-> \textcolor<5>{gray}{\textit{Ej. Tractor, Tractor-Mix, Recomb-Mix, Orchestra}}
+%                 \end{itemize}
+%                 \item<4-> \textbf{GWAS familiares:} Eliminan la confusión usando segregación meiótica.
+%                 \begin{itemize}
+%                     \item<4-> \textit{Ej. Estimador Robusto, snipar}
+%                 \end{itemize}
+%             \end{enumerate}
+%             }
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+\begin{frame}[c]{Cuatro rutas para modelar la genética en poblaciones diversas}
+    \begin{columns}[T]
+        % --- Column 1 (IBD) ---
+        \begin{column}{0.24\textwidth}
+            \uncover<1->{
+                \centering
+                \begin{minipage}[t][6.5em][t]{\textwidth}
+                    \centering
+                    \textcolor<5>{gray}{\textbf{Identidad por Descendencia (IBD)}} \\
+                    \vspace{0.3em}
+                    \textcolor<5>{gray}{\tiny \textit{Ej. \textcite{palma-martinez2024-variation, cai2025-ibd, marsico2026-ibd, micheletti2025-ibd}}}
+                \end{minipage}
+                
+                \parbox[c][0.4\textheight][c]{\textwidth}{\centering \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{img/diagrams/palma-martinez2024-ibd-networks.png}}
+                
+                \vspace{0.5em}
+                \begin{minipage}[t][4em][t]{\textwidth}
+                    \centering
+                    \textcolor<5>{gray}{\scriptsize \textbf{Pipeline GG-NC.} Detección de comunidades \parencite{palma-martinez2024-variation}.}
+                \end{minipage}
+            }
+        \end{column}
+        
+        % --- Column 2 (PRS) ---
+        \begin{column}{0.24\textwidth}
+            \uncover<2->{
+                \centering
+                \begin{minipage}[t][6.5em][t]{\textwidth}
+                    \centering
+                    \textcolor<5>{gray}{\textbf{PRS multi-ancestría}} \\
+                    \vspace{0.3em}
+                    \textcolor<5>{gray}{\tiny \textit{Ej. PRS-CSx, CT-SLEB, BridgePRS, GAUDI}}
+                \end{minipage}
+                
+                \parbox[c][0.4\textheight][c]{\textwidth}{\centering \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{img/diagrams/ruan2022-prs-csx.png}}
+                
+                \vspace{0.5em}
+                \begin{minipage}[t][4em][t]{\textwidth}
+                    \centering
+                    \textcolor<5>{gray}{\scriptsize Ejemplo de PRS multi-ancestría \parencite{ruan2022-prs}.}
+                \end{minipage}
+            }
+        \end{column}
+        
+        % --- Column 3 (LAI) ---
+        \begin{column}{0.24\textwidth}
+            \uncover<3->{
+                \centering
+                \begin{minipage}[t][6.5em][t]{\textwidth}
+                    \centering
+                    \textcolor<5>{gray}{\textbf{Ancestría local (LAI)}} \\
+                    \vspace{0.3em}
+                    \textcolor<5>{gray}{\tiny \textit{Ej. Tractor, Tractor-Mix, Recomb-Mix, Orchestra}}
+                \end{minipage}
+                
+                \parbox[c][0.4\textheight][c]{\textwidth}{\centering \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{img/diagrams/tan2026-tractor-mix-pipeline.png}}
+                
+                \vspace{0.5em}
+                \begin{minipage}[t][4em][t]{\textwidth}
+                    \centering
+                    \textcolor<5>{gray}{\scriptsize Ejemplo de ancestría local \parencite{tan2026-tractor-mix}.}
+                \end{minipage}
+            }
+        \end{column}
+        
+        % --- Column 4 (FGWAS) ---
+        \begin{column}{0.24\textwidth}
+            \uncover<4->{
+                \centering
+                \begin{minipage}[t][6.5em][t]{\textwidth}
+                    \centering
+                    \textbf{GWAS familiares} \\
+                    \vspace{0.3em}
+                    {\tiny \textit{Ej. Estimador Robusto, snipar}}
+                \end{minipage}
+                
+                \parbox[c][0.4\textheight][c]{\textwidth}{\centering \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{img/diagrams/young2019-signals-captured-gwas.png}}
+                
+                \vspace{0.5em}
+                \begin{minipage}[t][4em][t]{\textwidth}
+                    \centering
+                    {\scriptsize Ejemplo de GWAS familiares \parencite{young2019-genetic-effects}.}
+                \end{minipage}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ============================================================
+% SECCIÓN 3: Sesgos en GWAS y FGWAS como solución
+% ============================================================
+
+\usetikzlibrary{decorations.pathreplacing, arrows.meta}
+
+\begin{frame}{Sesgos en GWAS}
+  \centering
+  \vspace{0.5cm}
+  \begin{tikzpicture}[
+    every node/.style={font=\sffamily},
+  ]
+
+    % --- Color definitions ---
+    \definecolor{dgegray}{HTML}{3C3C3C}
+    \definecolor{nurblue}{HTML}{1A7FA0}
+    \definecolor{assred}{HTML}{7A1525}
+    \definecolor{stratgray}{HTML}{B8B8B8}
+    \definecolor{sideblack}{HTML}{000000}
+    \definecolor{arrowdark}{HTML}{2B3245}
+    \definecolor{bracered}{HTML}{ED4E33}
+
+    % --- Dimensions for left bar (copied from previous slide) ---
+    \def\barW{2.4}
+    \def\barX{-0.5}
+    \def\hdge{2.3}
+    \def\hBlue{0.75}
+    \def\hRed{0.6}
+    \def\hGray{0.35}
+
+    % --- Dimensions for right bar ---
+    \def\barXRight{6.8}
+    \def\hBlueR{0.4}
+    \def\hRedR{0.15}
+    \def\hGrayR{0.2}
+
+    % --- LEFT BAR ---
+    % DGE
+    \fill[dgegray] (\barX, 0) rectangle (\barX+\barW, \hdge);
+    % Crianza / IGEs
+    \fill[nurblue] (\barX, \hdge) rectangle (\barX+\barW, \hdge+\hBlue);
+    % Apareamiento / Assortative
+    \fill[assred] (\barX, \hdge+\hBlue) rectangle (\barX+\barW, \hdge+\hBlue+\hRed);
+    % Estratificación / Pop Strat
+    \fill[stratgray] (\barX, \hdge+\hBlue+\hRed) rectangle (\barX+\barW, \hdge+\hBlue+\hRed+\hGray);
+
+    % Sidebar "Confounding effects"
+    \fill[sideblack] (\barX-0.7, \hdge) rectangle (\barX, \hdge+\hBlue+\hRed+\hGray);
+    \node[rotate=90, anchor=mid, text=white, font=\sffamily\bfseries\tiny]
+      at (\barX-0.35, \hdge + 0.5*\hBlue + 0.5*\hRed + 0.5*\hGray)
+      % {Confounding effects};
+      {Efectos de confusión};
+
+    % Left bar annotations
+    \node[anchor=west, font=\sffamily\scriptsize] at (\barX+\barW+0.1, \hdge+\hBlue+\hRed+0.5*\hGray) {PCAs};
+    \node[anchor=west, font=\sffamily\scriptsize] at (\barX+\barW+0.1, \hdge+\hBlue+0.5*\hRed) {LMM w/GRM};
+
+    % --- MIDDLE ARROW ---
+    \draw[-{Triangle[width=10pt,length=10pt]}, line width=5pt, color=arrowdark] 
+      (\barX+\barW+2.0, \hdge+0.3) -- (\barXRight-0.5, \hdge+0.3);
+
+    % --- RIGHT BAR ---
+    % DGE (same height)
+    \fill[dgegray] (\barXRight, 0) rectangle (\barXRight+\barW, \hdge);
+    % IGEs (shrunk)
+    \fill[nurblue] (\barXRight, \hdge) rectangle (\barXRight+\barW, \hdge+\hBlueR);
+    % Assortative (shrunk)
+    \fill[assred] (\barXRight, \hdge+\hBlueR) rectangle (\barXRight+\barW, \hdge+\hBlueR+\hRedR);
+    % Pop Strat (shrunk)
+    \fill[stratgray] (\barXRight, \hdge+\hBlueR+\hRedR) rectangle (\barXRight+\barW, \hdge+\hBlueR+\hRedR+\hGrayR);
+
+    % Curly brace and "Inflated results"
+    \draw[bracered, thick, decorate, decoration={brace, amplitude=5pt, mirror}] 
+      (\barXRight+\barW+0.1, \hdge) -- (\barXRight+\barW+0.1, \hdge+\hBlueR+\hRedR+\hGrayR) 
+      node[midway, right=8pt, font=\sffamily\bfseries\scriptsize, text=bracered]
+      % {Inflated results};
+      {Efectos poblacionales};
+
+    % --- LEGEND (Bottom Left) ---
+    \def\legX{\barX-0.7}
+    \def\legY{-0.5}
+    \def\legSep{0.45}
+    \def\legBoxW{0.25}
+    \def\legBoxH{0.25}
+
+    % Pop Strat
+    \fill[stratgray] (\legX, \legY) rectangle +(\legBoxW, -\legBoxH);
+    \node[anchor=west, font=\sffamily\scriptsize] at (\legX+\legBoxW+0.1, \legY-0.5*\legBoxH)
+      % {Population stratification};
+      {Estratificación poblacional};
+
+    % Assortative Mating
+    \fill[assred] (\legX, \legY-1*\legSep) rectangle +(\legBoxW, -\legBoxH);
+    \node[anchor=west, font=\sffamily\scriptsize] at (\legX+\legBoxW+0.1, \legY-1*\legSep-0.5*\legBoxH)
+      % {Assortative mating};
+      {Apareamiento selectivo};
+
+    % IGEs
+    \fill[nurblue] (\legX, \legY-2*\legSep) rectangle +(\legBoxW, -\legBoxH);
+    \node[anchor=west, font=\sffamily\scriptsize] at (\legX+\legBoxW+0.1, \legY-2*\legSep-0.5*\legBoxH)
+      % {Indirect Genetic Effects (IGEs)};
+      {Efectos Genéticos Indirectos (IGEs)};
+
+    % DGEs
+    \fill[dgegray] (\legX, \legY-3*\legSep) rectangle +(\legBoxW, -\legBoxH);
+    \node[anchor=west, font=\sffamily\bfseries\scriptsize] at (\legX+\legBoxW+0.1, \legY-3*\legSep-0.5*\legBoxH)
+      % {Direct Genetic Efects (DGEs)};
+      {Efectos Genéticos Directos (DGEs)};
+
+    % --- CITATION (Bottom Right) ---
+    \node[anchor=south east, font=\sffamily\scriptsize] 
+      at (\barXRight+\barW+2.5, \legY-3*\legSep-0.5*\legBoxH) 
+      % {Adapted from \textcite{young2019-genetic-effects}.};
+      {Diagrama adptado de \textcite{young2019-genetic-effects}.};
+
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[c]{Family-based GWAS}
+  \begin{columns}[c]
+
+    % --- LEFT COLUMN: Image ---
+    \begin{column}{0.55\textwidth}
+      \centering
+      \includegraphics[height=5.15cm, keepaspectratio]{img/diagrams/young2019-signals-captured-gwas.png}
+      % \captionof{figure}{Signals captured by GWAS of related individuals and families \parencite{young2019-genetic-effects}.}
+      \captionof{figure}{Señales capturadas por un GWAS de individuos relacionados y familias. Recuperado de \textcite{young2019-genetic-effects}.}
+    \end{column}
+
+    % --- RIGHT COLUMN: Text ---
+    \begin{column}{0.45\textwidth}
+
+      % --- Spanish ---
+      {Los FGWAS aíslan los Efectos Genéticos Directos (DGEs)} \\[1pt]
+      {\tiny \parencite{visscher2006-populationgenetics,young2019-genetic-effects}}\\[0.5em]
+
+      {\footnotesize
+      $$y_{ij} = \delta \, g_{ij} + \alpha \, g_{\text{par}(i)} + \epsilon_{ij}$$
+      \begin{itemize}
+          \item $\delta$ = DGE
+          \item $\alpha$ = coeficiente no-transmitido
+          \item $g_{\text{par}(i)}$ = genotipo parental
+      \end{itemize}
+      GWAS estándar: $\hat{\beta} = \delta + \alpha$
+      }\\[1em]
+      
+      \pause
+      \centering
+      {\bfseries\large\color[HTML]{7CBB00}
+        PERO
+      }\\[0.5em]
+      \begin{columns}[T]
+        \small
+        \begin{column}{0.425\textwidth}
+          {Evidencia de una señal biológica \textbf{verdadera}}
+        \end{column}
+        \begin{column}{0.05\textwidth}
+          vs.
+        \end{column}
+        \begin{column}{0.425\textwidth}
+          {Limitado a solamente individuos con \textbf{ambos padres genotipados}}
+        \end{column}
+      \end{columns}
+      \pause
+      \vspace{1.5em}
+      {\centering\large
+        Recuperar poder estadístico es \textbf{prioridad}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[c]{El estimador robusto (Guan et al., 2025)}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=\textwidth, keepaspectratio]{img/diagrams/guan2025-nt-alleles.png}
+      \captionof{figure}{Muestra particionada por alelos no transmitidos observados \parencite{guan2025-fgwas}.}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=\textwidth, keepaspectratio]{img/diagrams/robust-estimator_neff.png}
+      \captionof{figure}{Ganancia de tamaño de muestra efectivo ($N_{\text{eff}}$) respecto al diseño de hermanos \parencite{guan2025-fgwas}.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[c]{Limitaciones: Validez interna vs.\ Portabilidad}
+    \vfill
+    \begin{itemize}
+        \setlength\itemsep{1.5em}
+        \item[\ding{51}] \textbf{FGWAS resuelve validez interna:} asociaciones limpias de confusión ambiental y estratificación.
+        \item[\ding{55}] \textbf{No garantiza portabilidad:} $>$85\% del decaimiento de PRS entre poblaciones se debe a diferencias en LD y MAF \parencite{zhang2024-fgwas}.
+    \end{itemize}
+
+    \vspace{1.5em}
+    \begin{center}
+        \textbf{\textcolor{ccgblue}{Conclusión:}} Para predecir en mexicanos, necesitamos hacer FGWAS \textbf{directamente en mexicanos}.
+    \end{center}
+    \vfill
+\end{frame}
+
+\begin{frame}[c]{En resumen\ldots}
+    \centering
+    \begin{tikzpicture}[
+        node distance=0.5cm,
+        every node/.style={font=\sffamily\large},
+        box/.style={draw=greenstroke, fill=greenfill, rounded corners, align=center, inner sep=10pt, text width=9cm}
+      ]
+      \node[box] (c1) {México tiene \textbf{140,000 genomas familiares} en el estudio MCPS.};
+      \node[box, below=of c1, draw=yellowstroke, fill=yellowfill] (c2) {Tenemos el \textbf{estimador robusto} para GWAS familiares.};
+      \node[box, below=of c2, draw=bluestroke, fill=bluefill] (c3) {Podemos construir el \textbf{primer atlas genómico libre de confusión} para rasgos complejos en mexicanos.};
+    \end{tikzpicture}
+\end{frame}
+
+% ============================================================
+% Objetivos e hipótesis
+% ============================================================
+
+\begin{frame}[c]{Objetivos de investigación}
+  \begin{center}
+    {\sffamily\bfseries\Large\color{ccgblue}
+      Objetivo principal
+    }\\[0.25cm]
+    {\sffamily\large
+      Estimar \textbf{efectos genéticos directos (DGEs)} para una amplia gama de rasgos complejos
+      y enfermedades en una cohorte \textit{mexicana}, utilizando el MCPS y nuevos estimadores
+      FGWAS para aumentar drásticamente el poder estadístico.
+    }
+    \vfill
+    \uncover<2->{
+      {\sffamily\bfseries\Large\color{ccgblue}
+        Hipótesis principal
+      }\\[0.25cm]
+      {\sffamily\large
+        Para la población mestiza del MCPS, un FGWAS con estimador robusto
+        a mestizaje reciente cuantificará DGEs en múltiples
+        rasgos complejos, superando otros diseños para identificar
+        falsos-positivos de PopGWAS y revelar nuevos \textit{loci} ocultos.
+      }
+    }
+  \end{center}
+\end{frame}
+
+\begin{frame}[c]{Objetivos específicos}
+  \begin{center}
+      \resizebox{\textwidth}{!}{%
+      \begin{tikzpicture}[
+          box/.style={
+              rectangle, rounded corners=4mm, very thick, align=center,
+              font=\sffamily\bfseries\large, minimum width=5.2cm,
+              minimum height=2cm, inner sep=8pt
+          },
+          active1/.style={fill=bluefill, draw=bluestroke, text=bluestroke!50!black},
+          active2/.style={fill=grayfill, draw=graystroke, text=graystroke!50!black},
+          inactive/.style={fill=aquafill, draw=aquastroke, text=aquastroke},
+          arrow_base/.style={single arrow, fill=aquastroke!30, minimum height=0.8cm, single arrow head extend=2.5mm},
+          arrow_right/.style={arrow_base, shape border rotate=0},
+          arrow_down/.style={arrow_base, shape border rotate=270},
+          arrow_left/.style={arrow_base, shape border rotate=180}
+      ]
+      \node[box, active1] (o1) {1. Asociaciones Genéticas\\[2mm] \small\normalfont (Estimador robusto)};
+      \node[arrow_right, right=0.3cm of o1] (a1) {};
+      \node[box, active2, right=0.3cm of a1] (o2) {2. Comparación de efectos\\[2mm] \small\normalfont (Cuantificación de sesgos)};
+      \node[arrow_right, right=0.3cm of o2] (a2) {};
+      \node[box, inactive, right=0.3cm of a2] (o3) {3. Meta-análisis con cohortes\\[2mm] \small\normalfont (Mexicanas y globales)};
+      \node[arrow_down, below=0.3cm of o3] (a3) {};
+      \node[box, inactive, below=0.3cm of a3] (o4) {4. Análisis posteriores\\[2mm] \small\normalfont (PGS y MR)};
+      \node[arrow_left, left=0.3cm of o4] (a4) {};
+      \node[box, inactive, left=0.3cm of a4] (o5) {5. Plataforma Interactiva\\[2mm] \small\normalfont (Libre acceso)};
+      \end{tikzpicture}%
+      }
+  \end{center}
 \end{frame}
 
 %%% \begin{frame}[b]{Los grupos originarios también son genéticamente diversos, no homogéneos}
