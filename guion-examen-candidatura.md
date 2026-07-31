@@ -354,101 +354,126 @@ lang: es-MX
 
 > El diseño experimental sigue una estrategia de **escalamiento incremental** a lo largo de cuatro semestres.
 >
-> En el **Semestre 1** — que ya se completó — trabajamos con el chip GSAv2 no imputado, solo el cromosoma 22, y tres rasgos piloto: estatura, IMC y logro educativo. Esto sirvió para validar el pipeline con datos de pares de hermanos y tríos.
+> Es importante destacar que llegar al pipeline final **no fue un logro de la noche a la mañana**. Existió una curva de aprendizaje importante y un proceso iterativo de prueba y error. 
+> 
+> En el **Semestre 1**, los intentos iniciales y errores procesando el cromosoma 22 y 3 rasgos fueron fundamentales para ajustar las tuercas de los modelos.
 >
-> En el **Semestre 2** — también completado — escalamos a datos imputados con TOPMed, los 22 autosomas, y 13 rasgos. Aquí es donde establecimos la inferencia de IBD y la imputación mendeliana a escala genómica.
+> En el **Semestre 2** escalamos a datos imputados con TOPMed y establecimos la imputación mendeliana a escala genómica.
 >
-> En el **Semestre 3** — actualmente en curso — incorporamos el GWAS poblacional con REGENIE, 17 rasgos, e implementamos el estimador robusto.
+> En el **Semestre 3** incorporamos el GWAS poblacional e implementamos el estimador robusto.
 >
-> Y en el **Semestre 4** completaremos el atlas con 28 rasgos, *fine-mapping* funcional, y el análisis completo de correlaciones genéticas y heredabilidad.
->
-> Cada semestre construye sobre el anterior, permitiendo validación progresiva antes de escalar.
+> Y en el **Semestre 4** completaremos el atlas con 28 rasgos y el análisis completo. 
+> Esta progresión nos permitió validar cada etapa antes de escalar a genoma completo.
 
-⏱️ *\~1 minuto 15 segundos*
+⏱️ *\~1 minuto 20 segundos*
 
 ---
 
-# SECCIÓN 6 — RESULTADOS
+## SLIDE 19 — "Datos de entrada: Fenotipos"
 
-**\[Estado\]:** No hay slides activas de resultados en la presentación actual. A continuación se propone el contenido basado en los reportes de resultados 2027-01.
-
-## SLIDE 19 — "El estimador robusto aumenta el poder estadístico en un 37%"
-
-**\[Contenido visual sugerido\]:** Boxplot de N~eff~ comparando estimador robusto vs sib-pair/trios (ya generados en semestre 2026-02).
+**\[Contenido visual\]:** Listas de rasgos conductuales y biomédicos procesados, con diagrama de flujo de scripts.
 
 **Guion:**
 
-> Nuestro primer resultado clave: el estimador robusto de SNIPAR logra un aumento promedio del **36.85% ± 6.78%** en el tamaño efectivo de muestra (*N~eff~*) comparado con el meta-análisis clásico de pares de hermanos y tríos.
->
-> Este aumento oscila entre un 21.6% y un 47.8% dependiendo del rasgo. Para contexto, en biobancos europeos el aumento reportado fue de 10--21%.
->
-> ¿Por qué es mayor en MCPS que en biobancos europeos? Por el diseño de reclutamiento. La cohorte se reclutó barrio por barrio en la Ciudad de México, lo que capturó familias extensas de forma natural. El 71% de los participantes tiene al menos un pariente de tercer grado en la cohorte — el estimador robusto tiene mucha más estructura familiar que explotar.
+> Pasando al flujo de los datos, comenzamos con nuestra materia prima: los fenotipos. Estandarizamos y pre-procesamos múltiples rasgos categorizados en conductuales y biomédicos, incluyendo logro educativo, índice de masa corporal, lípidos y diabetes.
+> Esta curación asegura que nuestros rasgos y covariables estén homogeneizados para comparaciones justas.
 
-⏱️ *\~1 minuto*
+⏱️ *\~45 segundos*
 
 ---
 
-## SLIDE 20 — "Espectro de heredabilidad: directa vs poblacional en 15 rasgos"
+## SLIDE 20 — "Datos de entrada: Genotipos"
 
-**\[Contenido visual sugerido\]:** *Dumbbell plot* + *forest plot* mostrando h²~direct~ vs h²~pop~ para los 15 rasgos.
+**\[Contenido visual\]:** Detalles del control de calidad de genotipos, filtros y proceso de Phased a BGEN.
 
 **Guion:**
 
-> Aquí está el resultado central del proyecto hasta ahora: la comparación de heredabilidad directa — estimada por diseño familiar — contra heredabilidad poblacional — estimada por análisis estándar — para 15 rasgos complejos.
->
-> Los resultados se organizan en cuatro categorías:
->
-> **Primero, rasgos socialmente mediados con atenuación fuerte.** El logro educativo muestra una atenuación del **85%** — su heredabilidad directa es apenas el 15% de la poblacional. Esto significa que la mayor parte de lo que un GWAS estándar atribuye a "genética de la educación" en realidad refleja el ambiente familiar y el apareamiento selectivo — no biología directa. La estatura muestra un 32% de atenuación, consistente con el apareamiento selectivo bien documentado para este rasgo.
->
-> **Segundo, rasgos biológicos con atenuación mínima.** IMC, presión arterial, y los biomarcadores lipídicos muestran ratios cercanos a 1.0. Esto es una **buena noticia**: significa que los estudios estándar para estos rasgos capturan efectos genuinamente directos, y que los instrumentos de aleatorización mendeliana para estas exposiciones son probablemente válidos.
->
-> **Tercero, y lo más interesante: las reversiones.** La diabetes tipo 2 y el colesterol HDL muestran heredabilidad directa **mayor** que la poblacional — un +38% y +63% respectivamente.
->
-> **Y cuarto,** los rasgos conductuales — tabaquismo y alcohol — que tienen heredabilidad cercana a cero con errores estándar grandes, reflejando limitaciones de medición.
+> Para completar las entradas del sistema, procesamos los genotipos. Partimos de datos previamente faseados para el chip GSAv2 y la imputación con TOPMed.
+> Aplicamos estrictos controles de calidad, como requerir un puntaje INFO mayor a 0.99, porque los modelos familiares son sumamente sensibles a errores de genotipado.
 
-⏱️ *\~2 minutos*
+⏱️ *\~45 segundos*
 
 ---
 
-## SLIDE 21 — "La reversión de la diabetes: ¿por qué h²~direct~ > h²~pop~?"
+## SLIDE 21 — "Selección de cohortes"
 
-**\[Contenido visual sugerido\]:** Diagrama explicativo con los 3 mecanismos (estratificación, sesgo de supervivencia, correlación ancestría-fenotipo).
+**\[Contenido visual\]:** Diagrama de flujo mostrando la partición de la cohorte completa en individuos emparentados y no emparentados usando KING.
 
 **Guion:**
 
-> La observación de que la heredabilidad directa de la diabetes sea mayor que la poblacional es inusual y requiere interpretación cuidadosa. Identificamos tres mecanismos que contribuyen:
->
-> **Primero, sobrecorrección por estratificación.** Sabemos que la arquitectura genética de la diabetes en México tiene un componente fuertemente enriquecido en segmentos de ancestría indígena americana — 12 de 15 variantes de riesgo novedosas están en estos fondos ancestrales. Cuando ajustamos por componentes principales, **corregimos la estratificación, pero también removemos parte de la señal biológica** que correlaciona con ancestría indígena. Esto deflacta la heredabilidad poblacional.
->
-> **Segundo, un sesgo de supervivencia.** La muestra familiar es 1.7 años mayor en promedio. Como la diabetes duplica la mortalidad antes de los 60 años en México, los participantes mayores son *sobrevivientes* — empobrecidos en variantes de alto riesgo. Y aun así, la heredabilidad directa es mayor, lo cual **refuerza** la conclusión de que la deflación poblacional es el factor dominante.
->
-> **Tercero, la correlación ancestría-fenotipo.** La ancestría indígena americana correlaciona con riesgo de diabetes a través de vías genéticas *y* no genéticas — la transición nutricional, el nivel socioeconómico, el acceso a salud.
->
-> En conjunto, esto demuestra por qué necesitamos diseños familiares en poblaciones admixtas: los métodos estándar distorsionan los resultados en ambas direcciones.
+> Una vez que tenemos los datos limpios, procedemos a dividirlos.
+> Usando KING para inferencia de parentesco, separamos la muestra en un grupo puramente "no emparentado" para el GWAS poblacional, y otro grupo con "redes familiares" para el análisis familiar (FGWAS).
+> Es fundamental que ambos grupos sean **estadísticamente independientes** para poder comparar posteriormente los estimadores de forma justa.
 
-⏱️ *\~1 minuto 30 segundos*
+⏱️ *\~45 segundos*
 
 ---
 
-## SLIDE 22 — "Evaluación de sesgos: muestra familiar vs. no emparentados"
+## SLIDE 23 — "Flujo de trabajo de SNIPAR (Estimador Robusto)"
 
-**\[Contenido visual sugerido\]:** Tabla de SMDs con variables flaggeadas.
+**\[Contenido visual\]:** Diagrama de bloques del módulo SNIPAR en color rojo (IBD, Imputación, Estimador).
 
 **Guion:**
 
-> Para respaldar estas interpretaciones, realizamos un análisis exhaustivo de **diferencias de medias estandarizadas** (SMD) entre las dos submuestras: los \~100,000 individuos en redes familiares y los \~29,000 no emparentados.
->
-> Las variables flaggeadas son edad (+0.13), ingreso (−0.11), y ciertos PCs de ancestría. Notablemente, la demencia está ampliamente enriquecida en familias con un SMD de 0.69.
->
-> Pero — y esto es clave — los rasgos que sustentan nuestros hallazgos principales: estatura, IMC, presión arterial, y lípidos, tienen **SMDs despreciables**, por debajo de 0.04. Esto nos da confianza en que las comparaciones de heredabilidad para rasgos cardiometabólicos son internamente válidas.
+> Finalmente, ¿qué le hacemos a la cohorte de individuos emparentados? Aquí utilizamos el módulo de SNIPAR.
+> Primero, inferimos los segmentos idénticos por descendencia (IBD) entre hermanos. Luego, usamos esa información para imputar los genotipos parentales faltantes.
+> Esta imputación Mendeliana es la clave que permite a nuestro estimador robusto aislar el efecto genético directo, eliminando por completo cualquier estratificación poblacional residual.
 
 ⏱️ *\~50 segundos*
 
 ---
 
+## SLIDE 23 — "Tamaños Efectivos de Muestra"
+
+**\[Contenido visual\]:** Gráfica comparando tamaños efectivos de muestra entre estimador robusto vs. pares de hermanos y tríos parentales.
+
+**Guion:**
+
+> El primer resultado es la evaluación del poder estadístico. El estimador robusto incrementa el tamaño efectivo de muestra en aproximadamente 36.58% frente a los métodos de pares de hermanos y tríos parentales, debido a que aprovecha estructuras familiares más complejas que solo los genotipos observados de los padres.
+
+⏱️ *\~1 minuto*
+
+---
+
+## SLIDE 24 — "Estimaciones de heredabilidad (PopGWAS vs FGWAS)"
+
+**\[Contenido visual\]:** Gráfica de dispersión comparando estimaciones de heredabilidad (popGWAS vs FGWAS) y tabla de valores.
+
+**Guion:**
+
+> Aquí comparamos las estimaciones de heredabilidad. Notamos que para rasgos como el nivel educativo, la heredabilidad poblacional disminuye significativamente cuando estimamos efectos directos. Esto sugiere un fuerte impacto del ambiente familiar y el emparejamiento selectivo. Sin embargo, para rasgos metabólicos como el IMC o la presión arterial, las estimaciones se mantienen bastante estables.
+
+⏱️ *\~1 minuto 10 segundos*
+
+---
+
+## SLIDE 25 — "Estimaciones de heredabilidad (Diferencias normalizadas)"
+
+**\[Contenido visual\]:** Gráfica mostrando las diferencias normalizadas ($Z_{diff}$) entre estimaciones de heredabilidad.
+
+**Guion:**
+
+> Al analizar las diferencias normalizadas, resaltan las desviaciones significativas en la diabetes autodeportada y el colesterol HDL, que muestran mayor heredabilidad en el análisis de efectos directos, contrastando con el efecto de deflación usual en otros rasgos. Esto demuestra cómo los efectos de estratificación o selección pueden inflar o desinflar las varianzas a nivel poblacional de manera asimétrica.
+
+⏱️ *\~1 minuto*
+
+---
+
+## SLIDE 26 — "Correlación de estimadores"
+
+**\[Contenido visual\]:** Correlaciones de genoma completo entre efectos genéticos directos y efectos poblacionales calculadas con SNIPAR.
+
+**Guion:**
+
+> Finalmente, calculamos la correlación genómica entre estos efectos. En muchos de los rasgos, la correlación es alta, pero en aquellos con fuertes sesgos ambientales, vemos desviaciones que confirman la importancia del control por estructura familiar, lo cual se alinea con reportes de estudios en otras poblaciones.
+
+⏱️ *\~1 minuto*
+
+---
+
 # SECCIÓN 7 — CONCLUSIONES Y PRÓXIMOS PASOS
 
-## SLIDE 23 — "¿Qué aprendimos?"
+## SLIDE 27 — "¿Qué aprendimos?"
 
 **Guion:**
 
@@ -464,7 +489,7 @@ lang: es-MX
 
 ---
 
-## SLIDE 24 — "Próximos pasos"
+## SLIDE 28 — "Próximos pasos"
 
 **Guion:**
 
@@ -484,7 +509,7 @@ lang: es-MX
 
 ---
 
-## SLIDE 25 — "Relevancia clínica para México"
+## SLIDE 29 — "Relevancia clínica para México"
 
 **Guion:**
 
@@ -502,7 +527,7 @@ lang: es-MX
 
 # SECCIÓN 8 — COLABORADORES Y AGRADECIMIENTOS
 
-## SLIDE 26 — "Current collaborations"
+## SLIDE 30 — "Current collaborations"
 
 **\[Contenido visual\]:** Tarjetas de los 5 colaboradores: Jason Torres (Oxford), Mashaal Sohail (CCG-UNAM), Alexander Young (UCLA), Daniela Robles (LIIGH-UNAM), Jaime Berumen (UNAM/MCPS PI).
 
@@ -522,7 +547,7 @@ lang: es-MX
 
 ---
 
-## SLIDE 27 — "¡GRACIAS A TODXS!"
+## SLIDE 31 — "¡GRACIAS A TODXS!"
 
 **\[Contenido visual\]:** Logos institucionales (UNAM, CCG, PDCB, Oxford CTSU, MCPS), fotos del equipo.
 
@@ -566,10 +591,13 @@ Las siguientes slides están *comentadas* o *no existen* en el deck actual y nec
 - [x] **Slide 14** — Resumen (3 cajas)
 - [x] **Slide 15** — Objetivos de investigación
 - [x] **Slide 16** — Objetivos específicos
-- [ ] **Slide 19** — N~eff~ boxplot (necesita figura)
-- [ ] **Slide 20** — Dumbbell plot de heredabilidad (necesita figura)
-- [ ] **Slide 21** — Mecanismos de la reversión de diabetes (diagrama nuevo)
-- [ ] **Slide 22** — Tabla de SMDs
-- [ ] **Slide 23** — Conclusiones
-- [ ] **Slide 24** — Próximos pasos
-- [ ] **Slide 25** — Relevancia clínica
+- [x] **Slide 19** — Flujo de trabajo completo
+- [x] **Slide 28** — Datos de entrada: Fenotipos
+- [x] **Slide 27** — Datos de entrada: Genotipos
+- [x] **Slide 28** — Tamaños Efectivos de Muestra
+- [x] **Slide 27** — Estimaciones de heredabilidad (scatter)
+- [x] **Slide 28** — Estimaciones de heredabilidad (diferencias normalizadas)
+- [x] **Slide 27** — Correlación de estimadores
+- [ ] **Slide 28** — Conclusiones
+- [ ] **Slide 27** — Próximos pasos
+- [ ] **Slide 28** — Relevancia clínica
