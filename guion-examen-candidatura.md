@@ -39,7 +39,8 @@ lang: es-MX
 
 **Guion:**
 
-> Buenas tardes a todas, todos, todes. Me llamo Roberto Olvera Hernández, soy estudiante de doctorado en el CCG de la UNAM por parte del programa de doctorado en ciencias biomédicas, y hoy les presento mi proyecto de candidatura: *"Estudios de Asociación Genómica Libres de Sesgos para Rasgos Complejos y Enfermedades en Más de 100 mil Mexicanos"*. Antes que nada quiero agradecer a [Daniela o Jaime] quien me extendio la invitacion para presentar aquí con ustedes.
+> Buenas tardes a todos. Mi nombre es Roberto Olvera Hernández. Soy estudiante de doctorado en el CCG de la UNAM por parte del programa de doctorado en Ciencias Biomédicas. El día de hoy vengo a presentarles mi proyecto de candidatura: Estudios de asociación genómica libres de sesgos para rasgos complejos y enfermedades en más de 100,000 mexicanos. Antes de continuar, quiero darle las gracias al [Dra. Daniela o Dr. Jaime], quien me extendió la invitación para presentar aquí con ustedes. Este es un proyecto que llevamos realizando alrededor de 2 años en colaboración entre la UNAM, el laboratorio del Dr. Alexander Young en UCLA, y el CTSU de la Universidad de Oxford. El proyecto se basa en los datos del *Mexico City Prospective Study*, o MCPS — un estudio prospectivo de aproximadamente 150 mil adultos reclutados entre 1998 y 2004 en la Ciudad de México, con seguimiento de mortalidad y morbilidad a más de 20 años.
+
 
 ⏱️ *\~30 segundos*
 
@@ -53,9 +54,11 @@ lang: es-MX
 
 **Guion:**
 
-> En México, cuatro de cada diez muertes se deben a enfermedades cardiometabólicas: diabetes, enfermedades del corazón y enfermedad cerebrovascular. Y como vemos en esta gráfica, la tendencia va en aumento — especialmente para diabetes y enfermedad cardíaca.
->
-> Estas tendencias las podemos observar directamente en la cohorte con la que trabajamos.
+> En México, 4 de cada 10 muertes se deben a enfermedades cardiometabólicas, es decir, por diabetes, enfermedades del corazón y enfermedad cerebrovascular. Como podemos ver en esta gráfica, mientras que las enfermedades cerebrovasculares y la hipertensión se han mantenido estables o han ido disminuyendo en los últimos 24 años, las cardiopatías y la diabetes mellitus han mostrado una tendencia al alza sostenida.
+
+**TODO:**
+
+- [ ] Completar transición a Slide 3: "México se encuentra en una posición de salud pública delicada, sobre todo cuando comparamos con otros países." (¿datos comparativos o ir directo a MCPS?)
 
 ⏱️ *\~1 minuto*
 
@@ -67,9 +70,9 @@ lang: es-MX
 
 **Guion:**
 
-> Veamos los datos directamente en nuestra cohorte. En el *Mexico City Prospective Study* — 150 mil adultos reclutados en la Ciudad de México — la diabetes explica **una de cada tres muertes** entre los 35 y 74 años. El riesgo relativo es de 5.4 en adultos jóvenes, mucho más alto que lo reportado en cohortes europeas.
+> Si vemos los datos directamente de la cohorte del MCPS, podemos ver que la diabetes explica una de cada tres muertes entre pacientes de 35 y 74 años. Como contexto, o para que nos demos una idea de la magnitud de esto, cuando se ideó la cohorte, la pregunta de investigación iba dirigida hacia la tasa de mortalidad que sucedía por fumar, y los primeros análisis de mortalidad revelaron que la principal causa de muerte en esta cohorte no era fumar... sino diabetes. 
 >
-> Este es un problema de salud pública que se aborda desde muchos ángulos. Nuestra contribución es desde la **genética como factor de riesgo**.
+> El riesgo relativo (RR) es de 5.4 en adultos jóvenes, lo cual es mucho mayor a lo reportado en cohortes europeas. Entonces, estamos hablando de un problema de salud pública que se está tratando de abordar desde distintos ángulos, sobre todo con estudios observacionales. Y nuestra contribución es desde entender estas enfermedades, usando la genética como factor de riesgo.
 
 ⏱️ *\~50 segundos*
 
@@ -81,9 +84,11 @@ lang: es-MX
 
 **Guion:**
 
-> Pero hay un problema fundamental: las poblaciones latinoamericanas están subrepresentadas en estudios genómicos. Más del 78% de los participantes en GWAS son de ancestría europea. Las poblaciones latinoamericanas — que son el 8% de la población mundial — representan apenas el 1.3% de los participantes.
+> Desafortunamente, en el área de la genética nos estamos enfrentando a un problema de representación. Durante mucho tiempo y hasta la actualidad, los participantes en GWAS --- estos estudios que asociacian millones de variantes genéticas con un rasgo o enfermedad que nos interesa --- son principalmente de ancestrías europeas. 
 >
-> ¿Por qué importa? Porque las herramientas que se derivan de estos estudios — los puntajes de riesgo poligénico, los instrumentos para aleatorización mendeliana — están calibrados para poblaciones europeas.
+> Las poblaciones latinoamericanas, apenas representan el 1.71% de los participantes a la fecha. 
+>
+> ¿Y por qué importa esto? Bueno, porque las herramientas que se derivan de estos estudios, los puntajes de riesgo poligénico y los mismos GWAS, están calibrados para el contexto demográfico de las poblaciones europeas, donde se originaron.
 
 ⏱️ *\~1 minuto 10 segundos*
 
@@ -95,9 +100,11 @@ lang: es-MX
 
 **Guion:**
 
-> Y cuando transferimos estas herramientas a poblaciones mestizas, **pierden precisión**.
+> En 2023 se publicó un artículo bastante interesante en el que utilizaron la cohorte ATLAS---a---, que cuenta con muchos participantes mestizos, principalmente afro-americanos y latino-americanos. 
 >
-> Aquí vemos el patrón cuantificado: conforme aumenta la distancia genética entre la población de descubrimiento y la de destino, la precisión de los puntajes de riesgo decae de forma continua. No es que dejen de funcionar de golpe — la predicción se degrada proporcionalmente. Para poblaciones latinoamericanas, con su componente indígena americano, esa distancia es considerable.
+>Y de lo que se dieron cuenta es que conforme aumenta la distancia genética entre la población de descubrimiento y la de destino, la precisión de esos puntajes de riesgo---que es nuestra herramienta de predicción en genética---decae de forma continua. Entonces no dejan de funcionar de golpe, sino que se degrada proporcionalmente.
+>
+> Este artículo se vuelve bastante relevante porque aquí nos muestran las consecuencias reales de esta brecha de representación. Hay un sesgo bastante pronunciado hacia poblaciones de ancestría europea.
 
 ⏱️ *\~45 segundos*
 
@@ -109,9 +116,13 @@ lang: es-MX
 
 **Guion:**
 
-> Y esto no es solo teoría — tenemos datos directos en MCPS. Los puntajes de riesgo para IMC derivados de cohortes europeas pierden poder predictivo conforme aumenta la proporción de ancestría indígena americana. Lo mismo ocurre para cardiopatía coronaria.
+> En el artículo de genotipado de MCPS, publicado el mismo año, se dieron cuenta de lo mismo. A medida que incrementaba el porcentaje de ancestría indígena, también disminuía la precisión de los scores poligénicos para IMC derivados del UK Biobank.
 >
 > ¿Por qué? Porque los enfoques estadísticos estándar asumen una población homogénea, y la estructura genética de México no encaja en ese supuesto. No es un problema de falta de datos, sino de **cómo modelamos** la variación genética.
+
+**TODO:**
+
+- [ ] Agregar una diapositiva mostrando la precisión de PRS generados en Latinoamérica y aplicados en Latinoamérica (actualmente solo se muestran PRS europeos → México).
 
 ⏱️ *\~1 minuto*
 
@@ -123,9 +134,7 @@ lang: es-MX
 
 **Guion:**
 
-> A esto sumemos que dentro de México, los grupos originarios también son altamente diversos.
->
-> La diversidad genética opera en múltiples escalas temporales — desde componentes arcaicos hasta estructuras subcontinentales muy finas. Cuando tratamos la ancestría como categorías discretas — "europeo", "indígena", "africano" — perdemos esta estructura fina. Debemos modelar la genética como un espectro continuo, no como etiquetas.
+> La diversidad genética opera en múltiples escalas temporales — desde componentes arcaicos hasta estructuras subcontinentales muy finas. Cuando tratamos la ancestría como categorías discretas — "europeo", "indígena", "africano" — perdemos esta estructura fina y continua.
 
 ⏱️ *\~45 segundos*
 
@@ -137,9 +146,11 @@ lang: es-MX
 
 **Guion:**
 
-> En el caso de México, tres grupos continentales — indígenas americanos, europeos y africanos — que habían estado aislados durante milenios, tuvieron un contacto masivo a partir de la colonización.
+> En el caso de México, tres grupos humanos que habían estado aislados durante miles de años en diferentes continentes — americanos, europeos y africanos — tuvieron un contacto masivo a partir de la colonización.
 >
-> A nivel genómico, esta mezcla creó mosaicos de haplotipos en los cromosomas, como vemos en estos cariogramas. Cada color es un segmento de diferente ancestría. Estos mosaicos generan patrones de LD y frecuencias alélicas que no encajan en los supuestos de homogeneidad de los métodos estándar. Es importante enfatizar: esto es una **limitación de los métodos**, no de la población.
+> A nivel genómico, esta mezcla creó mosaicos de haplotipos en los cromosomas, como vemos en estos cariogramas. Cada color es un segmento de diferente ancestría. Estos mosaicos generan patrones de LD y frecuencias alélicas que no encajan en los supuestos de homogeneidad de los métodos estándar.
+>
+> Con esto en mente, entonces el objetivo cambia. La brecha de representación no es solamente seguir agregando datos, sino que tenemos que reconsiderar por completo cómo podemos modificar nuestras herramientas para que representen de mejor forma la estructura continua de los genomas.
 
 ⏱️ *\~1 minuto*
 
@@ -151,19 +162,19 @@ lang: es-MX
 
 **Guion:**
 
-> Ante este reto, se están explorando cuatro rutas para modelar la genética en poblaciones diversas.
+> Ante este reto, actualmente se están explorando cuatro rutas para modelar la genética en poblaciones diversas.
 >
-> Primero, enfoques basados en identidad por descendencia, que modelan la estructura poblacional de forma continua.
+> Primero, enfoques basados en identidad por descendencia u otros métodos de "agrupamiento", que directamente modelan la estructura poblacional de forma continua.
 > **[Click: Aparece columna 2 (PRS)]**
-> Segundo, puntajes de riesgo poligénico multi-ancestría, que combinan datos de múltiples poblaciones.
+> Segundo, puntajes de riesgo poligénico multi-ancestría, que combinan datos de múltiples cohortes.
 > **[Click: Aparece columna 3 (LAI)]**
-> Tercero, métodos de ancestría local, que modelan el LD y las frecuencias alélicas por segmento ancestral.
+> Tercero, tenemos métodos de local ancestry que modelan el desequilibrio de ligamiento y las frecuencias alélicas condicionados al segmento ancestral. Entonces, ya no lo estamos tomando como no lo tratan como categorías discretas, sino como un espectro continuo a lo largo del cromosoma. Como se podrán imaginar, esto es algo que tiene algo de atractivo en cohortes como el MCPS o el Mexican Biobank.
 > **[Click: Aparece columna 4 (GWAS familiares)]**
 > Y cuarto, estudios de asociación basados en familias.
 >
 > **[Click: Las primeras 3 columnas se tornan grises; solo resalta la columna de GWAS familiares]**
 >
-> Este proyecto se enfoca en esta cuarta ruta — el diseño familiar — para superar las limitaciones de los métodos poblacionales en una cohorte tan grande como MCPS.
+> Este proyecto se enfoca en esta cuarta ruta — el diseño familiar — para superar las limitaciones de los métodos poblacionales en una cohorte tan grande y con una estructura familiar inusualmente densa como el MCPS.
 
 ⏱️ *\~45 segundos*
 
@@ -173,23 +184,29 @@ lang: es-MX
 
 ## SLIDE 10 — "Sesgos en estudios de asociación: El origen del problema"
 
-*Transición sugerida: "Para entender por qué elegimos la ruta familiar, veamos qué hay de malo con los métodos estándar."*
+*Transición sugerida: "Para entender por qué elegimos la ruta familiar, veamos cómo están estructuradas las señales que capturamos en un GWAS poblacional."*
 
 **\[Contenido visual\]:** Diagrama de barras apiladas mostrando la composición de señales en un estudio de asociación poblacional.
 
 **Guion:**
 
-> ¿Por qué no basta con un estudio estándar? Porque lo que estimamos a nivel poblacional no es únicamente el efecto genético directo — la biología causal. La señal incluye al menos tres fuentes de confusión:
+> **Efectos genéticos directos** - En primer lugar, tenemos a los efectos genéticos directos, los cuales reflejan la señal causal de un genotipo sobre un fenotipo. Es decir, tal vez este genotipo aumenta o reduce la expresión de un gen o cambia la conformación del sitio activo de una enzima. Y es lo que tiene relevancia médica y algo que nos puede ayudar a entender cómo funciona una enfermedad.
 >
-> **Efectos genéticos indirectos** — los genotipos de los padres moldean el ambiente familiar, independientemente de los alelos que transmitieron.
+> Pero, como bien sabemos, correlación no es causalidad. Hay muchísimos factores que pueden alterar la variación de un fenotipo en un grupo de personas. La señal genómica a nivel poblacional no es puramente genética. Tenemos efectos de confusión que distorsionan la asociación entre un genotipo y su fenotipo.
 >
-> **Apareamiento selectivo** — las personas tienden a emparejarse con parejas de fenotipos similares, lo que infla las correlaciones.
+> **Efectos genéticos indirectos** — los genotipos de los padres moldean el ambiente familiar, independientemente de los alelos que transmitieron. Por ejemplo, si dos personas tienen un posgrado y tienen un hijo o una hija, es muy probable que esa persona también vaya a seguir un posgrado, no porque haya heredado un gen de posgrado, sino porque el ambiente familiar propició para que esta persona tuviera ese nivel educativo.
+>
+> **Apareamiento selectivo** — las personas tienden a emparejarse con personas de fenotipos similares, lo que infla las correlaciones.
 >
 > Y **estratificación poblacional** — diferencias en frecuencias alélicas entre subgrupos que correlacionan con diferencias ambientales.
 >
-> Los métodos estándar corrigen parcialmente la estratificación, pero **no eliminan** los efectos indirectos ni el apareamiento selectivo. En una población admixta, estos sesgos se amplifican.
+> Los métodos estándar corrigen parcialmente la estratificación, pero **no eliminan** los efectos indirectos ni el apareamiento selectivo. En una población admixta, son más difíciles de corregir.
 
 ⏱️ *\~1 minuto 30 segundos*
+
+**TODO:**
+
+- [ ] Considerar agregar una explicación rápida de qué es un GWAS antes de esta slide.
 
 ---
 
@@ -201,7 +218,7 @@ lang: es-MX
 
 **Guion:**
 
-> La solución viene de la biología misma: la segregación meiótica es aleatoria. Cuando un padre transmite un alelo a su hijo, es un lanzamiento de moneda — independiente del ambiente, de la estratificación, del apareamiento selectivo.
+> Entonces, la solución viene desde la biología misma. La fortaleza de los GWAS familiares es que la aleatorización no proviene de la población, que puede estar influenciado por los efectos de confusion, sino de la segregación aleatoria de los alelos durante meiosis, la cual es independiente del ambiente.
 >
 > Formalmente, el rasgo $y$ depende del efecto directo $\delta$ del genotipo del individuo, más un efecto de confusión $\alpha$ del genotipo parental. Un estudio estándar estima la suma de ambos. Los diseños familiares aíslan $\delta$.
 >
@@ -221,7 +238,7 @@ lang: es-MX
 >
 > Tiene dos ventajas clave. **Primera:** no requiere ambos padres genotipados. Funciona con un solo pariente de primer grado — un padre, una madre, o un hermano — e infiere los alelos no transmitidos. Esto aumenta sustancialmente el poder estadístico.
 >
-> **Segunda:** está diseñado para ser insesgado bajo estratificación compleja. Funciona correctamente con genomas admixtos — exactamente el escenario de la población mexicana.
+> **Segunda:** está diseñado para ser sesgados bajo estratificación, lo cual hace que funcione correctamente con genomas admixtos — exactamente el escenario de la población mexicana.
 
 ⏱️ *\~1 minuto 10 segundos*
 
@@ -241,6 +258,10 @@ lang: es-MX
 >
 > **En resumen:** estos diseños identifican *qué* biología es causal, pero para *predecir* en mexicanos, necesitamos aplicarlos **en** mexicanos.
 
+**TODO:**
+
+- [ ] Evaluar si mover esta slide más adelante en la presentación (después de resultados). Puede ser demasiada información para la audiencia en este punto.
+
 ⏱️ *\~45 segundos*
 
 ---
@@ -251,13 +272,17 @@ lang: es-MX
 
 **Guion:**
 
-> Permítanme resumir el argumento antes de pasar a los objetivos:
+> Por lo tanto, el proyecto se resume en estos tres puntos:
 >
-> **Uno.** México tiene **140,000 genomas familiares** en el estudio MCPS — una de las cohortes familiares más grandes del mundo.
+> **Uno.** Contamos con la cohorte más grande actualmente para una población no europea que además por su diseño, el cual fue de casa en casa, tiene una alta densidad de redes familiares a la que le podemos sacar mucho provecho.
 >
-> **Dos.** Tenemos el **estimador robusto** para estudios familiares que maximiza el poder estadístico y es insesgado bajo admixtura.
+> **Dos.** Tenemos el **estimador robusto** para estudios familiares que maximiza el poder estadístico y es robusto a efectos de confusion, sobre todo en mestizaje reciente.
 >
-> **Tres.** Combinando ambos, podemos construir el **primer atlas de efectos genéticos directos** para rasgos complejos en la población mexicana.
+> **Tres.** Combinando ambos, podemos construir el **primer atlas de efectos genéticos directos** para rasgos complejos en la población mexicana --- por no decir no-europea.
+
+**TODO:**
+
+- [ ] Corregir: MCPS tiene ~140,000 *individuos genotipados*, no "genomas familiares". Buscar el dato exacto de cuántas familias hay y agregarlo a la slide.
 
 ⏱️ *\~45 segundos*
 
@@ -273,7 +298,7 @@ lang: es-MX
 
 > Con este contexto, establecemos el objetivo principal de este proyecto: estimar los efectos genéticos directos para rasgos complejos y enfermedades en la población mexicana utilizando los datos de la cohorte MCPS y el estimador robusto basado en familias.
 >
-> Nuestra hipótesis de trabajo plantea que el uso de este estimador en la cohorte MCPS logrará cuantificar estos efectos directos de manera precisa, identificando falsos positivos en las asociaciones previas y revelando nuevos loci de susceptibilidad específicos para la población mestiza.
+> Nuestra hipótesis de trabajo plantea que el uso de este estimador en la cohorte MCPS logrará cuantificar estos efectos directos de manera precisa, identificando falsos positivos en las asociaciones previas y revelando nuevos loci de susceptibilidad específicos para la población mexicana.
 
 ⏱️ *\~45 segundos*
 
@@ -469,7 +494,7 @@ lang: es-MX
 >
 > - La atenuación del 85% para educación indica que la transmisión intergeneracional del riesgo de diabetes opera principalmente a través del **ambiente familiar**. Esto argumenta a favor de intervenciones a nivel de **hogar** — modelo de Médico de Familia — no solo intervenciones individuales de riesgo genético.
 >
-> - Identificamos variantes funcionales que son **exclusivas** de poblaciones mexicanas e indígenas americanas. Estas variantes **no están** en los paneles clínicos actuales y tienen implicaciones terapéuticas directas que pueden guiar un tratamiento de precisión.
+> - Esperamos identificar variantes funcionales que son **exclusivas** de poblaciones mexicanas e indígenas americanas. Estas variantes **no están** en los paneles clínicos actuales y tienen implicaciones terapéuticas directas que pueden guiar un tratamiento de precisión.
 
 ⏱️ *\~1 minuto 10 segundos*
 
@@ -513,20 +538,20 @@ lang: es-MX
 
 # Resumen de tiempos estimados
 
-| Sección                       | Slides | Tiempo estimado |
-|-------------------------------|--------|-----------------|
-| Portada                       | 1      | 0:30            |
-| Introducción (problema)       | 8      | \~7:15          |
-| ¿Por qué fallan? (sesgos)     | 1      | \~1:30          |
-| La solución (diseños fam)     | 4      | \~3:40          |
-| Objetivos de investigación    | 2      | \~1:15          |
-| Métodos                       | 2      | \~2:30          |
-| Resultados                    | 4      | \~5:10          |
-| Conclusiones y próximos pasos | 3      | \~3:00          |
-| Colaboradores y cierre        | 2      | \~1:05          |
-| **TOTAL**                     | **27** | **\~25:55**     |
+| Sección                       | Slides | Tiempo estimado | Acumulado |
+|-------------------------------|--------|-----------------|-----------|
+| Portada                       | 1      | 1:00            | 1:00      |
+| Introducción (problema)       | 8      | ~6:35           | 7:35      |
+| ¿Por qué fallan? (sesgos)     | 1      | ~1:45           | 9:20      |
+| La solución (diseños fam)     | 4      | ~3:30           | 12:50     |
+| Objetivos de investigación    | 2      | ~1:05           | 13:55     |
+| Métodos                       | 2      | ~2:00           | 15:55     |
+| Resultados                    | 4      | ~4:35           | 20:30     |
+| Conclusiones y próximos pasos | 3      | ~2:40           | 23:10     |
+| Colaboradores y cierre        | 2      | ~0:55           | 24:05     |
+| **TOTAL**                     | **27** | **~24:05**      | —         |
 
-**Nota:** El tiempo está calibrado para una presentación de \~26 minutos dejando un margen para transiciones y ajustes de ritmo. Si el formato del examen requiere 30 o 40 minutos, las secciones de resultados y relevancia clínica pueden expandirse con más detalle en los mecanismos de la reversión de diabetes y las implicaciones para estudios genómicos.
+**Nota:** Tiempos calculados a ~140 wpm (cadencia promedio entre 130-150 wpm). El total de ~24 minutos deja ~6 minutos de margen para transiciones, pausas y ajustes de ritmo en una presentación de 30 minutos. Si el formato requiere 40 minutos, las secciones de resultados y relevancia clínica pueden expandirse.
 
 ---
 
