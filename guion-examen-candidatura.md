@@ -337,7 +337,7 @@ lang: es-MX
 > 1. Partimos de los datos genotípicos del MCPS — aproximadamente 138,500 individuos genotipados con el chip Illumina GSAv2, imputados al panel de referencia TOPMed.
 > 2. Realizamos la **inferencia de parentesco** (IBD entre hermanos) y la **reconstrucción de pedigríes** usando KING y SNIPAR.
 > 3. Con la estructura familiar definida, aplicamos la **imputación mendeliana** de genotipos parentales no observados.
-> 4. Corremos dos análisis en paralelo: **GWAS poblacional** con REGENIE en los \~29,000 individuos no emparentados, y estudios familiares con SNIPAR usando los \~100,000 individuos en redes familiares.
+> 4. Corremos dos análisis en paralelo: **GWAS poblacional** con REGENIE en los 29,041 individuos no emparentados, y estudios familiares con SNIPAR usando los 100,323 individuos en redes familiares.
 > 5. Finalmente, comparamos las heredabilidades, correlaciones genéticas, y tamaños de efecto entre ambos enfoques.
 >
 > Todo esto se ejecuta en la nube, en la plataforma DNAnexus, a través de pipelines automatizados en Nextflow.

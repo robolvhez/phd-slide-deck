@@ -416,8 +416,8 @@
       \node[process] (kinship) at (0, 0) {\textbf{KING}\\Inferencia de parentesco};
       
       % Outputs
-      \node[output] (related) at (6, 1.5) {\textbf{Individuos Emparentados}\\\textbf{$\sim$100,000 individuos}\\ \vspace{0.2cm} \small \textit{Para análisis FGWAS (efectos directos)}};
-      \node[output] (unrelated) at (6, -1.5) {\textbf{Individuos No Emparentados}\\\textbf{$\sim$29,000 individuos}\\ \vspace{0.2cm} \small \textit{Para análisis GWAS poblacional}};
+      \node[output] (related) at (6, 1.5) {\textbf{Individuos Emparentados}\\\textbf{100,323 individuos}\\ \vspace{0.2cm} \small \textit{Para análisis FGWAS (efectos directos)}};
+      \node[output] (unrelated) at (6, -1.5) {\textbf{Individuos No Emparentados}\\\textbf{29,041 individuos}\\ \vspace{0.2cm} \small \textit{Para análisis GWAS poblacional}};
       
       % Edges
       \draw[arrow] (all) -- (kinship);
@@ -470,8 +470,8 @@
       \draw[arrow] (ibd) -- (impute);
       \draw[arrow] (bgen) -- (impute);
       
-      \draw[arrow] (impute.south) -- ++(0,-0.5) -| (gwas.north);
-      \draw[arrow] (pheno.east) -| (gwas.south);
+      \draw[arrow] (impute.east) -| (gwas.north);
+      \draw[arrow] (pheno.south) -- ++(0,-1.0) -| (gwas.south);
       
       \draw[arrow] (gwas) -- (sumstats);
       
