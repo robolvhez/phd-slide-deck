@@ -104,6 +104,7 @@ trap unmount_gdrive EXIT
 # ── Build rsync options ─────────────────────────────────────────
 RSYNC_OPTS=(
     -av
+    -L
     --delete
     --exclude='.git/'
     --exclude='__pycache__/'

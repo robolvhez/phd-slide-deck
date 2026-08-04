@@ -298,7 +298,7 @@ lang: es-MX
 
 > Con este contexto, establecemos el objetivo principal de este proyecto: estimar los efectos genéticos directos para rasgos complejos y enfermedades en la población mexicana utilizando los datos de la cohorte MCPS y el estimador robusto basado en familias.
 >
-> Nuestra hipótesis de trabajo plantea que el uso de este estimador en la cohorte MCPS logrará cuantificar estos efectos directos de manera precisa, identificando falsos positivos en las asociaciones previas y revelando nuevos loci de susceptibilidad específicos para la población mexicana.
+> Nuestra hipótesis de trabajo plantea que el uso de este estimador en la cohorte MCPS logrará cuantificar estos efectos directos de manera precisa, identificando falsos positivos en las asociaciones previas y revelando nuevos *loci* de susceptibilidad específicos para la población mexicana.
 
 ⏱️ *\~45 segundos*
 
@@ -437,7 +437,7 @@ lang: es-MX
 
 ## SLIDE 24 — "Estimaciones de heredabilidad (PopGWAS vs FGWAS)"
 
-**\[Contenido visual\]:** Gráfica de dispersión comparando estimaciones de heredabilidad (popGWAS vs FGWAS) y tabla de valores.
+**\[Contenido visual\]:** Gráfica de dispersión comparando estimaciones de heredabilidad (popGWAS vs FGWAS).
 
 **Guion:**
 
@@ -469,11 +469,60 @@ lang: es-MX
 
 ⏱️ *\~1 minuto*
 
+## SLIDE 27 — "Comparación de prevalencias entre subcohortes"
+
+**\[Contenido visual\]:** Gráfico de comparación de prevalencias de fenotipos por subcohorte.
+
+**Guion:**
+
+> Para entender mejor de dónde provienen estos sesgos, primero comparamos las prevalencias de los distintos fenotipos entre nuestras subcohortes. Observamos que la distribución no es uniforme, lo cual nos da un primer indicio claro de que los criterios de inclusión y la estructura familiar generan una sobre-representación de ciertos fenotipos.
+
+⏱️ *\~30 segundos*
+
+---
+
+## SLIDE 28 — "Las subcohortes tiene diferencias sistemáticas por sesgos de averiguación"
+
+**\[Contenido visual\]:** Gráfico de bosque (*forest plot*) evaluando diferencias de medias estandarizadas (SMD) por sesgos de averiguación.
+
+**Guion:**
+
+> Analizando los sesgos de averiguación, observamos diferencias sistemáticas significativas entre las subcohortes de nuestra muestra. Al ver el tamaño del efecto estandarizado en múltiples fenotipos, se hace evidente que la forma en que los individuos fueron reclutados o detectados altera las mediciones poblacionales frente a los datos dentro-de-familia.
+
+⏱️ *\~50 segundos*
+
+---
+
+## SLIDE 29 — "Patrones y Conclusiones de Atenuación"
+
+**\[Contenido visual\]:** Viñetas de texto resumiendo los tres patrones principales encontrados en la comparación de heredabilidades.
+
+**Guion:**
+
+> Sintetizando estos hallazgos, podemos dividirlos en tres grandes patrones. Primero, para los rasgos mediados socialmente como el logro educativo y la estatura, observamos una fuerte atenuación, indicando que están dominados por efectos genéticos indirectos y el apareamiento selectivo. 
+> Segundo, para los rasgos cardiometabólicos la atenuación es mínima, lo que nos da confianza de que los estudios poblacionales están capturando efectos biológicos directos. 
+> Y tercero, el caso especial de la diabetes, donde vemos una inversión. Esta mayor heredabilidad directa refleja probablemente cómo la estructura genética admixta deflaciona las estimaciones poblacionales al controlar de forma imperfecta la estratificación.
+
+⏱️ *\~50 segundos*
+
+---
+
+## SLIDE 30 — "Atenuación a nivel de *locus* independientes (Clumping)"
+
+**\[Contenido visual\]:** Tabla de resultados de *fine-mapping* comparando PopGWAS y FGWAS en *loci* representativos.
+
+**Guion:**
+
+> Para confirmar que esta atenuación global en la heredabilidad también ocurre a nivel local, aislamos los *loci* independientes mediante *clumping*. 
+> Lo que encontramos, como se muestra en esta tabla, es que variantes fuertemente asociadas a diabetes en GWAS poblacionales, como en el gen CDKAL1 o CDKN2B, ven sus efectos reducidos casi a cero en los análisis dentro-de-familia. Esto nos demuestra empíricamente que la señal capturada por el estudio poblacional en estos *loci* era principalmente ruido originado por estratificación ambiental.
+
+⏱️ *\~50 segundos*
+
 ---
 
 # SECCIÓN 7 — CONCLUSIONES Y PRÓXIMOS PASOS
 
-## SLIDE 27 — "¿Qué aprendimos?"
+## SLIDE 32 — "¿Qué aprendimos?"
 
 **Guion:**
 
@@ -489,7 +538,7 @@ lang: es-MX
 
 ---
 
-## SLIDE 28 — "Próximos pasos"
+## SLIDE 32 — "Próximos pasos"
 
 **Guion:**
 
@@ -509,7 +558,7 @@ lang: es-MX
 
 ---
 
-## SLIDE 29 — "Relevancia clínica para México"
+## SLIDE 33 — "Relevancia clínica para México"
 
 **Guion:**
 
@@ -527,7 +576,7 @@ lang: es-MX
 
 # SECCIÓN 8 — COLABORADORES Y AGRADECIMIENTOS
 
-## SLIDE 30 — "Current collaborations"
+## SLIDE 34 — "Current collaborations"
 
 **\[Contenido visual\]:** Tarjetas de los 5 colaboradores: Jason Torres (Oxford), Mashaal Sohail (CCG-UNAM), Alexander Young (UCLA), Daniela Robles (LIIGH-UNAM), Jaime Berumen (UNAM/MCPS PI).
 
@@ -547,7 +596,7 @@ lang: es-MX
 
 ---
 
-## SLIDE 31 — "¡GRACIAS A TODXS!"
+## SLIDE 35 — "¡GRACIAS A TODXS!"
 
 **\[Contenido visual\]:** Logos institucionales (UNAM, CCG, PDCB, Oxford CTSU, MCPS), fotos del equipo.
 

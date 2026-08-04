@@ -396,39 +396,6 @@
 \end{frame}
 
 % ============================================================
-% Selección de cohortes
-% ============================================================
-\begin{frame}[c, fragile]{Selección de subcohortes}
-  \centering
-  \resizebox{\textwidth}{!}{
-    \begin{tikzpicture}[
-        box/.style={rectangle, thick, rounded corners, align=center, minimum height=1cm, inner sep=0.3cm},
-        input/.style={box, fill=gray!10, draw=gray!60, text width=4cm},
-        process/.style={box, fill=teal!10, draw=teal!50, text width=3.5cm},
-        output/.style={box, fill=cyan!10, draw=cyan!50, text width=3.5cm},
-        arrow/.style={->, ultra thick, draw=teal!50, >=stealth}
-      ]
-      
-      % Input
-      \node[input] (all) at (-6, 0) {\textbf{Cohorte completa}\\140,829 individuos};
-      
-      % Processes
-      \node[process] (kinship) at (0, 0) {\textbf{KING}\\Inferencia de parentesco};
-      
-      % Outputs
-      \node[output] (related) at (6, 1.5) {\textbf{Individuos Emparentados}\\\textbf{100,323 individuos}\\ \vspace{0.2cm} \small \textit{Para análisis FGWAS (efectos directos)}};
-      \node[output] (unrelated) at (6, -1.5) {\textbf{Individuos No Emparentados}\\\textbf{29,041 individuos}\\ \vspace{0.2cm} \small \textit{Para análisis GWAS poblacional}};
-      
-      % Edges
-      \draw[arrow] (all) -- (kinship);
-      \draw[arrow] (kinship.east) -- ++(1,0) |- (related.west);
-      \draw[arrow] (kinship.east) -- ++(1,0) |- (unrelated.west);
-      
-    \end{tikzpicture}
-  }
-\end{frame}
-
-% ============================================================
 % Flujo de trabajo de SNIPAR
 % ============================================================
 \begin{frame}[c, fragile]{Flujo de trabajo de SNIPAR}
@@ -474,6 +441,39 @@
       \draw[arrow] (pheno.south) -- ++(0,-1.0) -| (gwas.south);
       
       \draw[arrow] (gwas) -- (sumstats);
+      
+    \end{tikzpicture}
+  }
+\end{frame}
+
+% ============================================================
+% Selección de cohortes
+% ============================================================
+\begin{frame}[c, fragile]{Selección de subcohortes}
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}[
+        box/.style={rectangle, thick, rounded corners, align=center, minimum height=1cm, inner sep=0.3cm},
+        input/.style={box, fill=gray!10, draw=gray!60, text width=4cm},
+        process/.style={box, fill=teal!10, draw=teal!50, text width=3.5cm},
+        output/.style={box, fill=cyan!10, draw=cyan!50, text width=3.5cm},
+        arrow/.style={->, ultra thick, draw=teal!50, >=stealth}
+      ]
+      
+      % Input
+      \node[input] (all) at (-6, 0) {\textbf{Cohorte completa}\\140,829 individuos};
+      
+      % Processes
+      \node[process] (kinship) at (0, 0) {\textbf{KING}\\Inferencia de parentesco};
+      
+      % Outputs
+      \node[output] (related) at (6, 1.5) {\textbf{Individuos Emparentados}\\\textbf{100,323 individuos}\\ \vspace{0.2cm} \small \textit{Para análisis FGWAS (efectos directos)}};
+      \node[output] (unrelated) at (6, -1.5) {\textbf{Individuos No Emparentados}\\\textbf{29,041 individuos}\\ \vspace{0.2cm} \small \textit{Para análisis GWAS poblacional}};
+      
+      % Edges
+      \draw[arrow] (all) -- (kinship);
+      \draw[arrow] (kinship.east) -- ++(1,0) |- (related.west);
+      \draw[arrow] (kinship.east) -- ++(1,0) |- (unrelated.west);
       
     \end{tikzpicture}
   }
