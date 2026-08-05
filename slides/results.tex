@@ -32,31 +32,27 @@
 
 % --- HERITABILITY ---
 \begin{frame}[c]{Comparación entre estimaciones de heredabilidad}
-\begin{figure}
-    \begin{minipage}[b]{0.67\textwidth}
-        \includegraphics[width=0.95\textwidth]{img/results/2027-01/heritability/heritability_comparison.scatter.png}
-    \end{minipage}\hfill
-    \begin{minipage}[b]{0.33\textwidth}
-        \caption{
-            \textbf{Comparación de estimaciones de heredabilidad derivadas de FGWAS contra PopGWAS.}
-            Cada punto representa un rasgo complejo.
-            Los colores representan la clasificación.
-            La línea punteada representa la línea de identidad.
-            Barras de error representan intervalos de confianza al 95\%.
-        }
-    \end{minipage}
-\end{figure}
-\end{frame}
-
-\begin{frame}[b]{Comparación de prevalencias entre subcohortes}
-  \begin{figure}[htpb]
-      \centering
-      \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/results/2027-01/phenotype-smd-analyses/prevalence_comparison.cropped.png}
-      \caption{
-        \textbf{Comparación de prevalencias.} Prevalencias de fenotipos por subcohorte. \parencite{young2022-fgwas}
-      }
-      \label{fig:prevalences}
-  \end{figure}
+  \begin{columns}
+      % --- Column A ----
+      \begin{column}{0.45\textwidth}
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/results/2027-01/heritability/heritability_comparison.scatter.png}
+            \caption{Comparación de estimaciones de heredabilididad con LDSC en MCPS, derivadas de efectos genéticos directos y efectos poblacionales.}
+            \label{fig:h2-mine}
+        \end{figure}
+      \end{column}
+      \pause
+      % --- Column B ----
+      \begin{column}{0.45\textwidth}
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/diagrams/tan2024-heritability-scatter.png}
+            \caption{Comparación de estimadores en un meta-analisis de cohortes europeas \parencite{tan2024-fgwas}.}
+            \label{fig:h2-tan2024}
+        \end{figure}
+      \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[c]{Comparación entre estimaciones de heredabilidad}
@@ -70,16 +66,27 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}[b]{Las subcohortes tiene diferencias sistemáticas por sesgos de averiguación}
-  \begin{figure}[htpb]
-      \centering
-      \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/results/2027-01/phenotype-smd-analyses/forest_smd_bias_assessment_cropped.png}
-      \caption{
-        \textbf{Diferencias por sesgos de averiguación.} Diferencias de medias estandarizadas (SMD) entre subcohortes.
-      }
-      \label{fig:bias_assessment}
-  \end{figure}
-\end{frame}
+%% \begin{frame}[b]{Comparación de prevalencias entre subcohortes}
+%%   \begin{figure}[htpb]
+%%       \centering
+%%       \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/results/2027-01/phenotype-smd-analyses/prevalence_comparison.cropped.png}
+%%       \caption{
+%%         \textbf{Comparación de prevalencias.} Prevalencias de fenotipos por subcohorte. \parencite{young2022-fgwas}
+%%       }
+%%       \label{fig:prevalences}
+%%   \end{figure}
+%% \end{frame}
+%% 
+%% \begin{frame}[b]{Las subcohortes tiene diferencias sistemáticas por sesgos de averiguación}
+%%   \begin{figure}[htpb]
+%%       \centering
+%%       \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/results/2027-01/phenotype-smd-analyses/forest_smd_bias_assessment_cropped.png}
+%%       \caption{
+%%         \textbf{Diferencias por sesgos de averiguación.} Diferencias de medias estandarizadas (SMD) entre subcohortes.
+%%       }
+%%       \label{fig:bias_assessment}
+%%   \end{figure}
+%% \end{frame}
 
 \begin{frame}[c]{Atenuación a nivel de \textit{locus} independientes (Clumping)}
   \begin{table}[htpb]
@@ -150,4 +157,28 @@
       \item<3-> Estimadores intrafamiliares identifican \textbf{falsos positivos} en \textit{loci} canónicos de diabetes por confusión ambiental. % ponytail: directo al grano
       \item<4-> Urge el desarrollo de herramientas genómicas de mayor precisión para México.
   \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Diferencias significativas (FDR) y frecuencias alélicas}
+  % ponytail: straightforward latex table as requested
+  \begin{table}[htpb]
+      \centering
+      \resizebox{\textwidth}{!}{
+      \begin{tabular}{lllrrcr}
+          \toprule
+          \textbf{Fenotipo} & \textbf{SNP} & \textbf{Gen} & \textbf{$\Delta \beta$} & \textbf{FDR} & \textbf{Freq. IMX} & \textbf{Freq. EUR} \\
+          \midrule
+          Educational Attainment & \texttt{chr4:87858683:G:A} & \textit{MEPE} & -0.205 & $4.0 \times 10^{-6}$ & 15.9\% & 14.9\% \\
+          Diabetes & \texttt{chr6:20660459:G:A} & \textit{CDKAL1} & -0.168 & $1.4 \times 10^{-8}$ & 25.6\% & 34.2\% \\
+          Diabetes & \texttt{chr9:22137686:T:G} & \textit{CDKN2B} & -0.154 & $5.2 \times 10^{-8}$ & 34.1\% & 29.8\% \\
+          Diabetes & \texttt{chr10:12265895:C:T} & \textit{CDC123} & -0.144 & $1.1 \times 10^{-6}$ & 30.9\% & 21.9\% \\
+          HbA1c & \texttt{chr6:116771482:T:C} & \textit{FAM162B} & -0.084 & 0.021 & 7.9\% & 0.2\% \\
+          HDL cholesterol & \texttt{chr12:124828880:C:T} & \textit{SCARB1} & 0.040 & 0.025 & 37.8\% & 40.2\% \\
+          \bottomrule
+      \end{tabular}
+      }
+      \caption{
+        SNPs con diferencias de efecto significativas (FDR) y su frecuencia en ancestrías del MCPS (IMX y EUR).
+      }
+  \end{table}
 \end{frame}

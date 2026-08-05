@@ -288,13 +288,13 @@ lang: es-MX
 
 **Guion:**
 
-> Para lograr esto, nos hemos planteado cinco objetivos específicos:
+> Para lograr esto, nos hemos planteado cinco objetivos específicos (notando que los primeros tres, en color, son resultados actuales, mientras que los dos últimos en gris son análisis futuros):
 >
-> 1. Realizar los estudios de asociación genética implementando el estimador robusto.
-> 2. Comparar los tamaños de efecto frente a métodos poblacionales para cuantificar los sesgos.
-> 3. Integrar meta-análisis con cohortes internacionales para maximizar el descubrimiento.
-> 4. Desarrollar análisis derivados, como puntajes de riesgo poligénico y estudios de aleatorización mendeliana adaptados a esta población.
-> 5. Finalmente, construir una plataforma interactiva que ponga estos recursos a disposición de la comunidad científica.
+> 1. Primero, realizar las asociaciones con el estimador robusto, con el interés principal de comprobar qué tanto aumenta el tamaño de muestra con este estimador.
+> 2. Segundo, calcular las estimaciones directas de la heredabilidad.
+> 3. Tercero, comparar el tamaño de los efectos poblacionales y familiares para cuantificar los sesgos.
+> 4. Cuarto, realizar análisis posteriores; aunque aún por definir, proponemos el cálculo de scores poligénicos o PGS.
+> 5. Y quinto, desarrollar una plataforma abierta en línea para acceder a todos estos resultados.
 
 ⏱️ *\~30 segundos*
 
@@ -550,7 +550,19 @@ lang: es-MX
 
 ---
 
-## SLIDE 34 — "Próximos pasos"
+## SLIDE 34 — "Diferencias significativas (FDR) y frecuencias alélicas"
+
+**\[Contenido visual\]:** Tabla con los SNPs que presentan diferencias de efecto significativas y sus frecuencias alélicas por ancestría.
+
+**Guion:**
+
+> Para profundizar en estos hallazgos, analizamos específicamente los SNPs con diferencias significativas en un false discovery rate. Como observamos en esta tabla, al agregar la información de las frecuencias alélicas del MCPS, vemos claramente la distribución en individuos de ancestría indígena mexicana (IMX) frente a europea (EUR). Esto ilustra cómo la estructura poblacional puede inflar los efectos en loci que tradicionalmente asociábamos a fenotipos como la diabetes o niveles de colesterol.
+
+⏱️ *\~45 segundos*
+
+---
+
+## SLIDE 35 — "Próximos pasos"
 
 **Guion:**
 
