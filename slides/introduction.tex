@@ -485,8 +485,9 @@
   \end{center}
 \end{frame}
 
+% ponytail: macro to reuse objectives slide as a section transition
+\newcommand{\ObjectivesFrame}[3]{
 \begin{frame}[c]{Objetivos específicos}
-  % ponytail: simplified text to be direct, applied bluefill to first 3, grayfill to last 2
   \begin{center}
       \resizebox{\textwidth}{!}{%
       \begin{tikzpicture}[
@@ -502,11 +503,11 @@
           arrow_down/.style={arrow_base, shape border rotate=270},
           arrow_left/.style={arrow_base, shape border rotate=180}
       ]
-      \node[box, active] (o1) {1. Asociaciones (Robust Estimator)\\[2mm] \small\normalfont (Evaluación de incremento en muestra)};
+      \node[box, #1] (o1) {1. Asociaciones (Robust Estimator)\\[2mm] \small\normalfont (Evaluación de incremento en muestra)};
       \node[arrow_right, right=0.3cm of o1] (a1) {};
-      \node[box, active, right=0.3cm of a1] (o2) {2. Heredabilidad\\[2mm] \small\normalfont (Estimaciones directas)};
+      \node[box, #2, right=0.3cm of a1] (o2) {2. Heredabilidad\\[2mm] \small\normalfont (Estimaciones directas)};
       \node[arrow_right, right=0.3cm of o2] (a2) {};
-      \node[box, active, right=0.3cm of a2] (o3) {3. Comparación de efectos\\[2mm] \small\normalfont (Cuantificación del sesgo)};
+      \node[box, #3, right=0.3cm of a2] (o3) {3. Comparación de efectos\\[2mm] \small\normalfont (Cuantificación del sesgo)};
       \node[arrow_down, below=0.3cm of o3] (a3) {};
       \node[box, inactive, below=0.3cm of a3] (o4) {4. Análisis posteriores\\[2mm] \small\normalfont (Ej. cálculo de PGS)};
       \node[arrow_left, left=0.3cm of o4] (a4) {};
@@ -515,6 +516,9 @@
       }
   \end{center}
 \end{frame}
+}
+
+\ObjectivesFrame{active}{active}{active}
 
 %%% \begin{frame}[b]{Los grupos originarios también son genéticamente diversos, no homogéneos}
 %%%     \begin{columns}[T]

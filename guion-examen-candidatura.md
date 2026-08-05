@@ -423,6 +423,18 @@ lang: es-MX
 
 ---
 
+## SLIDE 23 (Transición) — "Objetivos: Asociaciones"
+
+**\[Contenido visual\]:** Diapositiva de objetivos con el punto 1 (Asociaciones) en color, los demás en gris.
+
+**Guion:**
+
+> Retomando nuestros objetivos, comenzaremos evaluando el incremento en el tamaño de muestra al utilizar el estimador robusto.
+
+⏱️ *\~10 segundos*
+
+---
+
 ## SLIDE 23 — "Tamaños Efectivos de Muestra"
 
 **\[Contenido visual\]:** Gráfica comparando tamaños efectivos de muestra entre estimador robusto vs. pares de hermanos y tríos parentales.
@@ -432,6 +444,18 @@ lang: es-MX
 > El primer resultado es la evaluación del poder estadístico. El estimador robusto incrementa el tamaño efectivo de muestra en aproximadamente 36.58% frente a los métodos de pares de hermanos y tríos parentales, debido a que aprovecha estructuras familiares más complejas que solo los genotipos observados de los padres.
 
 ⏱️ *\~1 minuto*
+
+---
+
+## SLIDE 24 (Transición) — "Objetivos: Heredabilidad"
+
+**\[Contenido visual\]:** Diapositiva de objetivos con el punto 2 (Heredabilidad) en color, los demás en gris.
+
+**Guion:**
+
+> Pasando al segundo objetivo, nos enfocamos ahora en las estimaciones directas de heredabilidad.
+
+⏱️ *\~10 segundos*
 
 ---
 
@@ -504,6 +528,18 @@ lang: es-MX
 > Y tercero, el caso especial de la diabetes, donde vemos una inversión. Esta mayor heredabilidad directa refleja probablemente cómo la estructura genética admixta deflaciona las estimaciones poblacionales al controlar de forma imperfecta la estratificación.
 
 ⏱️ *\~50 segundos*
+
+---
+
+## SLIDE 30 (Transición) — "Objetivos: Comparación de efectos"
+
+**\[Contenido visual\]:** Diapositiva de objetivos con el punto 3 (Comparación de efectos) en color, los demás en gris.
+
+**Guion:**
+
+> Ahora, abordaremos el tercer objetivo: la cuantificación empírica del sesgo mediante la comparación de los tamaños de efecto, atenuaciones a nivel locus y las diferencias genéticas por ancestría.
+
+⏱️ *\~15 segundos*
 
 ---
 
