@@ -582,33 +582,49 @@ lang: es-MX
 
 # SECCIÓN 7 — CONCLUSIONES Y PRÓXIMOS PASOS
 
-## SLIDE 32 — "Conclusiones: Relevancia de los Modelos Familiares"
-
-**\[Contenido visual\]:** Viñetas resumiendo (1) Diagnóstico de Sesgos, (2) Poder Estadístico en MCPS, y (3) Predicción de Riesgo, con sub-viñetas ejemplificando nuestros resultados en diabetes, tamaño de muestra y PRS.
-
-**Guion:**
-
-> Para concluir, agrupamos la relevancia de nuestros modelos familiares en tres puntos clave. 
-> 
-> En primer lugar, es crucial comprender que los GWAS familiares operan como herramientas diagnósticas. Como ejemplo destacado, en diabetes mellitus —un fenotipo con alto sesgo poblacional y fuertemente ligado a la ancestría según reportes recientes— logramos identificar falsos positivos en loci canónicos que estaban impulsados meramente por confusión ambiental.
->
-> En segundo lugar, al implementar el estimador robusto, logramos incrementar nuestro poder estadístico con un tamaño de muestra aproximadamente 36% mayor que los diseños clásicos. Esto nos permitió constatar fehacientemente la existencia de dichos sesgos estructurales sin perder información valiosa.
->
-> Finalmente, de cara al futuro, resulta imperativo desarrollar herramientas de predicción más precisas para México. Evaluar empíricamente si los scores poligénicos derivados de estimaciones familiares mejoran nuestra precisión predictiva es el siguiente gran paso para consolidar esta evidencia.
-
-⏱️ *\~1 minuto 45 segundos*
-
----
-
-## SLIDE 33 — "Diferencias significativas (FDR) y frecuencias alélicas"
+## SLIDE 31 — "Diferencias significativas (FDR) y frecuencias alélicas"
 
 **\[Contenido visual\]:** Tabla con los SNPs que presentan diferencias de efecto significativas y sus frecuencias alélicas por ancestría.
 
 **Guion:**
 
-> Para profundizar en estos hallazgos, analizamos específicamente los SNPs con diferencias significativas en un false discovery rate. Como observamos en esta tabla, al agregar la información de las frecuencias alélicas del MCPS, vemos claramente la distribución en individuos de ancestría indígena mexicana (IMX) frente a europea (EUR). Esto ilustra cómo la estructura poblacional puede inflar los efectos en loci que tradicionalmente asociábamos a fenotipos como la diabetes o niveles de colesterol.
+> Para profundizar en estos hallazgos, analizamos específicamente los SNPs con diferencias significativas bajo un *false discovery rate*. Como observamos en esta tabla al comparar los GWAS poblacionales y familiares, al agregar la información de las frecuencias alélicas del MCPS vemos claramente la distribución en individuos de ancestría indígena mexicana (IMX) frente a europea (EUR). Esto ilustra cómo la estructura poblacional puede inflar los efectos en loci que tradicionalmente asociábamos a fenotipos como la diabetes o niveles de colesterol.
 
 ⏱️ *\~45 segundos*
+
+---
+
+## SLIDE 32 — "Conclusiones: Relevancia de los Modelos Familiares"
+
+**\[Contenido visual\]:** Viñetas resumiendo (1) Diagnóstico de Sesgos, (2) Poder Estadístico en MCPS, y (3) Predicción de Riesgo.
+
+**Guion:**
+
+> Para concluir, agrupamos la relevancia de nuestros modelos familiares en tres puntos clave. 
+> 
+> En primer lugar, los GWAS familiares operan primordialmente como herramientas diagnósticas, permitiéndonos determinar la dirección y magnitud de los sesgos presentes en diseños de descubrimiento de mayor poder estadístico.
+>
+> En segundo lugar, al implementar el estimador robusto, logramos incrementar nuestro poder estadístico con un tamaño de muestra eficientemente mayor. Esto nos permitió constatar fehacientemente la existencia de sesgos ambientales en la cohorte sin perder el rigor metodológico.
+>
+> Finalmente, a nivel predictivo, carecemos de evidencia empírica robusta en poblaciones latinoamericanas, por lo que evaluar si estos modelos familiares mejoran la predicción de scores poligénicos en México será nuestro próximo paso crítico para consolidar la evidencia.
+
+⏱️ *\~1 minuto 10 segundos*
+
+---
+
+## SLIDE 33 — "Ancestría y Confusión Ambiental en Diabetes"
+
+**\[Contenido visual\]:** Viñetas enfocadas en diabetes y ancestría, con una sub-viñeta enfatizando el ejemplo de falsos positivos en \textit{loci} canónicos como CDKAL1 y CDKN2B vistos en los resultados.
+
+**Guion:**
+
+> Mención especial merece la diabetes mellitus. Clínicamente es uno de los fenotipos de mayor impacto, pero metodológicamente es un rasgo con altísimos niveles de sesgo poblacional.
+>
+> Estudios recientes en nuestra cohorte demuestran la fuerte contribución de la ancestría mexicana a la prevalencia de diabetes. Sin embargo, tal como vimos en el recordatorio de nuestros resultados (para genes como CDKAL1, CDKN2B y CDC123), los estimadores intrafamiliares identifican atenuaciones masivas que confirman la presencia de falsos positivos en \textit{loci} canónicos. 
+> 
+> Esta evidencia subraya que los efectos de composición ambiental están fuertemente ligados a la estructura poblacional, acentuando la urgencia metodológica de desarrollar herramientas genómicas de mayor precisión adaptadas a nuestro país.
+
+⏱️ *\~1 minuto*
 
 ---
 

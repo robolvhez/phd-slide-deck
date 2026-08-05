@@ -42,7 +42,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Comparación entre estimaciones de heredabilidad}
+\begin{frame}[c]{La heredabilidad disminuye usando DGEs... Excepto en 3 rasgos}
   \begin{columns}
       % --- Column A ----
       \begin{column}{0.45\textwidth}
@@ -66,7 +66,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}[c]{Comparación entre estimaciones de heredabilidad}
+\begin{frame}[c]{La heredabilidad disminuye usando DGEs... Excepto en 3 rasgos}
   \begin{figure}[htpb]
       \centering
       \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/results/2027-01/heritability/heritability_comparison.smd.png}
@@ -100,7 +100,7 @@
 %% \end{frame}
 
 \ObjectivesFrame{inactive}{inactive}{active}
-\begin{frame}[c]{Resumen Metodológico: \textit{Locus} Independientes}
+\begin{frame}[c]{Resumen Metodológico: Comparación del tamaño de los efectos en \textit{loci} independientes}
   \begin{itemize}
     \setlength\itemsep{1em}
     \item \textbf{Software}: SNIPAR y REGENIE para asociaciones; PLINK2 para agrupamiento heurístico (clumping) de señales.
@@ -109,67 +109,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Atenuación a nivel de \textit{locus} independientes (Clumping)}
-  \begin{table}[htpb]
-      \centering
-      \resizebox{\textwidth}{!}{
-      \begin{tabular}{llllrrlp{4.5cm}}
-          \toprule
-          \textbf{Fenotipo} & \textbf{SNP} & \textbf{Gen} & \textbf{PopGWAS} $\beta$ & \textbf{FGWAS} $\beta$ & $\Delta \beta$ & \textbf{FDR} & \textbf{Patrón de Atenuación} \\
-          \midrule
-          Diabetes & \texttt{chr6:20660459:G:A} & \textit{CDKAL1} & -0.178 & -0.010 & -0.168 & $1.4 \times 10^{-8}$ & \textbf{Alto:} Gran efecto poblacional; efecto directo cercano a cero. \\
-          Diabetes & \texttt{chr9:22137686:T:G} & \textit{CDKN2B} & -0.163 & -0.009 & -0.154 & $5.2 \times 10^{-8}$ & \textbf{Alto:} Asociación inflada por sesgos/confusión. \\
-          LDL & \texttt{chr5:156924336:T:C} & \textit{TIMD4} & -0.049 & -0.016 & -0.032 & 0.145 & \textbf{Fuerte:} Efecto directo $\sim 3\times$ menor. \\
-          Estatura & \texttt{chr7:44189469:C:T} & \textit{GCK} & -0.094 & -0.077 & -0.017 & 0.899 & \textbf{Moderado:} Efecto conservado, ligera sobreestimación. \\
-          HbA1c & \texttt{chr19:44908822:C:T} & \textit{APOE} & 0.498 & 0.481 & 0.017 & 0.966 & \textbf{Estable:} Efecto directo robusto, mínima confusión. \\
-          \bottomrule
-      \end{tabular}
-      }
-      \caption{
-        \textbf{Resumen de atenuación en \textit{loci} representativos (PopGWAS vs FGWAS).}
-      }
-      \label{tab:clumping_attenuation}
-  \end{table}
-\end{frame}
-
-\begin{frame}[c]{Frecuencias alélicas por ancestría continental (MCPS)}
-  \begin{table}[htpb]
-      \centering
-      \begin{tabular}{llrrr}
-          \toprule
-          \textbf{Gen} & \textbf{\textit{locus}} & \textbf{Freq. IMX} & \textbf{Freq. EUR} & \textbf{$\Delta$ (IMX - EUR)} \\
-          \midrule
-          \textit{CDKAL1} & \texttt{chr6:20660459:G:A} & 25.6\% & 34.2\% & $-8.6\%$ \\
-          \textit{CDKN2B} & \texttt{chr9:22137686:T:G} & 34.1\% & 29.8\% & $+4.3\%$ \\
-          \textit{GCK} & \texttt{chr7:44189469:C:T} & 19.3\% & 20.5\% & $-1.2\%$ \\
-          \textit{TIMD4} & \texttt{chr5:156924336:T:C} & 53.0\% & 30.0\% & $+23.0\%$ \\
-          \bottomrule
-      \end{tabular}
-      \caption{
-        \textbf{Frecuencias alélicas en subpoblaciones de MCPS.} IMX = Indígena Americano, EUR = Europeo. Datos extraídos del MCPS Allele Frequency Browser (\url{https://rgc-mcps.regeneron.com/home}).
-      }
-  \end{table}
-\end{frame}
-
-\begin{frame}[c]{Conclusiones: Relevancia de los Modelos Familiares}
-  \begin{itemize}
-      \setlength\itemsep{1.2em}
-      \item \textbf{Diagnóstico de Sesgos}: Los GWAS familiares operan como herramientas diagnósticas para determinar la dirección y magnitud de sesgos en PopGWAS.
-      \begin{itemize}
-          \item \textit{Ejemplo}: En diabetes mellitus, los estimadores intrafamiliares identificaron \textbf{falsos positivos} en \textit{loci} canónicos impulsados por confusión ambiental y ancestría \parencite{torres2026-diabetes, wang2025-mcps}.
-      \end{itemize}
-      \item \textbf{Poder Estadístico en MCPS}: El estimador robusto maximiza la retención de individuos emparentados frente a alternativas tradicionales.
-      \begin{itemize}
-          \item \textit{Ejemplo}: Observamos un incremento del $\sim$36\% en el tamaño efectivo de muestra, permitiendo documentar con rigor estadístico los efectos de composición ambiental.
-      \end{itemize}
-      \item \textbf{Predicción de Riesgo y Siguientes Pasos}: Urge el desarrollo de herramientas genómicas de mayor precisión adaptadas a la estructura poblacional de México.
-      \begin{itemize}
-          \item \textit{Ejemplo}: Aunque históricamente los PRS basados en FGWAS no mejoran la predicción, evaluar empíricamente esta aproximación en nuestra cohorte es un paso crítico.
-      \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[c]{Diferencias significativas (FDR) y frecuencias alélicas}
+\begin{frame}[c]{Comparar Pop. vs. DGEs ayuda a identificar variantes puntuales con falsos positivos}
   % ponytail: straightforward latex table as requested
   \begin{table}[htpb]
       \centering
@@ -191,4 +131,25 @@
         SNPs con diferencias de efecto significativas (FDR) y su frecuencia en ancestrías del MCPS (IMX y EUR).
       }
   \end{table}
+\end{frame}
+\begin{frame}[t]{Conclusiones: Relevancia de los Modelos Familiares}
+  \begin{itemize}
+      \setlength\itemsep{1.5em}
+      \item \textbf{1. Diagnóstico de Sesgos}: Los GWAS familiares operan como herramientas diagnósticas que permiten determinar la dirección y magnitud de sesgos en diseños de descubrimiento (PopGWAS), más que como estrategias primarias para identificación de \textit{loci}.
+      \item \textbf{2. Poder Estadístico en MCPS}: La implementación del estimador robusto incrementa eficientemente el tamaño de muestra efectivo frente a alternativas intra-familiares, permitiendo documentar rigurosamente efectos de composición ambiental en la cohorte.
+      \item \textbf{3. Predicción de Riesgo (PRS)}: Históricamente, construir puntajes poligénicos con estimaciones de FGWAS no ha mejorado la precisión predictiva. Sin embargo, evaluar empíricamente esta aproximación en población mexicana es un paso necesario para consolidar la evidencia.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Ancestría y Confusión Ambiental en Diabetes}
+  \begin{itemize}
+      \setlength\itemsep{1.2em}
+      \item<1-> Diabetes mellitus: fenotipo crítico con los mayores niveles de sesgo poblacional empírico.
+      \item<2-> \textcite{torres2026-diabetes, wang2025-mcps}: La ancestría mexicana explica la alta prevalencia de la enfermedad.
+      \item<3-> Estimadores intrafamiliares identifican \textbf{falsos positivos} en \textit{loci} canónicos de diabetes por confusión ambiental.
+      \begin{itemize}
+          \item<3-> \textit{Ejemplo: Como observamos previamente, genes como CDKAL1, CDKN2B y CDC123 sufrieron atenuaciones masivas, indicando confusión inducida por la ancestría.}
+      \end{itemize}
+      \item<4-> Urge el desarrollo de herramientas genómicas de mayor precisión para México.
+  \end{itemize}
 \end{frame}
