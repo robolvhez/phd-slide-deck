@@ -123,22 +123,31 @@
   \end{table}
 \end{frame}
 
-\begin{frame}[t]{Conclusiones: Explicando la Deflación Poblacional}
+\begin{frame}[t]{Conclusiones: Relevancia de los Modelos Familiares}
   \begin{columns}[T]
       \begin{column}{0.31\textwidth}
-          \begin{block}{1. Patrón de Heredabilidad}
-              Encontramos una fuerte atenuación en rasgos sociales, pero una inversión paradójica ($h^2_{\text{direct}} > h^2_{\text{pop}}$) para la diabetes en nuestra cohorte mestiza.
+          \begin{block}{1. Diagnóstico de Sesgos}
+              Los GWAS familiares operan como herramientas diagnósticas que permiten determinar la dirección y magnitud de sesgos en diseños de descubrimiento (PopGWAS), más que como estrategias primarias para identificación de \textit{loci}.
           \end{block}
       \end{column}
       \begin{column}{0.31\textwidth}
-          \begin{block}{2. Sesgos de Averiguación}
-              Comprobamos que las subcohortes tienen diferencias sistemáticas: las familias concentran individuos mayores, con más ascendencia indígena y mayor carga cardiometabólica.
+          \begin{block}{2. Poder Estadístico en MCPS}
+              La implementación del estimador robusto incrementa eficientemente el tamaño de muestra efectivo frente a alternativas intra-familiares, permitiendo documentar rigurosamente efectos de composición ambiental en la cohorte.
           \end{block}
       \end{column}
       \begin{column}{0.33\textwidth}
-          \begin{block}{3. El Origen de la Inflación}
-              Al excluir familias, el PopGWAS sufre restricción de varianza y su ajuste imperfecto (PCs) absorbe el entorno compartido. Esto infla los \textit{loci} independientes, pero deflacta la varianza genética global.
+          \begin{block}{3. Predicción de Riesgo (PRS)}
+              Históricamente, construir puntajes poligénicos con estimaciones de FGWAS no ha mejorado la precisión predictiva. Sin embargo, evaluar empíricamente esta aproximación en población mexicana es un paso necesario para consolidar la evidencia.
           \end{block}
       \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}[c]{Ancestría y Confusión Ambiental en Diabetes}
+  \begin{itemize}
+      \item<1-> Diabetes mellitus: fenotipo crítico con los mayores niveles de sesgo poblacional empírico.
+      \item<2-> \textcite{torres2026-diabetes, wang2025-mcps}: La ancestría mexicana explica la alta prevalencia de la enfermedad.
+      \item<3-> Estimadores intrafamiliares identifican \textbf{falsos positivos} en \textit{loci} canónicos de diabetes por confusión ambiental. % ponytail: directo al grano
+      \item<4-> Urge el desarrollo de herramientas genómicas de mayor precisión para México.
+  \end{itemize}
 \end{frame}

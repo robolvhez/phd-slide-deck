@@ -5,6 +5,76 @@
     \includegraphics[height=\textheight]{img/diagrams/visual-abstract.png}
 \end{frame}
 
+\begin{frame}[c]{El estimador robusto (Guan et al., 2025)}
+  \centering
+  \begin{figure}
+    \includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{img/diagrams/robust-estimator_neff.png}
+    \captionof{figure}{Ganancia de tamaño de muestra efectivo ($N_{\text{eff}}$) respecto al diseño de hermanos \parencite{guan2025-fgwas}.}
+  \end{figure}
+  {\tiny * Nota: Los tamaños de muestra efectivos precisos para la cohorte se encuentran en proceso de validación interna.}
+\end{frame}
+
+
+
+\begin{frame}[c]{Estructura familiar en la cohorte MCPS}
+  \centering
+  \begin{figure}
+    \includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{img/diagrams/ziyatdinov2023-family-networks.png}
+    \captionof{figure}{Redes familiares extensas dentro de la cohorte MCPS \parencite{ziyatdinov2023-mcps}.}
+  \end{figure}
+\end{frame}
+
+% ============================================================
+% Flujo de trabajo de SNIPAR
+% ============================================================
+\begin{frame}[c, fragile]{Flujo de trabajo de SNIPAR}
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}[
+        box/.style={rectangle, thick, rounded corners, align=center, minimum height=1cm, inner sep=0.3cm},
+        data/.style={box, fill=gray!10, draw=gray!50, text width=3cm},
+        process/.style={box, fill=red!10, draw=red!50, text width=4cm},
+        output/.style={box, fill=red!20, draw=red!60, text width=4.5cm},
+        groupbox/.style={rectangle, draw=black, thick, inner sep=0.4cm, rounded corners},
+        grouplabel/.style={fill=black, text=white, font=\sffamily\bfseries\scriptsize, rounded corners=2pt, inner sep=3pt},
+        arrow/.style={->, ultra thick, draw=red!50, >=stealth}
+      ]
+      
+      % Inputs
+      \node[data] (king) at (-5.5, 2.5) {\textbf{Parentesco}\\(KING IBD)};
+      \node[data] (bgen) at (-5.5, 0) {\textbf{Genotipos}\\(Phased BGEN)};
+      \node[data] (pheno) at (-5.5, -2.5) {\textbf{Fenotipos \& Covariantes}};
+      
+      % SNIPAR processes
+      \node[process] (ibd) at (0, 2.5) {\textbf{1. Inferir IBD}\\(\texttt{ibd.py})\\ \small Segmentos compartidos};
+      \node[process] (impute) at (0, 0) {\textbf{2. Imputación Mendeliana}\\(\texttt{impute.py})\\ \small Genotipos parentales faltantes};
+      \node[process] (gwas) at (5.5, -1.25) {\textbf{3. Estimador Robusto}\\(\texttt{gwas.py})\\ \small Asociación genética familiar};
+      
+      % Output
+      \node[output] (sumstats) at (11.5, -1.25) {\textbf{Estadísticas de resumen}\\(Efectos directos $\delta$ y NTC)};
+      
+      % Background grouping box for SNIPAR
+      \begin{scope}[on background layer]
+        \node[groupbox, fit=(ibd) (impute) (gwas)] (snipar_box) {};
+        \node[grouplabel, anchor=south west] at ([xshift=0.3cm, yshift=-0.15cm]snipar_box.north west) {Módulo SNIPAR};
+      \end{scope}
+
+      % Edges
+      \draw[arrow] (king) -- (ibd);
+      \draw[arrow] (bgen.north) -- ++(0,0.5) -| (ibd.south);
+      
+      \draw[arrow] (ibd) -- (impute);
+      \draw[arrow] (bgen) -- (impute);
+      
+      \draw[arrow] (impute.east) -| (gwas.north);
+      \draw[arrow] (pheno.south) -- ++(0,-1.0) -| (gwas.south);
+      
+      \draw[arrow] (gwas) -- (sumstats);
+      
+    \end{tikzpicture}
+  }
+\end{frame}
+
 % ---- Option C: Cascading Incremental ----
 % ponytail: plain TikZ, no # args, hardcoded positions
 \begin{frame}[b]{Diseño experimental: Escalamiento incremental}
@@ -395,56 +465,7 @@
   \end{columns}
 \end{frame}
 
-% ============================================================
-% Flujo de trabajo de SNIPAR
-% ============================================================
-\begin{frame}[c, fragile]{Flujo de trabajo de SNIPAR}
-  \centering
-  \resizebox{\textwidth}{!}{
-    \begin{tikzpicture}[
-        box/.style={rectangle, thick, rounded corners, align=center, minimum height=1cm, inner sep=0.3cm},
-        data/.style={box, fill=gray!10, draw=gray!50, text width=3cm},
-        process/.style={box, fill=red!10, draw=red!50, text width=4cm},
-        output/.style={box, fill=red!20, draw=red!60, text width=4.5cm},
-        groupbox/.style={rectangle, draw=black, thick, inner sep=0.4cm, rounded corners},
-        grouplabel/.style={fill=black, text=white, font=\sffamily\bfseries\scriptsize, rounded corners=2pt, inner sep=3pt},
-        arrow/.style={->, ultra thick, draw=red!50, >=stealth}
-      ]
-      
-      % Inputs
-      \node[data] (king) at (-5.5, 2.5) {\textbf{Parentesco}\\(KING IBD)};
-      \node[data] (bgen) at (-5.5, 0) {\textbf{Genotipos}\\(Phased BGEN)};
-      \node[data] (pheno) at (-5.5, -2.5) {\textbf{Fenotipos \& Covariantes}};
-      
-      % SNIPAR processes
-      \node[process] (ibd) at (0, 2.5) {\textbf{1. Inferir IBD}\\(\texttt{ibd.py})\\ \small Segmentos compartidos};
-      \node[process] (impute) at (0, 0) {\textbf{2. Imputación Mendeliana}\\(\texttt{impute.py})\\ \small Genotipos parentales faltantes};
-      \node[process] (gwas) at (5.5, -1.25) {\textbf{3. Estimador Robusto}\\(\texttt{gwas.py})\\ \small Asociación genética familiar};
-      
-      % Output
-      \node[output] (sumstats) at (11.5, -1.25) {\textbf{Estadísticas de resumen}\\(Efectos directos $\delta$ y NTC)};
-      
-      % Background grouping box for SNIPAR
-      \begin{scope}[on background layer]
-        \node[groupbox, fit=(ibd) (impute) (gwas)] (snipar_box) {};
-        \node[grouplabel, anchor=south west] at ([xshift=0.3cm, yshift=-0.15cm]snipar_box.north west) {Módulo SNIPAR};
-      \end{scope}
 
-      % Edges
-      \draw[arrow] (king) -- (ibd);
-      \draw[arrow] (bgen.north) -- ++(0,0.5) -| (ibd.south);
-      
-      \draw[arrow] (ibd) -- (impute);
-      \draw[arrow] (bgen) -- (impute);
-      
-      \draw[arrow] (impute.east) -| (gwas.north);
-      \draw[arrow] (pheno.south) -- ++(0,-1.0) -| (gwas.south);
-      
-      \draw[arrow] (gwas) -- (sumstats);
-      
-    \end{tikzpicture}
-  }
-\end{frame}
 
 % ============================================================
 % Selección de cohortes

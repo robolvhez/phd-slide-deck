@@ -9,13 +9,25 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}[c]{La diabetes es más común y más mortal en México que en países de altos ingresos}
-    \begin{figure}[htpb]
-        \centering
-        \includegraphics[width=0.9\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/alegre-diaz2016-mortality-mcps.png}
-        \caption{En la cohorte MCPS (N $\approx$ 150{,}000), la diabetes explica \textbf{1 de cada 3 muertes} entre 35--74 años (RR = 5.4 a los 35--59). Recuperado de \textcite{alegre-diazjesus2016-diabetes}.}
-        \label{fig:mortality-diabetes-mexico}
-    \end{figure}
+\begin{frame}[c]{La diabetes es más común y mortal en México que en países de altos ingresos}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}[htpb]
+                \centering
+                \includegraphics[width=0.95\textwidth,height=0.65\textheight,keepaspectratio]{img/diagrams/alegre-diaz2016-diabetes-prevalence-mcps.png}
+                \caption{Prevalencia de diabetes en la cohorte MCPS \parencite{alegre-diazjesus2016-diabetes}.}
+                \label{fig:prevalence-diabetes-mexico}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}[htpb]
+                \centering
+                \includegraphics[width=0.95\textwidth,height=0.65\textheight,keepaspectratio]{img/diagrams/alegre-diaz2016-rate-ratio-death-mcps.png}
+                \caption{Razones de tasas (Rate Ratios) de mortalidad (RR = 5.4 a los 35--59 años) \parencite{alegre-diazjesus2016-diabetes}.}
+                \label{fig:mortality-diabetes-mexico-rr}
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}[c]{Las poblaciones latinoamericanas están subrepresentadas en estudios genómicos}
@@ -107,7 +119,7 @@
 
 
 \begin{frame}[c]{El genoma mexicano es mestizo y tiene orígen en su pasado colonial europeo}
-\begin{columns}
+\begin{columns}[T]
     \begin{column}{0.45\textwidth}
         \begin{figure}[htpb]
             \centering
@@ -115,17 +127,11 @@
             \caption{Mosaico de bloques de haplotipos en cromosomas admixtos \parencite{ziyatdinov2023-mcps}.}
         \end{figure}
     \end{column}
-    \begin{column}{0.5\textwidth}
+    \begin{column}{0.45\textwidth}
         \begin{figure}[htpb]
             \centering
-            \includegraphics[width=0.95\textwidth, height=0.35\textheight, keepaspectratio]{img/diagrams/moreno2014-nmdp_aspca-mexico.png}
+            \includegraphics[width=0.95\textwidth, height=0.50\textheight, keepaspectratio]{img/diagrams/moreno2014-nmdp_aspca-mexico.cropped.png}
             \caption{Estructura subcontinental de México \parencite{moreno-estrada2014-nmdp}.}
-        \end{figure}
-        \vspace{0.2cm}
-        \begin{figure}[htpb]
-            \centering
-            \includegraphics[width=0.95\textwidth, height=0.35\textheight, keepaspectratio]{img/diagrams/sohail2023-mexico-diversity-admixture.png}
-            \caption{Agrupamiento ADMIXTURE \parencite{sohail2023-mexican-biobank}.}
         \end{figure}
     \end{column}
 \end{columns}
@@ -254,7 +260,7 @@
                     \centering
                     \textbf{GWAS familiares} \\
                     \vspace{0.3em}
-                    {\tiny \textit{Ej. Estimador Robusto, snipar}}
+                    {\tiny \textit{Ej. snipar}}
                 \end{minipage}
                 
                 \parbox[c][0.4\textheight][c]{\textwidth}{\centering \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{img/diagrams/young2019-signals-captured-gwas.png}}
@@ -267,6 +273,22 @@
             }
         \end{column}
     \end{columns}
+\end{frame}
+
+\begin{frame}[c]{Estudios de Asociación de Genoma Completo (GWAS)}
+    \begin{figure}[htpb]
+        \centering
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/single-locus.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{img/diagrams/manhattan.png}
+        \end{subfigure}
+        \caption{Diagrama de un solo locus (izquierda) y un gráfico de Manhattan de genoma completo (derecha) para los GWAS. \parencite{uffelmann2021-gwas}.}
+    \end{figure}
 \end{frame}
 
 % ============================================================
@@ -387,7 +409,7 @@
   \end{tikzpicture}
 \end{frame}
 
-\begin{frame}[c]{Family-based GWAS}
+\begin{frame}[c]{Estudios de Asociación Familiares (FGWAS)}
   \begin{columns}[c]
 
     % --- LEFT COLUMN: Image ---
@@ -403,17 +425,8 @@
 
       % --- Spanish ---
       {Los FGWAS aíslan los Efectos Genéticos Directos (DGEs)} \\[1pt]
-      {\tiny \parencite{visscher2006-populationgenetics,young2019-genetic-effects}}\\[0.5em]
-
-      {\footnotesize
-      $$y_{ij} = \delta \, g_{ij} + \alpha \, g_{\text{par}(i)} + \epsilon_{ij}$$
-      \begin{itemize}
-          \item $\delta$ = DGE
-          \item $\alpha$ = coeficiente no-transmitido
-          \item $g_{\text{par}(i)}$ = genotipo parental
-      \end{itemize}
-      GWAS estándar: $\hat{\beta} = \delta + \alpha$
-      }\\[1em]
+      {\tiny \parencite{visscher2006-populationgenetics,young2019-genetic-effects}}
+      \vspace{1.5em}
       
       \pause
       \centering
@@ -432,57 +445,16 @@
           {Limitado a solamente individuos con \textbf{ambos padres genotipados}}
         \end{column}
       \end{columns}
-      \pause
-      \vspace{1.5em}
-      {\centering\large
-        Recuperar poder estadístico es \textbf{prioridad}
-      }
+
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}[c]{El estimador robusto (Guan et al., 2025)}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \centering
-      \includegraphics[width=\textwidth, keepaspectratio]{img/diagrams/guan2025-nt-alleles.png}
-      \captionof{figure}{Muestra particionada por alelos no transmitidos observados \parencite{guan2025-fgwas}.}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \centering
-      \includegraphics[width=\textwidth, keepaspectratio]{img/diagrams/robust-estimator_neff.png}
-      \captionof{figure}{Ganancia de tamaño de muestra efectivo ($N_{\text{eff}}$) respecto al diseño de hermanos \parencite{guan2025-fgwas}.}
-    \end{column}
-  \end{columns}
-\end{frame}
 
-\begin{frame}[c]{Limitaciones: Validez interna vs.\ Portabilidad}
-    \vfill
-    \begin{itemize}
-        \setlength\itemsep{1.5em}
-        \item[\ding{51}] \textbf{FGWAS resuelve validez interna:} asociaciones limpias de confusión ambiental y estratificación.
-        \item[\ding{55}] \textbf{No garantiza portabilidad:} $>$85\% del decaimiento de PRS entre poblaciones se debe a diferencias en LD y MAF \parencite{zhang2024-fgwas}.
-    \end{itemize}
 
-    \vspace{1.5em}
-    \begin{center}
-        \textbf{\textcolor{ccgblue}{Conclusión:}} Para predecir en mexicanos, necesitamos hacer FGWAS \textbf{directamente en mexicanos}.
-    \end{center}
-    \vfill
-\end{frame}
 
-\begin{frame}[c]{En resumen\ldots}
-    \centering
-    \begin{tikzpicture}[
-        node distance=0.5cm,
-        every node/.style={font=\sffamily\large},
-        box/.style={draw=greenstroke, fill=greenfill, rounded corners, align=center, inner sep=10pt, text width=9cm}
-      ]
-      \node[box] (c1) {México tiene \textbf{140,000 genomas familiares} en el estudio MCPS.};
-      \node[box, below=of c1, draw=yellowstroke, fill=yellowfill] (c2) {Tenemos el \textbf{estimador robusto} para GWAS familiares.};
-      \node[box, below=of c2, draw=bluestroke, fill=bluefill] (c3) {Podemos construir el \textbf{primer atlas genómico libre de confusión} para rasgos complejos en mexicanos.};
-    \end{tikzpicture}
-\end{frame}
+
+
 
 % ============================================================
 % Objetivos e hipótesis

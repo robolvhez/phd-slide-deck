@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="0.34057886"
-     inkscape:cx="550.53328"
-     inkscape:cy="612.19301"
+     inkscape:zoom="0.82854265"
+     inkscape:cx="745.88798"
+     inkscape:cy="530.44946"
      inkscape:window-width="1920"
      inkscape:window-height="1014"
      inkscape:window-x="0"
@@ -44,8 +44,8 @@
        bleed="0"
        inkscape:label="Visual abtract"
        inkscape:export-filename="visual-abstract.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" /><inkscape:page
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" /><inkscape:page
        x="517.37311"
        y="0"
        width="508"
@@ -1566,7 +1566,8 @@
          id="path6"
          sodipodi:nodetypes="cc" /></g><g
        id="g31"
-       transform="matrix(0.46485326,0,0,0.46485326,318.18123,-24.154851)"><g
+       transform="matrix(0.46485326,0,0,0.46485326,318.18123,-24.154851)"
+       style="display:none"><g
          id="use4042"
          transform="matrix(0.26458333,0,0,0.26458333,-192.98986,189.92994)"
          style="isolation:isolate"
@@ -2308,7 +2309,7 @@
            id="tspan99"
            style="font-size:9.87778px;fill:#000000;fill-opacity:1;stroke-width:4.52002"
            x="202.48427"
-           y="43.771019">Families</tspan></text><g
+           y="43.771019">Related individuals</tspan></text><g
          id="g110"
          transform="matrix(1.2812651,0,0,1.2812651,-44.034788,-69.000788)"><g
            id="g108"><path
@@ -2342,15 +2343,15 @@
              style="fill:#d39d1e;fill-opacity:1;stroke-width:0.264584"
              d="m 192.92304,108.49648 c -2.19215,0 -3.97184,1.77971 -3.97184,3.97185 0,2.19214 1.77969,3.97186 3.97184,3.97186 2.19214,0 3.97185,-1.77972 3.97185,-3.97186 0,-2.19214 -1.77971,-3.97185 -3.97185,-3.97185 z m 0,9.77692 c -3.37606,0 -6.11049,2.73444 -6.11049,6.11049 v 0.6112 c 0,0.67598 0.54605,1.22202 1.22203,1.22202 h 9.77692 c 0.67598,0 1.22203,-0.54604 1.22203,-1.22202 v -0.6112 c 0,-3.37605 -2.73445,-6.11049 -6.11049,-6.11049 z m -2.46236,2.2756 c 0.63532,0 1.15224,0.26825 1.58859,0.63097 0.31766,0.2649 0.60447,0.59125 0.87377,0.9188 0.26928,-0.32755 0.55611,-0.6539 0.87376,-0.9188 0.43637,-0.36272 0.95292,-0.63097 1.58823,-0.63097 0.19456,0 0.35192,0.157 0.35192,0.35156 0,0.19454 -0.15736,0.35192 -0.35192,0.35192 v 2.81392 c 0.19456,0 0.35192,0.157 0.35192,0.35155 0,0.19455 -0.15736,0.35192 -0.35192,0.35192 -0.63531,0 -1.15186,-0.26824 -1.58823,-0.63097 -0.31765,-0.2649 -0.60557,-0.59126 -0.87376,-0.91881 -0.2693,0.32755 -0.55611,0.65391 -0.87377,0.91881 -0.43526,0.36273 -0.95328,0.63097 -1.58859,0.63097 -0.19455,0 -0.35155,-0.15737 -0.35155,-0.35192 0,-0.19455 0.157,-0.35155 0.35155,-0.35155 v -2.81392 c -0.19455,0 -0.35155,-0.15738 -0.35155,-0.35192 0,-0.19456 0.157,-0.35156 0.35155,-0.35156 z m 4.22088,0.87816 c -0.11982,0.0615 -0.23614,0.13729 -0.35156,0.22631 v 2.01046 c 0.11541,0.0901 0.23174,0.16623 0.35156,0.22668 z m -3.5174,0.001 v 2.46455 c 0.11982,-0.0615 0.23651,-0.13765 0.35193,-0.22668 v -0.001 -2.01046 c -0.11542,-0.0901 -0.23211,-0.16585 -0.35193,-0.22631 z m 0.87962,0.72545 v 1.01145 c 0.14289,-0.15718 0.28337,-0.32766 0.42847,-0.50572 -0.144,-0.17807 -0.28558,-0.34855 -0.42847,-0.50573 z m 1.75852,0 c -0.14289,0.15718 -0.28374,0.32766 -0.42883,0.50573 0.14399,0.17806 0.28594,0.34854 0.42883,0.50572 z" /></g></g><text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.04005px;line-height:0.8;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.26002;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;line-height:0.8;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.26002;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          x="203.02278"
          y="104.17051"
          id="text728"><tspan
            sodipodi:role="line"
            id="tspan728"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke-width:2.26002"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke-width:2.26002"
            x="203.02278"
-           y="104.17051">N = 100,323</tspan></text></g><g
+           y="104.17051">N ≈ 50,000</tspan></text></g><g
        id="g10"
        transform="translate(0,-4.3946043)"><g
          id="g85"
@@ -2375,13 +2376,13 @@
            x="306.10675"
            y="42.8498">Sigletons</tspan></text><text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.04005px;line-height:0.8;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.26002;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;line-height:0.8;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.26002;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          x="306.30539"
          y="103.00368"
          id="text729"><tspan
            sodipodi:role="line"
            id="tspan729"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke-width:2.26002"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke-width:2.26002"
            x="306.30539"
            y="103.00368">N = 29,041</tspan></text></g><path
        style="fill:none;fill-opacity:1;stroke:#2f2f2f;stroke-width:1.36017;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowWideHeavy)"
@@ -2429,7 +2430,7 @@
        transform="matrix(1.7814404,0,0,1.7814404,29.853752,105.17808)"><tspan
          x="214.55449"
          y="35.765263"
-         id="tspan10">Fine mapping</tspan></text><text
+         id="tspan1">Fine mapping</tspan></text><text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.56711px;line-height:0.8;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:98.8269;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.76389;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        x="214.55449"
@@ -2438,7 +2439,7 @@
        transform="matrix(1.7814404,0,0,1.7814404,-127.20224,102.61045)"><tspan
          x="214.55449"
          y="35.765263"
-         id="tspan16">Genome-Wide Association Studies</tspan></text><g
+         id="tspan3">Genome-Wide Association Studies</tspan></text><g
        id="g744"
        transform="matrix(1.1617803,0,0,1.1617803,-0.236481,-4.606865)"><g
          id="g73"
@@ -2564,16 +2565,16 @@
        transform="matrix(1.7814404,0,0,1.7814404,-284.45711,102.61045)"><tspan
          x="214.55449"
          y="35.765263"
-         id="tspan17">Heritability estimations</tspan></text><text
+         id="tspan6">Heritability estimations</tspan></text><text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.37635px;line-height:0.8;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:98.8269;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.76389;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.37635px;line-height:0.8;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:98.8269;display:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.76389;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        x="214.55449"
        y="35.765263"
        id="text32"
        transform="matrix(1.7814404,0,0,1.7814404,-127.34327,62.729595)"><tspan
          x="214.55449"
          y="35.765263"
-         id="tspan18">Single Nucleotide Polymorphisms (SNP)</tspan></text><g
+         id="tspan7">Single Nucleotide Polymorphisms (SNP)</tspan></text><g
        id="g32"
        transform="matrix(1.0919746,0,0,1.0917009,-363.559,-35.647991)"
        style="stroke-width:1.16151"><image
@@ -2658,7 +2659,7 @@
          transform="matrix(1.7814404,0,0,1.7814404,-306.0961,11.400948)"><tspan
            x="214.55449"
            y="35.765263"
-           id="tspan19">Ascertainment assessment</tspan></text><text
+           id="tspan9">Ascertainment assessment</tspan></text><text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.68374px;line-height:0.8;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:98.8269;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.76389;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          x="214.55449"
@@ -2667,7 +2668,7 @@
          transform="matrix(1.1491956,0,0,1.1491956,-168.24905,82.634703)"><tspan
            x="214.55449"
            y="35.765263"
-           id="tspan20">Standarized Phenotype Values</tspan></text><text
+           id="tspan10">Standarized Phenotype Values</tspan></text><text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.68374px;line-height:0.8;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:98.8269;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.76389;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          x="214.55449"
@@ -2676,7 +2677,7 @@
          transform="matrix(0,-1.1491956,1.1491956,0,-18.673973,347.19967)"><tspan
            x="214.55449"
            y="35.765263"
-           id="tspan21">Density</tspan></text></g><path
+           id="tspan11">Density</tspan></text></g><path
        style="fill:#000000;fill-opacity:0;stroke:#2f2f2f;stroke-width:1.35996;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker41)"
        d="M 53.649702,209.0742 H 20.366286 l 0,-85.28988 h 14.891348"
        id="path40"
@@ -2689,10 +2690,10 @@
        transform="translate(-12.323291,-11.766538)"><tspan
          x="321.24939"
          y="133.86392"
-         id="tspan22">Population </tspan><tspan
+         id="tspan12">Population </tspan><tspan
          x="321.24939"
          y="138.37946"
-         id="tspan23">effects (β)</tspan></text><text
+         id="tspan13">effects (β)</tspan></text><text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.45844px;line-height:0.8;font-family:'Mononoki Nerd Font Mono';-inkscape-font-specification:'Mononoki Nerd Font Mono Bold';text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.64327;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        x="186.62128"
@@ -2711,12 +2712,12 @@
        transform="translate(-176.32558,-11.766538)"><tspan
          x="376.5769"
          y="133.86392"
-         id="tspan24">Direct genetic<tspan
+         id="tspan14">Direct genetic<tspan
    y="133.86392"
-   id="tspan25"> </tspan></tspan><tspan
+   id="tspan15"> </tspan></tspan><tspan
          x="376.5769"
          y="138.37946"
-         id="tspan26">effects (δ)</tspan></text><text
+         id="tspan16">effects (δ)</tspan></text><text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.56453px;line-height:0.8;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:98.8269;display:inline;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:1.76389;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        x="214.55449"
@@ -2725,4 +2726,4 @@
        transform="matrix(1.7814404,0,0,1.7814404,-127.20224,110.10223)"><tspan
          x="214.55449"
          y="35.765263"
-         id="tspan27">19 complex traits and diseases</tspan></text></g></svg>
+         id="tspan17">19 complex traits and diseases</tspan></text></g></svg>
