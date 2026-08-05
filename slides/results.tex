@@ -33,6 +33,15 @@
 
 % --- HERITABILITY ---
 \ObjectivesFrame{inactive}{active}{inactive}
+\begin{frame}[c]{Resumen Metodológico: Heredabilidad}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item \textbf{Software}: Estimador robusto SNIPAR (FamGWAS) y REGENIE (PopGWAS), calculando heredabilidad con LDSC.
+    \item \textbf{Variantes}: Todos los autosomas con control de calidad (variantes comunes).
+    \item \textbf{Hipótesis}: Esperábamos que PopGWAS sobreestimara la heredabilidad por factores de confusión poblacional, mientras que FamGWAS revelaría la heredabilidad biológica directa \parencite{tan2024-fgwas}.
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[c]{Comparación entre estimaciones de heredabilidad}
   \begin{columns}
       % --- Column A ----
@@ -91,6 +100,15 @@
 %% \end{frame}
 
 \ObjectivesFrame{inactive}{inactive}{active}
+\begin{frame}[c]{Resumen Metodológico: \textit{Locus} Independientes}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item \textbf{Software}: SNIPAR y REGENIE para asociaciones; PLINK2 para agrupamiento heurístico (clumping) de señales.
+    \item \textbf{Variantes}: \textit{Loci} genoma-significativos principales (Lead SNPs) obtenidos tras el agrupamiento.
+    \item \textbf{Hipótesis}: Esperábamos que PopGWAS presentara efectos ($\beta$) locales inflados por sesgos ambientales/ancestrales, y que FamGWAS los atenuara hacia su efecto causal verdadero \parencite{guan2025-fgwas}.
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[c]{Atenuación a nivel de \textit{locus} independientes (Clumping)}
   \begin{table}[htpb]
       \centering

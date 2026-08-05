@@ -459,6 +459,18 @@ lang: es-MX
 
 ---
 
+## SLIDE 24A — "Resumen Metodológico: Heredabilidad"
+
+**\[Contenido visual\]:** Viñetas describiendo el software (SNIPAR, REGENIE, LDSC), variantes (autosomas) y la hipótesis esperada.
+
+**Guion:**
+
+> Para lograr esto, aplicamos el estimador robusto SNIPAR y modelos poblacionales con REGENIE sobre todas las variantes comunes, calculando la heredabilidad con LDSC. Nuestra hipótesis, basada en estudios previos, era que el modelo poblacional presentaría estimaciones infladas por la estructura poblacional, y que nuestro diseño familiar nos permitiría observar el efecto directo real.
+
+⏱️ *\~20 segundos*
+
+---
+
 ## SLIDE 24 — "Estimaciones de heredabilidad (PopGWAS vs FGWAS)"
 
 **\[Contenido visual\]:** Gráfica de dispersión comparando estimaciones de heredabilidad (popGWAS vs FGWAS).
@@ -540,6 +552,18 @@ lang: es-MX
 > Ahora, abordaremos el tercer objetivo: la cuantificación empírica del sesgo mediante la comparación de los tamaños de efecto, atenuaciones a nivel locus y las diferencias genéticas por ancestría.
 
 ⏱️ *\~15 segundos*
+
+---
+
+## SLIDE 30A — "Resumen Metodológico: Locus Independientes"
+
+**\[Contenido visual\]:** Viñetas describiendo el software (PLINK2, SNIPAR), las variantes analizadas (Loci genoma-significativos) y la hipótesis.
+
+**Guion:**
+
+> Para esta etapa, filtramos nuestras asociaciones utilizando un procedimiento de clumping con PLINK2 para aislar los locus independientes con significancia genómica. Esperábamos que los efectos poblacionales estuvieran localmente inflados por confusión ambiental, y que el diseño familiar atenuara estos sesgos acercándose al verdadero efecto biológico.
+
+⏱️ *\~20 segundos*
 
 ---
 
