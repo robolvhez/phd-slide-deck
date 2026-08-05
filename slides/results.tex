@@ -151,32 +151,21 @@
   \end{table}
 \end{frame}
 
-\begin{frame}[t]{Conclusiones: Relevancia de los Modelos Familiares}
-  \begin{columns}[T]
-      \begin{column}{0.31\textwidth}
-          \begin{block}{1. Diagnóstico de Sesgos}
-              Los GWAS familiares operan como herramientas diagnósticas que permiten determinar la dirección y magnitud de sesgos en diseños de descubrimiento (PopGWAS), más que como estrategias primarias para identificación de \textit{loci}.
-          \end{block}
-      \end{column}
-      \begin{column}{0.31\textwidth}
-          \begin{block}{2. Poder Estadístico en MCPS}
-              La implementación del estimador robusto incrementa eficientemente el tamaño de muestra efectivo frente a alternativas intra-familiares, permitiendo documentar rigurosamente efectos de composición ambiental en la cohorte.
-          \end{block}
-      \end{column}
-      \begin{column}{0.33\textwidth}
-          \begin{block}{3. Predicción de Riesgo (PRS)}
-              Históricamente, construir puntajes poligénicos con estimaciones de FGWAS no ha mejorado la precisión predictiva. Sin embargo, evaluar empíricamente esta aproximación en población mexicana es un paso necesario para consolidar la evidencia.
-          \end{block}
-      \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}[c]{Ancestría y Confusión Ambiental en Diabetes}
+\begin{frame}[c]{Conclusiones: Relevancia de los Modelos Familiares}
   \begin{itemize}
-      \item<1-> Diabetes mellitus: fenotipo crítico con los mayores niveles de sesgo poblacional empírico.
-      \item<2-> \textcite{torres2026-diabetes, wang2025-mcps}: La ancestría mexicana explica la alta prevalencia de la enfermedad.
-      \item<3-> Estimadores intrafamiliares identifican \textbf{falsos positivos} en \textit{loci} canónicos de diabetes por confusión ambiental. % ponytail: directo al grano
-      \item<4-> Urge el desarrollo de herramientas genómicas de mayor precisión para México.
+      \setlength\itemsep{1.2em}
+      \item \textbf{Diagnóstico de Sesgos}: Los GWAS familiares operan como herramientas diagnósticas para determinar la dirección y magnitud de sesgos en PopGWAS.
+      \begin{itemize}
+          \item \textit{Ejemplo}: En diabetes mellitus, los estimadores intrafamiliares identificaron \textbf{falsos positivos} en \textit{loci} canónicos impulsados por confusión ambiental y ancestría \parencite{torres2026-diabetes, wang2025-mcps}.
+      \end{itemize}
+      \item \textbf{Poder Estadístico en MCPS}: El estimador robusto maximiza la retención de individuos emparentados frente a alternativas tradicionales.
+      \begin{itemize}
+          \item \textit{Ejemplo}: Observamos un incremento del $\sim$36\% en el tamaño efectivo de muestra, permitiendo documentar con rigor estadístico los efectos de composición ambiental.
+      \end{itemize}
+      \item \textbf{Predicción de Riesgo y Siguientes Pasos}: Urge el desarrollo de herramientas genómicas de mayor precisión adaptadas a la estructura poblacional de México.
+      \begin{itemize}
+          \item \textit{Ejemplo}: Aunque históricamente los PRS basados en FGWAS no mejoran la predicción, evaluar empíricamente esta aproximación en nuestra cohorte es un paso crítico.
+      \end{itemize}
   \end{itemize}
 \end{frame}
 

@@ -584,33 +584,23 @@ lang: es-MX
 
 ## SLIDE 32 — "Conclusiones: Relevancia de los Modelos Familiares"
 
-**Guion:**
-
-> En primer lugar, es crucial comprender que los GWAS familiares no fungen principalmente como herramientas de descubrimiento primario de variantes causales debido a limitaciones inherentes en el tamaño de muestra, aunque algunos SNPs sí alcancen significancia genómica. Su valor clínico y epidemiológico radica en que operan como herramientas diagnósticas robustas. Nos permiten cuantificar la dirección y magnitud de los sesgos presentes en diseños de descubrimiento de mayor poder estadístico, como los GWAS poblacionales.
->
-> En el caso específico del MCPS, observamos que el estimador robusto logra incrementar de forma eficiente el tamaño de muestra efectivo respecto a métodos análogos. Esto nos permitió constatar fehacientemente la existencia de sesgos ambientales estructurales en la cohorte.
->
-> Finalmente, a nivel predictivo, no existe consenso histórico en que construir scores poligénicos a partir de efectos de FGWAS mejore la precisión de la predicción. Sin embargo, carecemos de evidencia empírica en poblaciones latinoamericanas. Resulta imperativo evaluar empíricamente el comportamiento de estos modelos en la población mexicana para generar evidencia conclusiva al respecto.
-
-⏱️ *\~1 minuto 10 segundos*
-
----
-
-## SLIDE 33 — "El Rol de la Ancestría y la Confusión Ambiental en Diabetes"
+**\[Contenido visual\]:** Viñetas resumiendo (1) Diagnóstico de Sesgos, (2) Poder Estadístico en MCPS, y (3) Predicción de Riesgo, con sub-viñetas ejemplificando nuestros resultados en diabetes, tamaño de muestra y PRS.
 
 **Guion:**
 
-> Mención aparte merece la diabetes mellitus. Clínicamente es uno de los fenotipos con mayor impacto, pero metodológicamente es uno de los rasgos que exhibe mayores niveles de sesgo en estimaciones poblacionales.
->
-> Trabajos recientes en nuestra misma cohorte, particularmente los estudios de Torres (2026) y Wang (2025), demuestran rigurosamente la contribución de la ancestría mexicana a las elevadas prevalencias de diabetes. Si bien el componente ancestral en la incidencia es innegable, nuestros análisis intrafamiliares demuestran empíricamente que existe una inflación sistemática en estimaciones poblacionales, identificando falsos positivos en \textit{loci} canónicos de diabetes. 
+> Para concluir, agrupamos la relevancia de nuestros modelos familiares en tres puntos clave. 
 > 
-> Esta evidencia expone que los efectos de composición ambiental están fuertemente entrelazados con la estructura genómica poblacional. Por consiguiente, se acentúa la urgencia metodológica de desarrollar instrumentos de mayor precisión estadística para detectar y estratificar el riesgo genético de diabetes en las poblaciones mexicanas, separando la señal biológica de los artefactos ambientales.
+> En primer lugar, es crucial comprender que los GWAS familiares operan como herramientas diagnósticas. Como ejemplo destacado, en diabetes mellitus —un fenotipo con alto sesgo poblacional y fuertemente ligado a la ancestría según reportes recientes— logramos identificar falsos positivos en loci canónicos que estaban impulsados meramente por confusión ambiental.
+>
+> En segundo lugar, al implementar el estimador robusto, logramos incrementar nuestro poder estadístico con un tamaño de muestra aproximadamente 36% mayor que los diseños clásicos. Esto nos permitió constatar fehacientemente la existencia de dichos sesgos estructurales sin perder información valiosa.
+>
+> Finalmente, de cara al futuro, resulta imperativo desarrollar herramientas de predicción más precisas para México. Evaluar empíricamente si los scores poligénicos derivados de estimaciones familiares mejoran nuestra precisión predictiva es el siguiente gran paso para consolidar esta evidencia.
 
-⏱️ *\~1 minuto*
+⏱️ *\~1 minuto 45 segundos*
 
 ---
 
-## SLIDE 34 — "Diferencias significativas (FDR) y frecuencias alélicas"
+## SLIDE 33 — "Diferencias significativas (FDR) y frecuencias alélicas"
 
 **\[Contenido visual\]:** Tabla con los SNPs que presentan diferencias de efecto significativas y sus frecuencias alélicas por ancestría.
 
@@ -622,7 +612,7 @@ lang: es-MX
 
 ---
 
-## SLIDE 35 — "Próximos pasos"
+## SLIDE 34 — "Próximos pasos"
 
 **Guion:**
 
@@ -644,7 +634,7 @@ lang: es-MX
 
 # SECCIÓN 8 — COLABORADORES Y AGRADECIMIENTOS
 
-## SLIDE 34 — "Current collaborations"
+## SLIDE 35 — "Current collaborations"
 
 **\[Contenido visual\]:** Tarjetas de los 5 colaboradores: Jason Torres (Oxford), Mashaal Sohail (CCG-UNAM), Alexander Young (UCLA), Daniela Robles (LIIGH-UNAM), Jaime Berumen (UNAM/MCPS PI).
 
@@ -664,7 +654,7 @@ lang: es-MX
 
 ---
 
-## SLIDE 35 — "¡GRACIAS A TODXS!"
+## SLIDE 36 — "¡GRACIAS A TODXS!"
 
 **\[Contenido visual\]:** Logos institucionales (UNAM, CCG, PDCB, Oxford CTSU, MCPS), fotos del equipo.
 
