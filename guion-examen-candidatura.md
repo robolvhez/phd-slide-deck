@@ -39,8 +39,13 @@ lang: es-MX
 
 **Guion:**
 
-> Buenas tardes a todos. Mi nombre es Roberto Olvera Hernández. Soy estudiante de doctorado en el CCG de la UNAM por parte del programa de doctorado en Ciencias Biomédicas en el laboratorio de la Dra. Mashaal Sohail. El día de hoy vengo a presentarles mi proyecto de candidatura: Estudios de asociación genómica libres de sesgos para rasgos complejos y enfermedades en más de 100,000 mexicanos. Antes de continuar, quiero darle las gracias al [Dra. Daniela o Dr. Jaime], quien es parte de mi comité tutor y me extendió la invitación para presentar aquí con ustedes. Este es un proyecto que llevamos realizando alrededor de 2 años en colaboración entre la UNAM, el laboratorio del Dr. Alexander Young en UCLA, y el CTSU de la Universidad de Oxford. El proyecto se basa en los datos del *Mexico City Prospective Study*, o MCPS — un estudio prospectivo de aproximadamente 150 mil adultos reclutados entre 1998 y 2004 en la Ciudad de México, con seguimiento de mortalidad y morbilidad a más de 20 años. Ahora...
-
+> Buenas tardes a todos. Mi nombre es Roberto Olvera Hernández. Soy estudiante de doctorado en el CCG de la UNAM por parte del programa de doctorado en Ciencias Biomédicas en el laboratorio de la Dra. Mashaal Sohail. El día de hoy vengo a presentarles mi proyecto de doctorado: Estudios de asociación genómica libres de sesgos para rasgos complejos y enfermedades en más de 100,000 mexicanos. 
+>
+> Este es un proyecto que llevamos realizando poco más de 3 semestres en colaboración entre la UNAM, el laboratorio del Dr. Alexander Young en UCLA, y la Universidad de Oxford. El proyecto se basa en los datos del *Mexico City Prospective Study*, o MCPS — un estudio prospectivo de aproximadamente 150 mil adultos reclutados entre 1998 y 2004 en la Ciudad de México, con seguimiento de mortalidad y morbilidad a más de 20 años.
+>
+> Antes de continuar, quiero darle las gracias al [Dra. Daniela o Dr. Jaime], quien es parte de mi comité tutor y me extendió la invitación para presentar aquí con ustedes.
+>
+> Esto es lo que presentaré como mi exmen de candidatura el siguiente semestre, entonces por favor siéntanse libres de comentar mejoras. Ahora...
 
 ⏱️ *\~30 segundos*
 
@@ -54,9 +59,11 @@ lang: es-MX
 
 **Guion:**
 
-> Un estudio reciente, utilizando datos de INEGI y la CONAPO, encontraron que en México 4 de cada 10 muertes se deben a enfermedades cardiometabólicas, es decir, por diabetes, enfermedades del corazón y enfermedad cerebrovascular. Como podemos ver en esta gráfica, mientras que las enfermedades cerebrovasculares y la hipertensión se han mantenido estables o han ido disminuyendo en los últimos 24 años, las cardiopatías y la diabetes mellitus han mostrado una tendencia al alza sostenida.
+> Un estudio reciente, utilizando datos de INEGI y la CONAPO, encontraron que en México 4 de cada 10 muertes se deben a enfermedades cardiometabólicas, es decir, por diabetes, enfermedades del corazón y enfermedad cerebrovascular. Como podemos ver en esta gráfica, mientras que las enfermedades cerebrovasculares y la hipertensión se han mantenido estables o han ido disminuyendo en los últimos 24 años, las cardiopatías y la diabetes mellitus han mostrado una tendencia al alza en los últimos 4 años.
 >
-> Y en el MCPS no vimos algo tan diferente.
+> Esto es una situación de salud pública nacional que varios podrán estar familiarizados, estén en el campo o no. La prevención de estas enfermedades, sobre todo diabetes, es algo que como mexicanos y mexicanas hemos escuchado durante muchos años, pero creo que a veces no logramos dimensionar la situación en la que encontramos.
+>
+> En MCPS podemos ver a detalle qué es lo que sucede.
 
 **TODO:**
 
@@ -150,9 +157,13 @@ lang: es-MX
 
 **Guion:**
 
+> Por lo tanto México se vuelve bastante atractivo por esto mismo.
+>
 > Hace aproximadamente 500 años ---apenas unas 15 a 20 generaciones evolutivas atrás---, tres macrogrupos humanos que habían divergido hace miles de años entraron en contacto masivo a partir de la colonización: poblaciones europeas, del oeste de África y originarias de Mesoamérica y Aridoamérica.
 >
-> A nivel genómico, esta mezcla creó mosaicos de haplotipos en los cromosomas, como vemos en estos cariogramas donde cada color es un segmento de diferente ancestría. Y no solo eso: la diversidad de la ancestría originaria en México está estratificada. Entre los grupos Seri en Sonora y Lacandones en Chiapas existe una divergencia mayor a la que existe entre grupos europeos y asiáticos de HapMap3. Estos niveles de diversidad generan mosaicos, patrones de LD y frecuencias alélicas que no encajan en los supuestos de homogeneidad de los métodos estándar.
+> A nivel genómico, esta mezcla creó mosaicos de haplotipos en los cromosomas, como vemos en estos cariogramas donde cada color es un segmento de diferente ancestría.
+>
+> Y no solo eso sino la diversidad de la ancestría originaria en México está estratificada. Entre los grupos Seri en Sonora y Lacandones en Chiapas existe una divergencia mayor a la que existe entre grupos europeos y asiáticos de HapMap3. Estos niveles de diversidad generan mosaicos, patrones de LD y frecuencias alélicas que no encajan en los supuestos de homogeneidad de los métodos estándar.
 >
 > Con esto en mente, entonces el objetivo cambia. La brecha de representación no es solamente seguir agregando datos, sino que tenemos que reconsiderar por completo cómo podemos modificar nuestras herramientas para que representen de mejor forma la estructura continua de los genomas.
 
@@ -178,7 +189,7 @@ lang: es-MX
 >
 > **[Click: Las primeras 3 columnas se tornan grises; solo resalta la columna de GWAS familiares]**
 >
-> Este proyecto se enfoca en esta cuarta ruta — el diseño familiar — para superar las limitaciones de los métodos poblacionales en una cohorte tan grande y con una estructura familiar inusualmente densa como el MCPS.
+> Este proyecto se enfoca en esta cuarta ruta — el diseño familiar — para superar las limitaciones de los métodos poblacionales.
 
 ⏱️ *\~45 segundos*
 
@@ -317,6 +328,10 @@ lang: es-MX
 > 3. Con la estructura familiar definida, aplicamos la **imputación mendeliana** de genotipos parentales no observados.
 > 4. Corremos dos análisis en paralelo: **GWAS poblacional** con REGENIE en los 29,041 individuos no emparentados, y estudios familiares con SNIPAR usando los 100,323 individuos en redes familiares.
 > 5. Finalmente, comparamos las heredabilidades, correlaciones genéticas, y tamaños de efecto entre ambos enfoques.
+> 
+> 1. Partimos de los datos genotípicos del MCPS — aproximadamente 138,500 individuos genotipados con el chip Illumina GSAv2, imputados al panel de referencia TOPMed.
+> 2. Obtuvimos asociaciones en dos grupos independientes (con y sin familiares), utilizando GWAS familiares y poblacionales respectivamente.
+> 3. Después, comparamos estas asociaciones por medio de dos vías: heredabilidad para evaluar sesgos a un nivel superior, y con el tamaño de los efectos puntuales en .
 >
 > Todo esto se ejecuta en la nube, en la plataforma DNAnexus, a través de pipelines automatizados en Nextflow.
 
@@ -330,7 +345,11 @@ lang: es-MX
 
 **Guion:**
 
-> Escogimos este estimador robusto de Guan y colaboradores (2025) porque ataca directamente el mayor problema de los FGWAS: la severa pérdida de poder estadístico. Este método aprovecha la variación de cualquier individuo que cuente con al menos un familiar de primer grado genotipado, infiriendo los alelos no transmitidos para recuperar una enorme cantidad de tamaño de muestra efectivo ($N_{\text{eff}}$). Además, y esto es crucial para nuestro contexto, es un estimador estrictamente "robusto" porque a diferencia de otros métodos, solo utiliza la variación aleatoria de la segregación mendeliana y no asume frecuencias alélicas poblacionales; esto evita introducir sesgos por la fuerte estructura poblacional y el mestizaje en México.
+> Escogimos este estimador robusto de Guan y colaboradores (2025) porque ataca directamente el mayor problema de los FGWAS: la severa pérdida de poder estadístico. Este método aprovecha la variación de cualquier individuo que cuente con al menos un familiar de primer grado genotipado.
+>
+> En comparación con otros métodos que se limitan a usar relaciones de hermanos o con trios de padres e hijo completos.
+>
+> Entonces consideramos que una cohorte con una densa red familiar puede ayudar a superar este reto.
 
 ⏱️ *\~45 segundos*
 
@@ -355,8 +374,8 @@ lang: es-MX
 **Guion:**
 
 > Finalmente, ¿qué le hacemos a la cohorte de individuos emparentados? Aquí utilizamos el módulo de SNIPAR.
-> Primero, inferimos los segmentos idénticos por descendencia (IBD) entre hermanos. Luego, usamos esa información para imputar los genotipos parentales faltantes.
-> Esta imputación Mendeliana es la clave que permite a nuestro estimador robusto aislar el efecto genético directo, eliminando por completo cualquier estratificación poblacional residual.
+> Primero, inferimos los segmentos idénticos por descendencia (IBD) entre hermanos. Luego, usamos esa información para identificar alelos transmitidos mediante la informacion de la imputación mendeliana.
+> Y finalmente aplicar el estimador robusto para obtener efectos genéticos directos.
 
 ⏱️ *\~50 segundos*
 

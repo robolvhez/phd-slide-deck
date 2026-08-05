@@ -3,7 +3,7 @@
 
 % --- EFFECTIVE SAMPLE SIZE ---
 \ObjectivesFrame{active}{inactive}{inactive}
-\begin{frame}[c]{Tamaños Efectivos de Muestra}
+\begin{frame}[c]{El estimador robusto incrementa efectivamente el tamaño de muestra efectivo contra métodos actuales}
   \begin{columns}[b]
     % --- LEFT COLUMN ----
     \begin{column}{0.64\textwidth}
@@ -132,24 +132,47 @@
       }
   \end{table}
 \end{frame}
-\begin{frame}[t]{Conclusiones: Relevancia de los Modelos Familiares}
+
+\begin{frame}[c]{Conclusiones de esta investigación al momento}
   \begin{itemize}
-      \setlength\itemsep{1.5em}
-      \item \textbf{1. Diagnóstico de Sesgos}: Los GWAS familiares operan como herramientas diagnósticas que permiten determinar la dirección y magnitud de sesgos en diseños de descubrimiento (PopGWAS), más que como estrategias primarias para identificación de \textit{loci}.
-      \item \textbf{2. Poder Estadístico en MCPS}: La implementación del estimador robusto incrementa eficientemente el tamaño de muestra efectivo frente a alternativas intra-familiares, permitiendo documentar rigurosamente efectos de composición ambiental en la cohorte.
-      \item \textbf{3. Predicción de Riesgo (PRS)}: Históricamente, construir puntajes poligénicos con estimaciones de FGWAS no ha mejorado la precisión predictiva. Sin embargo, evaluar empíricamente esta aproximación en población mexicana es un paso necesario para consolidar la evidencia.
+      \setlength\itemsep{1.25em}
+
+      \uncover<1-3>{
+        \item \textbf{1. Poder Estadístico en MCPS}
+        \begin{itemize}
+          \item FGWAS funcionan en cohortes con diseños de reclutamiento basados en casas.
+          \item Estimador robusto incrementa $N_{eff}$ de forma efectiva en MCPS.
+        \end{itemize}
+      }
+      \uncover<2-3>{
+      \item \textbf{2. Diagnóstico de Sesgos} 
+      \begin{itemize}
+        \item \textbf{A nivel macro}: Usando \textit{heredabilidad} podemos identificar señales de sesgos sistemáticos en PopGWAS. 
+        \item \textbf{A nivel micro}: Comparando efectos podemos encontrar \textit{falsos positivos} en señales que consieramos causales. Ser precavidos con la interpretación de resultados.
+        % \item Los GWAS familiares operan como herramientas diagnósticas que permiten determinar la dirección y magnitud de sesgos en diseños de descubrimiento (PopGWAS), más que como estrategias primarias para identificación de \textit{loci}.
+      \end{itemize} 
+      }
+      \uncover<3>{
+      \item \textbf{3. (\textit{Trabajo a futuro}) Predicción de Riesgo} 
+      \begin{itemize}
+        \item FGWAS presenta precisión en tamaños de los efectos, ¿Funcionarán para \textit{PGS más portables}?
+        \item Portabilidad de MCPS a MXB como prueba de concepto.
+
+        %\item Históricamente, construir puntajes poligénicos con estimaciones de FGWAS no ha mejorado la precisión predictiva. Sin embargo, evaluar empíricamente esta aproximación en población mexicana es un paso necesario para consolidar la evidencia.
+      \end{itemize}
+      }
   \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Ancestría y Confusión Ambiental en Diabetes}
-  \begin{itemize}
-      \setlength\itemsep{1.2em}
-      \item<1-> Diabetes mellitus: fenotipo crítico con los mayores niveles de sesgo poblacional empírico.
-      \item<2-> \textcite{torres2026-diabetes, wang2025-mcps}: La ancestría mexicana explica la alta prevalencia de la enfermedad.
-      \item<3-> Estimadores intrafamiliares identifican \textbf{falsos positivos} en \textit{loci} canónicos de diabetes por confusión ambiental.
-      \begin{itemize}
-          \item<3-> \textit{Ejemplo: Como observamos previamente, genes como CDKAL1, CDKN2B y CDC123 sufrieron atenuaciones masivas, indicando confusión inducida por la ancestría.}
-      \end{itemize}
-      \item<4-> Urge el desarrollo de herramientas genómicas de mayor precisión para México.
-  \end{itemize}
-\end{frame}
+%%% \begin{frame}[c]{Ancestría y Confusión Ambiental en Diabetes}
+%%%   \begin{itemize}
+%%%       \setlength\itemsep{1.2em}
+%%%       \item<1-> Diabetes mellitus: fenotipo crítico con los mayores niveles de sesgo poblacional empírico.
+%%%       \item<2-> \textcite{torres2026-diabetes, wang2025-mcps}: La ancestría mexicana explica la alta prevalencia de la enfermedad.
+%%%       \item<3-> Estimadores intrafamiliares identifican \textbf{falsos positivos} en \textit{loci} canónicos de diabetes por confusión ambiental.
+%%%       \begin{itemize}
+%%%           \item<3-> \textit{Ejemplo: Como observamos previamente, genes como CDKAL1, CDKN2B y CDC123 sufrieron atenuaciones masivas, indicando confusión inducida por la ancestría.}
+%%%       \end{itemize}
+%%%       \item<4-> Urge el desarrollo de herramientas genómicas de mayor precisión para México.
+%%%   \end{itemize}
+%%% \end{frame}
